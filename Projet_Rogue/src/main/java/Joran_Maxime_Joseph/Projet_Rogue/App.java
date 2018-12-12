@@ -39,6 +39,7 @@ public class App
         	   else {
         		   System.out.println("Mauvaise commande !!");
         	   }
+        	   t.deplacerEnnemis();
            }
            catch (ExceptionDeplacementIllegal e) {
         	   System.out.println(e.getMessage());
