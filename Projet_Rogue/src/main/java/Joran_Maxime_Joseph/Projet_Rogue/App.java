@@ -18,11 +18,13 @@ public class App
     	
     	Terrain t = new Terrain(10, j, ennemis);
     	
-       while(true)
+    	String s="";
+    	
+       while(!s.equals("exit"))
        {
     	   // for(int i = 0; i < 100; i++) {System.out.println();}
            t.Affiche();
-           String s=sc.nextLine();
+           s=sc.nextLine();
            try {
         	   if (s.equals("haut")) {
         		   t.deplacerPersonnage(Actions.HAUT);
@@ -44,7 +46,10 @@ public class App
            catch (ExceptionDeplacementIllegal e) {
         	   System.out.println(e.getMessage());
         	   continue;
-           }
+           }          
        }
+       
+       sc.close();
+       System.exit(0);
     }
 }
