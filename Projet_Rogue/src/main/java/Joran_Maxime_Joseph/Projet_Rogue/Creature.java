@@ -16,6 +16,5 @@ public abstract class Creature {
 		this.y=y;
 		this.pv=pv;
 		this.degat=degat;	
-		this.symbole = "@";
 	}
 }

@@ -10,6 +10,7 @@ public class Joueur extends Creature {
 		super(nom,x,y,nb_actions,pv,degat);
 		this.lvl=lvl;
 		this.exp=exp;
+		this.symbole = "@";
 	}
 
 }

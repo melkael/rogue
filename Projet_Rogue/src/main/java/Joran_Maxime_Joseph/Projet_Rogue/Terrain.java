@@ -5,12 +5,14 @@ import java.util.ArrayList;
 
 public class Terrain {
 	
+	ArrayList<Creature> ennemis;
 	Creature personnage;
 	Decor[][] tab;
 	int taille;
 	
-	public Terrain(int taille, Creature personnage) 
+	public Terrain(int taille, Creature personnage, ArrayList<Creature> ennemis) 
 	{
+		this.ennemis = ennemis;
 		this.taille = taille;
 		this.tab = new Decor[taille][taille];
 		this.personnage = personnage;
@@ -23,7 +25,16 @@ public class Terrain {
 		
 		for(int i = 0; i < taille; i++) {
 			for(int j = 0; j < taille; j++) {
-				if (rand.nextInt(10) == 0 && (personnage.x != i || personnage.y != j)) {
+				boolean mur_legal = true;
+				for (int k = 0 ; k < ennemis.size() ; k++) {
+					if (ennemis.get(k).x == i && ennemis.get(k).y == j) {
+						mur_legal = false;
+					}
+					if (personnage.x == i && personnage.y == j) {
+						mur_legal = false;
+					}
+				}
+				if (rand.nextInt(10) == 0 && mur_legal) {
 					tab[i][j] = Decor.MUR;
 				}
 				else {
@@ -48,10 +59,18 @@ public class Terrain {
 	public void Affiche() {
 		for(int i = 0; i < taille; i++) {
 			for(int j = 0; j < taille; j++) {
+				boolean ennemi_ici = false;
+				for(int k = 0; k < ennemis.size(); k++) {
+					if (ennemis.get(k).x == i && ennemis.get(k).y == j) {
+						System.out.print(ennemis.get(k).symbole);
+						ennemi_ici = true;
+					}
+				}
+				
 				if (personnage.x == i && personnage.y == j) {
 					System.out.print(personnage.symbole);
 				}
-				else {
+				else if (!ennemi_ici){
 					System.out.print(tab[i][j]);
 				}
 			}
