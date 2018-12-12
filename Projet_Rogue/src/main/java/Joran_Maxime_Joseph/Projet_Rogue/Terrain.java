@@ -59,7 +59,7 @@ public class Terrain {
 		}
 	}	
 	
-	public void deplacerPersonnage(Actions a) {
-		a.deplace(personnage, this);
+	public void deplacerPersonnage(Actions a) throws ExceptionDeplacementIllegal{
+			a.deplace(personnage, this);
 	}
 }

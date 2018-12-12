@@ -11,10 +11,29 @@ public class App
     	
        while(true)
        {
-    	   for(int i = 0; i < 100; i++) {System.out.println();}
+    	   // for(int i = 0; i < 100; i++) {System.out.println();}
            t.Affiche();
            String s=sc.nextLine();
-           t.deplacerPersonnage(Actions.HAUT);
+           try {
+        	   System.out.println(s);
+        	   
+        	   if (s.equals("haut")) {
+        		   t.deplacerPersonnage(Actions.HAUT);
+        	   }
+        	   else if (s.equals("bas")) {
+        		   t.deplacerPersonnage(Actions.BAS);
+        	   }
+        	   else if (s.equals("gauche")) {
+        		   t.deplacerPersonnage(Actions.GAUCHE);
+        	   }
+        	   else if (s.equals("droite")) {
+        		   t.deplacerPersonnage(Actions.DROITE);
+        	   }
+           }
+           catch (ExceptionDeplacementIllegal e) {
+        	   e.getMessage();
+        	   continue;
+           }
        }
     }
 }

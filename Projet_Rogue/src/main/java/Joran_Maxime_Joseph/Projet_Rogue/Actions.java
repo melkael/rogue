@@ -5,8 +5,11 @@ public enum Actions {
 	HAUT("h")
 	{
 		@Override
-		public void deplace(Creature c,Terrain t)
+		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal
 		{
+			if(c.x < 2) {
+				throw new ExceptionDeplacementIllegal();
+			}
 			c.x--;
 		}
 	},
@@ -14,8 +17,11 @@ public enum Actions {
 	BAS("b")
 	{
 		@Override
-		public void deplace(Creature c,Terrain t)
+		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal
 		{
+			if(c.x > t.taille - 3) {
+				throw new ExceptionDeplacementIllegal();
+			}
 			c.x++;
 		}
 	},
@@ -23,18 +29,24 @@ public enum Actions {
 	GAUCHE("g")
 	{
 		@Override
-		public void deplace(Creature c,Terrain t)
+		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal
 		{
-			c.y++;
+			if(c.y < 2) {
+				throw new ExceptionDeplacementIllegal();
+			}
+			c.y--;
 		}
 	},
 	
 	DROITE("d")
 	{
 		@Override
-		public void deplace(Creature c,Terrain t)
+		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal
 		{
-			c.y--;
+			if(c.y > t.taille - 3) {
+				throw new ExceptionDeplacementIllegal();
+			}
+			c.y++;
 		}
 	};
 	
@@ -45,5 +57,5 @@ public enum Actions {
 		this.s=str;
 	}
 	
-	public abstract void deplace(Creature c,Terrain t);
+	public abstract void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal;
 }
