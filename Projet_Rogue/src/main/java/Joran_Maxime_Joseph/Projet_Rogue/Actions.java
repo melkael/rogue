@@ -7,7 +7,7 @@ public enum Actions {
 		@Override
 		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal
 		{
-			if(c.x < 2) {
+			if(c.x < 2 || t.tab[c.x-1][c.y] == Decor.MUR) {
 				throw new ExceptionDeplacementIllegal();
 			}
 			c.x--;
@@ -19,7 +19,7 @@ public enum Actions {
 		@Override
 		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal
 		{
-			if(c.x > t.taille - 3) {
+			if(c.x > t.taille - 3 || t.tab[c.x+1][c.y] == Decor.MUR) {
 				throw new ExceptionDeplacementIllegal();
 			}
 			c.x++;
@@ -31,7 +31,7 @@ public enum Actions {
 		@Override
 		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal
 		{
-			if(c.y < 2) {
+			if(c.y < 2 || t.tab[c.x][c.y-1] == Decor.MUR) {
 				throw new ExceptionDeplacementIllegal();
 			}
 			c.y--;
@@ -43,7 +43,7 @@ public enum Actions {
 		@Override
 		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal
 		{
-			if(c.y > t.taille - 3) {
+			if(c.y > t.taille - 3 || t.tab[c.x][c.y+1] == Decor.MUR) {
 				throw new ExceptionDeplacementIllegal();
 			}
 			c.y++;
