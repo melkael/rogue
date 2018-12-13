@@ -103,7 +103,7 @@ public class Terrain {
 			a.deplace(ennemis.get(i), this);
 		}
 	}
-	public void attaquerPersonnage(Actions a)
+	public void attaquerPersonnage(Actions a) throws ExceptionAttaqueImpossible
 	{
 		a.attaque(personnage,this);
 	}

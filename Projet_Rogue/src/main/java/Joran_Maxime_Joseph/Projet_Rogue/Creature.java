@@ -22,4 +22,10 @@ public abstract class Creature {
 	{
 		return this.nom;
 	}
+	
+	public boolean estVivant() {
+		if (pv <= 0)
+			return false;
+		return true;
+	}
 }

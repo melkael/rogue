@@ -26,19 +26,28 @@ public enum Actions {
 		}
 		
 		@Override 
-		public void attaque(Creature c,Terrain t) {
+		public void attaque(Creature c,Terrain t) throws ExceptionAttaqueImpossible{
+			boolean aAttaque = false;
 			if(c.equals(t.personnage))
 			{	
 				for(int i = 0;i<t.ennemis.size();i++)
 				{
-					if(t.ennemis.get(i).x == c.x -1 && t.ennemis.get(i).y == c.y)
+					if(t.ennemis.get(i).x == c.x -1 && t.ennemis.get(i).y == c.y) {
 						t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
+						System.out.println(t.ennemis.get(i).pv);
+						aAttaque = true;
+					}
 				}
 			}
 			else
 			{
-				if(t.personnage.x-1 == c.x && t.personnage.y == c.y)
+				if(t.personnage.x-1 == c.x && t.personnage.y == c.y) {
 					 t.personnage.pv = t.personnage.pv - c.degat;
+					 aAttaque = true;
+				}
+			}
+			if(aAttaque == false) {
+				throw new ExceptionAttaqueImpossible();
 			}
 		}	
 	},
@@ -63,19 +72,28 @@ public enum Actions {
 			c.x++;
 		}
 		@Override 
-		public void attaque(Creature c,Terrain t) {
+		public void attaque(Creature c,Terrain t) throws ExceptionAttaqueImpossible{
+			boolean aAttaque = false;
 			if(c.equals(t.personnage))
 			{	
 				for(int i = 0;i<t.ennemis.size();i++)
 				{
-					if(t.ennemis.get(i).x == c.x +1 && t.ennemis.get(i).y == c.y)
+					if(t.ennemis.get(i).x == c.x +1 && t.ennemis.get(i).y == c.y) {
 						t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
+						System.out.println(t.ennemis.get(i).pv);
+						aAttaque = true;
+					}
 				}
 			}
 			else
 			{
-				if(t.personnage.x+1 == c.x && t.personnage.y == c.y)
+				if(t.personnage.x+1 == c.x && t.personnage.y == c.y) {
 					 t.personnage.pv = t.personnage.pv - c.degat;
+					 aAttaque = true;
+				}
+			}
+			if(aAttaque == false) {
+				throw new ExceptionAttaqueImpossible();
 			}
 		}
 	},
@@ -100,19 +118,28 @@ public enum Actions {
 			c.y--;
 		}
 		@Override 
-		public void attaque(Creature c,Terrain t) {
+		public void attaque(Creature c,Terrain t) throws ExceptionAttaqueImpossible{
+			boolean aAttaque = false;
 			if(c.equals(t.personnage))
 			{	
 				for(int i = 0;i<t.ennemis.size();i++)
 				{
-					if(t.ennemis.get(i).x == c.x && t.ennemis.get(i).y-1 == c.y)
+					if(t.ennemis.get(i).x == c.x && t.ennemis.get(i).y == c.y -1) {
 						t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
+						System.out.println(t.ennemis.get(i).pv);
+						aAttaque = true;
+					}
 				}
 			}
 			else
 			{
-				if(t.personnage.x == c.x && t.personnage.y-1 == c.y)
+				if(t.personnage.x == c.x && t.personnage.y+1 == c.y) {
 					 t.personnage.pv = t.personnage.pv - c.degat;
+					 aAttaque = true;
+				}
+			}
+			if(aAttaque == false) {
+				throw new ExceptionAttaqueImpossible();
 			}
 		}
 	},
@@ -137,19 +164,28 @@ public enum Actions {
 			c.y++;
 		}
 		@Override 
-		public void attaque(Creature c,Terrain t) {
+		public void attaque(Creature c,Terrain t) throws ExceptionAttaqueImpossible{
+			boolean aAttaque = false;
 			if(c.equals(t.personnage))
 			{	
 				for(int i = 0;i<t.ennemis.size();i++)
 				{
-					if(t.ennemis.get(i).x == c.x  && t.ennemis.get(i).y+1 == c.y)
-						t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
+					if(t.ennemis.get(i).x == c.x  && t.ennemis.get(i).y == c.y + 1) {
+						t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ;
+						System.out.println(t.ennemis.get(i).pv);
+						aAttaque = true;
+					} 
 				}
 			}
 			else
 			{
-				if(t.personnage.x == c.x && t.personnage.y+1 == c.y)
+				if(t.personnage.x == c.x && t.personnage.y+1 == c.y) {
 					 t.personnage.pv = t.personnage.pv - c.degat;
+					 aAttaque = true;
+				}
+			}
+			if(aAttaque == false) {
+				throw new ExceptionAttaqueImpossible();
 			}
 		}
 	};
@@ -162,5 +198,5 @@ public enum Actions {
 	}
 	
 	public abstract void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal;
-	public abstract void attaque(Creature c,Terrain t);
+	public abstract void attaque(Creature c,Terrain t) throws ExceptionAttaqueImpossible;
 }
