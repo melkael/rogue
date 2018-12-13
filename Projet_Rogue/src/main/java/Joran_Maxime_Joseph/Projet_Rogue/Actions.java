@@ -27,12 +27,20 @@ public enum Actions {
 		
 		@Override 
 		public void attaque(Creature c,Terrain t) {
-			for(int i = 0;i<t.ennemis.size();i++)
-			{
-				if(t.ennemis.get(i).x == c.x -1 && t.ennemis.get(i).y == c.y)
-					t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
+			if(c == t.personnage)
+			{	
+				for(int i = 0;i<t.ennemis.size();i++)
+				{
+					if(t.ennemis.get(i).x == c.x -1 && t.ennemis.get(i).y == c.y)
+						t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
+				}
 			}
-		}
+			else
+			{
+				if(t.personnage.x-1 == c.x && t.personnage.y == c.y)
+					 t.personnage.pv = t.personnage.pv - c.degat;
+			}
+		}	
 	},
 	
 	BAS("b")
@@ -56,10 +64,18 @@ public enum Actions {
 		}
 		@Override 
 		public void attaque(Creature c,Terrain t) {
-			for(int i = 0;i<t.ennemis.size();i++)
+			if(c == t.personnage)
+			{	
+				for(int i = 0;i<t.ennemis.size();i++)
+				{
+					if(t.ennemis.get(i).x == c.x +1 && t.ennemis.get(i).y == c.y)
+						t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
+				}
+			}
+			else
 			{
-				if(t.ennemis.get(i).x == c.x +1 && t.ennemis.get(i).y == c.y)
-					t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
+				if(t.personnage.x+1 == c.x && t.personnage.y == c.y)
+					 t.personnage.pv = t.personnage.pv - c.degat;
 			}
 		}
 	},
@@ -85,10 +101,18 @@ public enum Actions {
 		}
 		@Override 
 		public void attaque(Creature c,Terrain t) {
-			for(int i = 0;i<t.ennemis.size();i++)
+			if(c == t.personnage)
+			{	
+				for(int i = 0;i<t.ennemis.size();i++)
+				{
+					if(t.ennemis.get(i).x == c.x && t.ennemis.get(i).y-1 == c.y)
+						t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
+				}
+			}
+			else
 			{
-				if(t.ennemis.get(i).x == c.x && t.ennemis.get(i).y == c.y-1)
-					t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
+				if(t.personnage.x == c.x && t.personnage.y-1 == c.y)
+					 t.personnage.pv = t.personnage.pv - c.degat;
 			}
 		}
 	},
@@ -114,10 +138,18 @@ public enum Actions {
 		}
 		@Override 
 		public void attaque(Creature c,Terrain t) {
-			for(int i = 0;i<t.ennemis.size();i++)
+			if(c == t.personnage)
+			{	
+				for(int i = 0;i<t.ennemis.size();i++)
+				{
+					if(t.ennemis.get(i).x == c.x  && t.ennemis.get(i).y+1 == c.y)
+						t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
+				}
+			}
+			else
 			{
-				if(t.ennemis.get(i).x == c.x && t.ennemis.get(i).y == c.y+1)
-					t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
+				if(t.personnage.x == c.x && t.personnage.y+1 == c.y)
+					 t.personnage.pv = t.personnage.pv - c.degat;
 			}
 		}
 	};
