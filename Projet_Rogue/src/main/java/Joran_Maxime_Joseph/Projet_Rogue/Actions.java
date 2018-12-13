@@ -39,7 +39,7 @@ public enum Actions {
 				{
 					if(t.ennemis.get(i).x == c.x -1 && t.ennemis.get(i).y == c.y) {
 						t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
-						System.out.println(t.ennemis.get(i).pv);
+						System.out.println(t.ennemis.get(i).nom + " a moins de pv : " + + t.ennemis.get(i).pv);
 						aAttaque = true;
 					}
 				}
@@ -89,7 +89,7 @@ public enum Actions {
 				{
 					if(t.ennemis.get(i).x == c.x +1 && t.ennemis.get(i).y == c.y) {
 						t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
-						System.out.println(t.ennemis.get(i).pv);
+						System.out.println(t.ennemis.get(i).nom + " a moins de pv : " + t.ennemis.get(i).pv);
 						aAttaque = true;
 					}
 				}
@@ -139,7 +139,7 @@ public enum Actions {
 				{
 					if(t.ennemis.get(i).x == c.x && t.ennemis.get(i).y == c.y -1) {
 						t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
-						System.out.println(t.ennemis.get(i).pv);
+						System.out.println(t.ennemis.get(i).nom + " a moins de pv : " + + t.ennemis.get(i).pv);
 						aAttaque = true;
 					}
 				}
@@ -189,7 +189,7 @@ public enum Actions {
 				{
 					if(t.ennemis.get(i).x == c.x  && t.ennemis.get(i).y == c.y + 1) {
 						t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ;
-						System.out.println(t.ennemis.get(i).pv);
+						System.out.println(t.ennemis.get(i).nom + " a moins de pv : " + + t.ennemis.get(i).pv);
 						aAttaque = true;
 					} 
 				}

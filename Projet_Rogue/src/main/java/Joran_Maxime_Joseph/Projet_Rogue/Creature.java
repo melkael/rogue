@@ -2,7 +2,7 @@ package Joran_Maxime_Joseph.Projet_Rogue;
 
 public abstract class Creature {
 	
-	private String nom;
+	public String nom;
 	public int x;
 	public int y;
 	public int pv;
