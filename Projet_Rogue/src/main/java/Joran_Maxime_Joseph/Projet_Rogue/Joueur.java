@@ -12,5 +12,6 @@ public class Joueur extends Creature {
 		this.exp=exp;
 		this.symbole = "@";
 	}
-
+	
+	
 }

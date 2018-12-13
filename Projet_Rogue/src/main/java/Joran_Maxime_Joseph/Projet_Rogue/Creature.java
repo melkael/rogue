@@ -18,4 +18,8 @@ public abstract class Creature {
 		this.degat=degat;	
 	}
 	
+	public String getnom()
+	{
+		return this.nom;
+	}
 }

@@ -27,7 +27,7 @@ public enum Actions {
 		
 		@Override 
 		public void attaque(Creature c,Terrain t) {
-			if(c == t.personnage)
+			if(c.equals(t.personnage))
 			{	
 				for(int i = 0;i<t.ennemis.size();i++)
 				{
@@ -64,7 +64,7 @@ public enum Actions {
 		}
 		@Override 
 		public void attaque(Creature c,Terrain t) {
-			if(c == t.personnage)
+			if(c.equals(t.personnage))
 			{	
 				for(int i = 0;i<t.ennemis.size();i++)
 				{
@@ -101,7 +101,7 @@ public enum Actions {
 		}
 		@Override 
 		public void attaque(Creature c,Terrain t) {
-			if(c == t.personnage)
+			if(c.equals(t.personnage))
 			{	
 				for(int i = 0;i<t.ennemis.size();i++)
 				{
@@ -138,7 +138,7 @@ public enum Actions {
 		}
 		@Override 
 		public void attaque(Creature c,Terrain t) {
-			if(c == t.personnage)
+			if(c.equals(t.personnage))
 			{	
 				for(int i = 0;i<t.ennemis.size();i++)
 				{

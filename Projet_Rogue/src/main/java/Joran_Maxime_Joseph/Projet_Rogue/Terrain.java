@@ -103,4 +103,9 @@ public class Terrain {
 			a.deplace(ennemis.get(i), this);
 		}
 	}
+	public void attaquerPersonnage(Actions a)
+	{
+		a.attaque(personnage,this);
+	}
+	
 }
