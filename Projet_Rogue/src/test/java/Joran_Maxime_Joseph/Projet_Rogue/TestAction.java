@@ -45,9 +45,15 @@ public class TestAction {
 		Terrain t = new Terrain(10, j, ennemis);
 		
 		
-		
-		h.deplace(j, t);
-		assertEquals(4,j.x);
+		try
+		{
+			h.deplace(j, t);
+			assertEquals(4,j.x);
+		}
+		catch(ExceptionDeplacementIllegal e)
+		{
+			assertTrue(e.getMessage().equals("Deplacement Illegal"));
+		}
 	}
 	
 	@Test
@@ -59,9 +65,15 @@ public class TestAction {
 		Terrain t = new Terrain(10, j, ennemis);
 		
 		
-		
-		b.deplace(j, t);
-		assertEquals(6,j.x);	
+		try
+		{
+			b.deplace(j, t);
+			assertEquals(6,j.x);
+		}
+		catch(ExceptionDeplacementIllegal e)
+		{
+			assertTrue(e.getMessage().equals("Deplacement Illegal"));
+		}
 	}
 
 	@Test
@@ -73,9 +85,15 @@ public class TestAction {
 		Terrain t = new Terrain(10, j, ennemis);
 		
 		
-		
-		g.deplace(j, t);
-		assertEquals(4,j.y);
+		try 
+		{
+			g.deplace(j, t);
+			assertEquals(4,j.y);
+		}
+		catch(ExceptionDeplacementIllegal e)
+		{
+			assertTrue(e.getMessage().equals("Deplacement Illegal"));
+		}
 	}
 	
 	@Test
@@ -87,8 +105,15 @@ public class TestAction {
 		Terrain t = new Terrain(10, j, ennemis);
 		
 		
+		try 
+		{
+			d.deplace(j, t);
+			assertEquals(6,j.y);
+		}
+		catch(ExceptionDeplacementIllegal e)
+		{
+			assertTrue(e.getMessage().equals("Deplacement Illegal"));
+		}
 		
-		d.deplace(j, t);
-		assertEquals(6,j.y);
 	}
 }
