@@ -5,8 +5,8 @@ public abstract class Creature {
 	private String nom;
 	public int x;
 	public int y;
-	private int pv;
-	private int degat;
+	public int pv;
+	public int degat;
 	public String symbole;
 	
 	public Creature(String nom,int x,int y,int nb_actions,int pv,int degat)
@@ -17,4 +17,5 @@ public abstract class Creature {
 		this.pv=pv;
 		this.degat=degat;	
 	}
+	
 }

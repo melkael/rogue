@@ -24,6 +24,15 @@ public enum Actions {
 			}
 			c.x--;
 		}
+		
+		@Override 
+		public void attaque(Creature c,Terrain t) {
+			for(int i = 0;i<t.ennemis.size();i++)
+			{
+				if(t.ennemis.get(i).x == c.x -1 && t.ennemis.get(i).y == c.y)
+					t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
+			}
+		}
 	},
 	
 	BAS("b")
@@ -44,6 +53,14 @@ public enum Actions {
 				throw new ExceptionDeplacementIllegal();
 			}
 			c.x++;
+		}
+		@Override 
+		public void attaque(Creature c,Terrain t) {
+			for(int i = 0;i<t.ennemis.size();i++)
+			{
+				if(t.ennemis.get(i).x == c.x +1 && t.ennemis.get(i).y == c.y)
+					t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
+			}
 		}
 	},
 	
@@ -66,6 +83,14 @@ public enum Actions {
 			}
 			c.y--;
 		}
+		@Override 
+		public void attaque(Creature c,Terrain t) {
+			for(int i = 0;i<t.ennemis.size();i++)
+			{
+				if(t.ennemis.get(i).x == c.x && t.ennemis.get(i).y == c.y-1)
+					t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
+			}
+		}
 	},
 	
 	DROITE("d")
@@ -87,6 +112,14 @@ public enum Actions {
 			}
 			c.y++;
 		}
+		@Override 
+		public void attaque(Creature c,Terrain t) {
+			for(int i = 0;i<t.ennemis.size();i++)
+			{
+				if(t.ennemis.get(i).x == c.x && t.ennemis.get(i).y == c.y+1)
+					t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
+			}
+		}
 	};
 	
 	private String s;
@@ -97,4 +130,5 @@ public enum Actions {
 	}
 	
 	public abstract void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal;
+	public abstract void attaque(Creature c,Terrain t);
 }
