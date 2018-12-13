@@ -2,6 +2,8 @@ package Joran_Maxime_Joseph.Projet_Rogue;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 public class TestAction {
@@ -35,30 +37,58 @@ public class TestAction {
 	}
 	
 	@Test
-	public void TestDeplaceHaut() 
+	public void TestDeplaceHaut()  throws ExceptionDeplacementIllegal
 	{
 		Actions h = Actions.HAUT;
-		assertNotNull(h);
+		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		ArrayList<Creature> ennemis = new ArrayList<Creature>();
+		Terrain t = new Terrain(10, j, ennemis);
+		
+		
+		
+		h.deplace(j, t);
+		assertEquals(4,j.x);
 	}
 	
 	@Test
-	public void TestDeplaceBas() 
+	public void TestDeplaceBas() throws ExceptionDeplacementIllegal
 	{
 		Actions b = Actions.BAS;
-		assertNotNull(b);
+		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		ArrayList<Creature> ennemis = new ArrayList<Creature>();
+		Terrain t = new Terrain(10, j, ennemis);
+		
+		
+		
+		b.deplace(j, t);
+		assertEquals(6,j.x);	
 	}
 
 	@Test
-	public void TestDeplaceGauche() 
+	public void TestDeplaceGauche() throws ExceptionDeplacementIllegal
 	{
 		Actions g = Actions.GAUCHE;
-		assertNotNull(g);
+		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		ArrayList<Creature> ennemis = new ArrayList<Creature>();
+		Terrain t = new Terrain(10, j, ennemis);
+		
+		
+		
+		g.deplace(j, t);
+		assertEquals(4,j.y);
 	}
 	
 	@Test
-	public void TestDeplaceDroite() 
+	public void TestDeplaceDroite() throws ExceptionDeplacementIllegal
 	{
 		Actions d = Actions.DROITE;
-		assertNotNull(d);
+		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		ArrayList<Creature> ennemis = new ArrayList<Creature>();
+		Terrain t = new Terrain(10, j, ennemis);
+		
+		
+		
+		d.deplace(j, t);
+		assertEquals(6,j.y);
 	}
 }
