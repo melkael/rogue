@@ -61,9 +61,14 @@ public class Terrain {
 			for(int j = 0; j < taille; j++) {
 				boolean ennemi_ici = false;
 				for(int k = 0; k < ennemis.size(); k++) {
-					if (ennemis.get(k).x == i && ennemis.get(k).y == j) {
-						System.out.print(ennemis.get(k).symbole);
-						ennemi_ici = true;
+					if (ennemis.get(k).estVivant()) {
+						if (ennemis.get(k).x == i && ennemis.get(k).y == j) {
+							System.out.print(ennemis.get(k).symbole);
+							ennemi_ici = true;
+						}
+					}
+					else {
+						ennemis.remove(k);
 					}
 				}
 				
