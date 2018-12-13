@@ -12,32 +12,35 @@ public class TestTerrain {
 	public void TestInstanceTerrain() 
 	{
 		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		
-		Terrain t= new Terrain(10, j, ennemis);
+		Terrain t= new Terrain(10, j, ennemis,epee);
 		
 		assertNotNull(t);
 	}
 	
 	@Test
-	public void TestDeplacerPersonnageHaut() throws ExceptionDeplacementIllegal
+	public void TestDeplacerPersonnageHaut() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet
 	{
 		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		
-		Terrain t= new Terrain(10, j, ennemis);
+		Terrain t= new Terrain(10, j, ennemis,epee);
 		
 		t.deplacerPersonnage(Actions.HAUT);
 		assertEquals(4,j.x);
 	}
 	
 	@Test
-	public void TestDeplacerPersonnageBas() throws ExceptionDeplacementIllegal
+	public void TestDeplacerPersonnageBas() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet
 	{
 		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		
-		Terrain t= new Terrain(10, j, ennemis);
+		Terrain t= new Terrain(10, j, ennemis,epee);
 		
 		t.deplacerPersonnage(Actions.BAS);
 		assertEquals(6,j.x);
@@ -45,12 +48,13 @@ public class TestTerrain {
 	}
 	
 	@Test
-	public void TestDeplacerPersonnageGauche() throws ExceptionDeplacementIllegal
+	public void TestDeplacerPersonnageGauche() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet
 	{
 		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		
-		Terrain t= new Terrain(10, j, ennemis);
+		Terrain t= new Terrain(10, j, ennemis,epee);
 		
 		t.deplacerPersonnage(Actions.GAUCHE);
 		assertEquals(4,j.y);
@@ -58,12 +62,13 @@ public class TestTerrain {
 	}
 	
 	@Test
-	public void TestDeplacerPersonnageDroite() throws ExceptionDeplacementIllegal
+	public void TestDeplacerPersonnageDroite() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet
 	{
 		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		
-		Terrain t= new Terrain(10, j, ennemis);
+		Terrain t= new Terrain(10, j, ennemis,epee);
 		
 		t.deplacerPersonnage(Actions.DROITE);
 		assertEquals(6,j.y);

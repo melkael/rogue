@@ -37,12 +37,13 @@ public class TestAction {
 	}
 	
 	@Test
-	public void TestDeplaceHaut()  throws ExceptionDeplacementIllegal
+	public void TestDeplaceHaut()  throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet
 	{
 		Actions h = Actions.HAUT;
 		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
-		Terrain t = new Terrain(10, j, ennemis);
+		Terrain t = new Terrain(10, j, ennemis,epee);
 		
 		
 		try
@@ -57,12 +58,13 @@ public class TestAction {
 	}
 	
 	@Test
-	public void TestDeplaceBas() throws ExceptionDeplacementIllegal
+	public void TestDeplaceBas() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet
 	{
 		Actions b = Actions.BAS;
 		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
-		Terrain t = new Terrain(10, j, ennemis);
+		Terrain t = new Terrain(10, j, ennemis,epee);
 		
 		
 		try
@@ -77,12 +79,13 @@ public class TestAction {
 	}
 
 	@Test
-	public void TestDeplaceGauche() throws ExceptionDeplacementIllegal
+	public void TestDeplaceGauche() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet
 	{
 		Actions g = Actions.GAUCHE;
 		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
-		Terrain t = new Terrain(10, j, ennemis);
+		Terrain t = new Terrain(10, j, ennemis,epee);
 		
 		
 		try 
@@ -97,12 +100,13 @@ public class TestAction {
 	}
 	
 	@Test
-	public void TestDeplaceDroite() throws ExceptionDeplacementIllegal
+	public void TestDeplaceDroite() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet
 	{
 		Actions d = Actions.DROITE;
 		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
-		Terrain t = new Terrain(10, j, ennemis);
+		Terrain t = new Terrain(10, j, ennemis,epee);
 		
 		
 		try 

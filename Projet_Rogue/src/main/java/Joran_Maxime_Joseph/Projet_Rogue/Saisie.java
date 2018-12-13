@@ -32,6 +32,9 @@ public class Saisie {
 	     else if (cmd.equals("atk haut")) {
 	    	 t.attaquerPersonnage(Actions.HAUT);
 	     }
+	     else if (cmd.equals("game over")) {
+	    	 System.exit(0);
+	     }
 	     else {
 	     	throw new ExceptionInvalidCommand();
 	     }
