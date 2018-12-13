@@ -15,7 +15,9 @@ public class App
     	ennemis.add(g2);
     	ennemis.add(g3);
     	
-    	Terrain t = new Terrain(10, j, ennemis);
+    	Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
+    	
+    	Terrain t = new Terrain(10, j, ennemis, epee);
     	
     	Saisie saisie = new Saisie(t);
     	saisie.jouer();

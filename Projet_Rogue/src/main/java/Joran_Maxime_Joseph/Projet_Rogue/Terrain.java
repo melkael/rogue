@@ -6,16 +6,18 @@ import java.util.ArrayList;
 public class Terrain {
 	
 	ArrayList<Creature> ennemis;
-	Creature personnage;
+	Joueur personnage;
 	Decor[][] tab;
 	int taille;
+	Epee epee;
 	
-	public Terrain(int taille, Creature personnage, ArrayList<Creature> ennemis) 
+	public Terrain(int taille, Joueur personnage, ArrayList<Creature> ennemis, Epee epee) 
 	{
 		this.ennemis = ennemis;
 		this.taille = taille;
 		this.tab = new Decor[taille][taille];
 		this.personnage = personnage;
+		this.epee = epee;
 		Init();
 	}
 	
@@ -30,9 +32,9 @@ public class Terrain {
 					if (ennemis.get(k).x == i && ennemis.get(k).y == j) {
 						mur_legal = false;
 					}
-					if (personnage.x == i && personnage.y == j) {
-						mur_legal = false;
-					}
+				}
+				if ((personnage.x == i && personnage.y == j) || (epee.x == i && epee.y == j)) {
+					mur_legal = false;
 				}
 				if (rand.nextInt(10) == 0 && mur_legal) {
 					tab[i][j] = Decor.MUR;
@@ -71,9 +73,13 @@ public class Terrain {
 						ennemis.remove(k);
 					}
 				}
-				
 				if (personnage.x == i && personnage.y == j) {
 					System.out.print(personnage.symbole);
+					ennemi_ici = true;
+				}
+				if (epee.x == i && epee.y == j) {
+					System.out.print(epee.glyph);
+					ennemi_ici = true;
 				}
 				else if (!ennemi_ici){
 					System.out.print(tab[i][j]);
@@ -83,11 +89,11 @@ public class Terrain {
 		}
 	}	
 	
-	public void deplacerPersonnage(Actions a) throws ExceptionDeplacementIllegal{
+	public void deplacerPersonnage(Actions a) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet{
 			a.deplace(personnage, this);
 	}
 	
-	public void deplacerEnnemis() throws ExceptionDeplacementIllegal{
+	public void deplacerEnnemis() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet{
 		Actions a;
 		Random rand = new Random();
 		int r = rand.nextInt();

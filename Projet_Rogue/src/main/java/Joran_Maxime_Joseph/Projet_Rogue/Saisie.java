@@ -7,7 +7,7 @@ public class Saisie {
 	public Saisie(Terrain t) {
 		this.t = t;
 	}
-	public void joueurJoue(String cmd) throws ExceptionDeplacementIllegal, ExceptionInvalidCommand, ExceptionAttaqueImpossible{
+	public void joueurJoue(String cmd) throws ExceptionDeplacementIllegal, ExceptionInvalidCommand, ExceptionAttaqueImpossible, ExceptionMarcheSurObjet{
 	     if (cmd.equals("go haut")) {
 	     	t.deplacerPersonnage(Actions.HAUT);
 	     }
@@ -49,15 +49,20 @@ public class Saisie {
 				joueurJoue(cmd);
 				joueurAPuJouer = true;
 			}
-			catch (Exception e1){
-				System.out.println(e1.getMessage());
+			catch (ExceptionMarcheSurObjet e1){
+				t.personnage.ramasserEpee(t.epee);
+				t.epee = new Epee();
+				joueurAPuJouer = true;
+			}
+			catch (Exception e2) {
+				System.out.println(e2.getMessage());
 				joueurAPuJouer = false;
 			}
 			if (joueurAPuJouer) {
 				try {
 					t.deplacerEnnemis();
 				}
-				catch (ExceptionDeplacementIllegal e2) {
+				catch (Exception e3) {
 					
 				}
 			}

@@ -4,7 +4,7 @@ public abstract class Objet {
 	public String glyph;
 	public int x;
 	public int y;
-	private String nom;
+	public String nom;
 	
 
 	Objet()

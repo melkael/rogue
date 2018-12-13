@@ -5,7 +5,7 @@ public enum Actions {
 	HAUT("h")
 	{
 		@Override
-		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal
+		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet
 		{
 			// verification des collisions avec le mur
 			if(c.x < 2 || t.tab[c.x-1][c.y] == Decor.MUR) {
@@ -21,6 +21,11 @@ public enum Actions {
 			//verification des collisions avec le joueurs
 			if(c.x -1 == t.personnage.x && c.y == t.personnage.y) {
 				throw new ExceptionDeplacementIllegal();
+			}
+			//verification de collision avec l'epee
+			if(c.x -1 == t.epee.x && c.y == t.epee.y) {
+				c.x--;
+				throw new ExceptionMarcheSurObjet();
 			}
 			c.x--;
 		}
@@ -55,7 +60,7 @@ public enum Actions {
 	BAS("b")
 	{
 		@Override
-		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal
+		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet
 		{
 			if(c.x > t.taille - 3 || t.tab[c.x+1][c.y] == Decor.MUR) {
 				throw new ExceptionDeplacementIllegal();
@@ -68,6 +73,10 @@ public enum Actions {
 			}
 			if(c.x + 1 == t.personnage.x && c.y == t.personnage.y) {
 				throw new ExceptionDeplacementIllegal();
+			}
+			if(c.x +1 == t.epee.x && c.y == t.epee.y) {
+				c.x++;
+				throw new ExceptionMarcheSurObjet();
 			}
 			c.x++;
 		}
@@ -101,7 +110,7 @@ public enum Actions {
 	GAUCHE("g")
 	{
 		@Override
-		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal
+		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet
 		{
 			if(c.y < 2 || t.tab[c.x][c.y-1] == Decor.MUR) {
 				throw new ExceptionDeplacementIllegal();
@@ -114,6 +123,10 @@ public enum Actions {
 			}
 			if(c.x == t.personnage.x && c.y - 1 == t.personnage.y) {
 				throw new ExceptionDeplacementIllegal();
+			}
+			if(c.x == t.epee.x && c.y - 1 == t.epee.y) {
+				c.y--;
+				throw new ExceptionMarcheSurObjet();
 			}
 			c.y--;
 		}
@@ -147,7 +160,7 @@ public enum Actions {
 	DROITE("d")
 	{
 		@Override
-		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal
+		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet
 		{
 			if(c.y > t.taille - 3 || t.tab[c.x][c.y+1] == Decor.MUR) {
 				throw new ExceptionDeplacementIllegal();
@@ -160,6 +173,10 @@ public enum Actions {
 			}
 			if(c.x == t.personnage.x && c.y + 1 == t.personnage.y) {
 				throw new ExceptionDeplacementIllegal();
+			}
+			if(c.x == t.epee.x && c.y + 1 == t.epee.y) {
+				c.y++;
+				throw new ExceptionMarcheSurObjet();
 			}
 			c.y++;
 		}
@@ -197,6 +214,6 @@ public enum Actions {
 		this.s=str;
 	}
 	
-	public abstract void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal;
+	public abstract void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet;
 	public abstract void attaque(Creature c,Terrain t) throws ExceptionAttaqueImpossible;
 }
