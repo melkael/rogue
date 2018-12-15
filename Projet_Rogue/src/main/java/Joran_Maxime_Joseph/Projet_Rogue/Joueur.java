@@ -12,7 +12,7 @@ public class Joueur extends Creature {
 		super(nom,x,y,nb_actions,pv,degat);
 		this.lvl=lvl;
 		this.exp=exp;
-		this.symbole = "@";
+		this.symbole = "\uD83D\uDC68";
 		this.bouclier = new Bouclier();
 		this.epee = new Epee();
 	}
