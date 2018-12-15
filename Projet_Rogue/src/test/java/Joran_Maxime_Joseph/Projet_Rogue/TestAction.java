@@ -55,6 +55,10 @@ public class TestAction {
 		{
 			assertTrue(e.getMessage().equals("Deplacement Illegal"));
 		}
+		catch(ExceptionMarcheSurObjet e)
+		{
+			assertTrue(e.getMessage().equals("Marche sur un objet"));
+		}
 	}
 	
 	@Test
@@ -75,6 +79,10 @@ public class TestAction {
 		catch(ExceptionDeplacementIllegal e)
 		{
 			assertTrue(e.getMessage().equals("Deplacement Illegal"));
+		}
+		catch(ExceptionMarcheSurObjet e)
+		{
+			assertTrue(e.getMessage().equals("Marche sur un objet"));
 		}
 	}
 
@@ -97,6 +105,10 @@ public class TestAction {
 		{
 			assertTrue(e.getMessage().equals("Deplacement Illegal"));
 		}
+		catch(ExceptionMarcheSurObjet e)
+		{
+			assertTrue(e.getMessage().equals("Marche sur un objet"));
+		}
 	}
 	
 	@Test
@@ -118,6 +130,9 @@ public class TestAction {
 		{
 			assertTrue(e.getMessage().equals("Deplacement Illegal"));
 		}
-		
+		catch(ExceptionMarcheSurObjet e)
+		{
+			assertTrue(e.getMessage().equals("Marche sur un objet"));
+		}
 	}
 }
