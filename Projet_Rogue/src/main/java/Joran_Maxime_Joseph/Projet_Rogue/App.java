@@ -15,7 +15,7 @@ public class App
     	ennemis.add(g2);
     	ennemis.add(g3);
     	
-    	Epee epee = new Epee("Excaliburne", "\uD83D\uDDE1️", 10, 8, 8);
+    	Epee epee = new Epee("Excaliburne", "T", 10, 8, 8);
     	
     	Terrain t = new Terrain(10, j, ennemis, epee);
     	
