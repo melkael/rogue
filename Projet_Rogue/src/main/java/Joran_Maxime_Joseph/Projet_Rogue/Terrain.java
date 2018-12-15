@@ -89,34 +89,8 @@ public class Terrain {
 		}
 	}	
 	
-	public void deplacerPersonnage(Actions a) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet{
-			a.deplace(personnage, this);
-	}
 	
-	public void deplacerEnnemis() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet{
-		Actions a;
-		Random rand = new Random();
-		int r = rand.nextInt();
-		for(int i = 0; i < ennemis.size(); i++) {
-			r = rand.nextInt(4);
-			if(r == 0) {
-				a = Actions.HAUT;
-			}
-			else if(r == 1) {
-				a = Actions.BAS;
-			}
-			else if(r == 2) {
-				a = Actions.GAUCHE;
-			}
-			else {
-				a = Actions.DROITE;
-			}
-			a.deplace(ennemis.get(i), this);
-		}
-	}
-	public void attaquerPersonnage(Actions a) throws ExceptionAttaqueImpossible
-	{
-		a.attaque(personnage,this);
-	}
+	
+	
 	
 }

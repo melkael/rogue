@@ -9,28 +9,28 @@ public class Saisie {
 	}
 	public void joueurJoue(String cmd) throws ExceptionDeplacementIllegal, ExceptionInvalidCommand, ExceptionAttaqueImpossible, ExceptionMarcheSurObjet{
 	     if (cmd.equals("go haut")) {
-	     	t.deplacerPersonnage(Actions.HAUT);
+	     	t.personnage.sedeplacer(Actions.HAUT,t);
 	     }
 	     else if (cmd.equals("go bas")) {
-	     	t.deplacerPersonnage(Actions.BAS);
+	     	t.personnage.sedeplacer(Actions.BAS,t);
 	     }
 	     else if (cmd.equals("go gauche")) {
-	     	t.deplacerPersonnage(Actions.GAUCHE);
+	    	 t.personnage.sedeplacer(Actions.GAUCHE,t);
 	     }
 	     else if (cmd.equals("go droite")) {
-	     	t.deplacerPersonnage(Actions.DROITE);
+	    	 t.personnage.sedeplacer(Actions.DROITE,t);
 	     }
 	     else if (cmd.equals("atk gauche")) {
-	    	 t.attaquerPersonnage(Actions.GAUCHE);
+	    	 t.personnage.attaquer(Actions.GAUCHE,t);
 	     }
 	     else if (cmd.equals("atk droite")) {
-	    	 t.attaquerPersonnage(Actions.DROITE);
+	    	 t.personnage.attaquer(Actions.DROITE,t);
 	     }
 	     else if (cmd.equals("atk bas")) {
-	    	 t.attaquerPersonnage(Actions.BAS);
+	    	 t.personnage.attaquer(Actions.BAS,t);
 	     }
 	     else if (cmd.equals("atk haut")) {
-	    	 t.attaquerPersonnage(Actions.HAUT);
+	    	 t.personnage.attaquer(Actions.HAUT,t);
 	     }
 	     else if (cmd.equals("game over")) {
 	    	 System.exit(0);
@@ -62,12 +62,16 @@ public class Saisie {
 				joueurAPuJouer = false;
 			}
 			if (joueurAPuJouer) {
-				try {
-					t.deplacerEnnemis();
-				}
-				catch (Exception e3) {
-					
-				}
+				
+					for(int i = 0;i<t.ennemis.size();i++)
+					{
+						try {
+							t.ennemis.get(i).IA(t);
+						}
+						catch (Exception e3) {							
+						}
+					}
+				
 			}
 		}
 		sc.close();

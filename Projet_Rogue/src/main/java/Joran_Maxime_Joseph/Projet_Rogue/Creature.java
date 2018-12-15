@@ -28,4 +28,28 @@ public abstract class Creature {
 			return false;
 		return true;
 	}
+	
+	public void sedeplacer(Actions a,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet{
+		a.deplace(this, t);
+}
+	public void attaquer(Actions a,Terrain t) throws ExceptionAttaqueImpossible
+	{
+		a.attaque(this,t);
+	}
+	//donne la position du joueur par rapport à la créature
+	public int close_to_player(Terrain t){
+		if(this.x == t.personnage.x-1 && this.y == t.personnage.y)
+			return 1; //perso en bas
+		else if(this.x == t.personnage.x+1 && this.y == t.personnage.y)
+			return 2; //perso en haut
+		else if(this.x == t.personnage.x && this.y == t.personnage.y-1)
+			return 3; //Perso à droite
+		else if(this.x == t.personnage.x && this.y == t.personnage.y+1)
+			return 4; //Perso à gauche
+		else 
+			return -1;//Perso Pas Là		
+	}
+	
+	abstract public void IA(Terrain t)throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet,ExceptionAttaqueImpossible;
+	
 }

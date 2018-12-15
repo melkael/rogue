@@ -46,8 +46,9 @@ public enum Actions {
 			}
 			else
 			{
-				if(t.personnage.x-1 == c.x && t.personnage.y == c.y) {
+				if(t.personnage.x == c.x-1 && t.personnage.y == c.y) {
 					 t.personnage.pv = t.personnage.pv - c.degat;
+					 System.out.println(c.nom + " Vous a infligé : " + + c.degat);
 					 aAttaque = true;
 				}
 			}
@@ -96,8 +97,9 @@ public enum Actions {
 			}
 			else
 			{
-				if(t.personnage.x+1 == c.x && t.personnage.y == c.y) {
+				if(t.personnage.x == c.x+1 && t.personnage.y == c.y) {
 					 t.personnage.pv = t.personnage.pv - c.degat;
+					 System.out.println(c.nom + " Vous a infligé : " + + c.degat);
 					 aAttaque = true;
 				}
 			}
@@ -146,8 +148,9 @@ public enum Actions {
 			}
 			else
 			{
-				if(t.personnage.x == c.x && t.personnage.y+1 == c.y) {
+				if(t.personnage.x == c.x && t.personnage.y == c.y-1) {
 					 t.personnage.pv = t.personnage.pv - c.degat;
+					 System.out.println(c.nom + " Vous a infligé : " + + c.degat);
 					 aAttaque = true;
 				}
 			}
@@ -196,8 +199,9 @@ public enum Actions {
 			}
 			else
 			{
-				if(t.personnage.x == c.x && t.personnage.y+1 == c.y) {
+				if(t.personnage.x == c.x && t.personnage.y == c.y+1) {
 					 t.personnage.pv = t.personnage.pv - c.degat;
+					 System.out.println(c.nom + " Vous a infligé : " + + c.degat);
 					 aAttaque = true;
 				}
 			}

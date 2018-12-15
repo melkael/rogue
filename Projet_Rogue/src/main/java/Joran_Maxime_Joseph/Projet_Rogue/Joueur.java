@@ -24,5 +24,9 @@ public class Joueur extends Creature {
 		System.out.println("Vous ramassez " + e.nom + ", vos degats : " + this.degat);
 	}
 	
+	@Override
+	public void IA(Terrain t){
+		
+	}
 	
 }
