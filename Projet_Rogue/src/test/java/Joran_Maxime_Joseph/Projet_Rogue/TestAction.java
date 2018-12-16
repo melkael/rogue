@@ -37,7 +37,7 @@ public class TestAction {
 	}
 	
 	@Test
-	public void TestDeplaceHaut()  throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet
+	public void TestDeplaceHaut()  throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
 		Actions h = Actions.HAUT;
 		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
@@ -59,10 +59,14 @@ public class TestAction {
 		{
 			assertTrue(e.getMessage().equals("Marche sur un objet"));
 		}
+		catch(ExceptionOuvrePorte e)
+		{
+			assertTrue(e.getMessage().equals("Vous ouvrez une porte !"));
+		}
 	}
 	
 	@Test
-	public void TestDeplaceBas() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet
+	public void TestDeplaceBas() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
 		Actions b = Actions.BAS;
 		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
@@ -84,10 +88,14 @@ public class TestAction {
 		{
 			assertTrue(e.getMessage().equals("Marche sur un objet"));
 		}
+		catch(ExceptionOuvrePorte e)
+		{
+			assertTrue(e.getMessage().equals("Vous ouvrez une porte !"));
+		}
 	}
 
 	@Test
-	public void TestDeplaceGauche() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet
+	public void TestDeplaceGauche() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
 		Actions g = Actions.GAUCHE;
 		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
@@ -109,10 +117,14 @@ public class TestAction {
 		{
 			assertTrue(e.getMessage().equals("Marche sur un objet"));
 		}
+		catch(ExceptionOuvrePorte e)
+		{
+			assertTrue(e.getMessage().equals("Vous ouvrez une porte !"));
+		}
 	}
 	
 	@Test
-	public void TestDeplaceDroite() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet
+	public void TestDeplaceDroite() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
 		Actions d = Actions.DROITE;
 		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
@@ -133,6 +145,10 @@ public class TestAction {
 		catch(ExceptionMarcheSurObjet e)
 		{
 			assertTrue(e.getMessage().equals("Marche sur un objet"));
+		}
+		catch(ExceptionOuvrePorte e)
+		{
+			assertTrue(e.getMessage().equals("Vous ouvrez une porte !"));
 		}
 	}
 }
