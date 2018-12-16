@@ -89,6 +89,22 @@ public class Saisie {
 	     else if (cmd.equals("game over")) {
 	    	 System.exit(0);
 	     }
+	     else if (cmd.equals("save")) {
+	     	try {
+				t.saveToFIle();
+			}
+	     	catch (Exception e){
+	     		System.out.println(e.getMessage());
+			}
+		 }
+	     else if (cmd.equals("load")){
+	     	try {
+	     		t = t.readFromFile();
+			}
+			catch (Exception e){
+				System.out.println(e.getMessage());
+			}
+		 }
 	     else {
 	     	throw new ExceptionInvalidCommand();
 	     }

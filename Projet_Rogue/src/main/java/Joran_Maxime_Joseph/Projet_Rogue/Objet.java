@@ -1,6 +1,8 @@
 package Joran_Maxime_Joseph.Projet_Rogue;
 
-public abstract class Objet {
+import java.io.Serializable;
+
+public abstract class Objet implements Serializable {
 	public String glyph;
 	public int x;
 	public int y;

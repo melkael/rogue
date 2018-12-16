@@ -1,6 +1,8 @@
 package Joran_Maxime_Joseph.Projet_Rogue;
 
-public enum Decor{
+import java.io.Serializable;
+
+public enum Decor implements Serializable {
 	
 	MUR("#"){
 		@Override

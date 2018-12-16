@@ -2,8 +2,15 @@ package Joran_Maxime_Joseph.Projet_Rogue;
 
 import java.util.Random;
 import java.util.ArrayList;
+import java.io.Serializable;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
-public class Terrain {
+public class Terrain  implements Serializable{
 	
 	ArrayList<Creature> ennemis;
 	Joueur personnage;
@@ -100,5 +107,21 @@ public class Terrain {
 			legal = false;
 		}
 		return legal;
+	}
+
+	public void saveToFIle() throws Exception {
+		// write object to file
+		FileOutputStream fos = new FileOutputStream("terrain.sav");
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		oos.writeObject(this);
+		oos.close();
+	}
+
+	public Terrain readFromFile() throws Exception {
+		FileInputStream fis = new FileInputStream("terrain.sav");
+		ObjectInputStream ois = new ObjectInputStream(fis);
+		Terrain result = (Terrain) ois.readObject();
+		ois.close();
+		return result;
 	}
 }
