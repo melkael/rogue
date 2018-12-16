@@ -59,9 +59,12 @@ public class Terrain  implements Serializable{
 			tab[i][taille - 1] = Decor.LIMITE;
 		}
 
-
-		int x_porte = rand.nextInt(taille - 2) + 1;
-		int y_porte = rand.nextInt(taille - 2) + 1;
+		int x_porte;
+		int y_porte;
+		do {
+			x_porte = rand.nextInt(taille - 2) + 1;
+			y_porte = rand.nextInt(taille - 2) + 1;
+		}while(x_porte == epee.x && y_porte == epee.y);
 		tab[x_porte][y_porte] = Decor.PORTE;
 	}
 	
@@ -69,11 +72,15 @@ public class Terrain  implements Serializable{
 		for(int i = 0; i < taille; i++) {
 			for(int j = 0; j < taille; j++) {
 				boolean ennemi_ici = false;
+				boolean ennemiEstSurEpee = false;
 				for(int k = 0; k < ennemis.size(); k++) {
 					if (ennemis.get(k).estVivant()) {
 						if (ennemis.get(k).x == i && ennemis.get(k).y == j) {
 							System.out.print(ennemis.get(k).symbole);
 							ennemi_ici = true;
+						}
+						if (ennemis.get(k).x == epee.x && ennemis.get(k).y == epee.y){
+							ennemiEstSurEpee = true;
 						}
 					}
 					else {
@@ -84,11 +91,11 @@ public class Terrain  implements Serializable{
 					System.out.print(personnage.symbole);
 					ennemi_ici = true;
 				}
-				if (epee.x == i && epee.y == j) {
+				if (epee.x == i && epee.y == j  && !ennemiEstSurEpee) {
 					System.out.print(epee.glyph);
 					ennemi_ici = true;
 				}
-				else if (!ennemi_ici){
+				if (!ennemi_ici){
 					System.out.print(tab[i][j]);
 				}
 			}
