@@ -1,5 +1,6 @@
 package Joran_Maxime_Joseph.Projet_Rogue;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Saisie {
@@ -57,8 +58,30 @@ public class Saisie {
 				t.epee = new Epee();
 				joueurAPuJouer = true;
 			}
-			catch (Exception e2) {
+			catch (ExceptionOuvrePorte e2) {
 				System.out.println(e2.getMessage());
+				Gobelin g1 = new Gobelin("Gobelin Jamel", 2, 3, 1, 20, 5);
+				Gobelin g2 = new Gobelin("Gobelin Abdel", 1, 4, 1, 20, 5);
+				Gobelin g3 = new Gobelin("Gobelin Lakrim", 7, 2, 1, 20, 5);
+				Gobelin g4 = new Gobelin("Gobelin Jamel", 5, 1, 1, 20, 5);
+				Gobelin g5 = new Gobelin("Gobelin Abdel", 6, 9, 1, 20, 5);
+				Gobelin g6 = new Gobelin("Gobelin Lakrim", 2, 2, 1, 20, 5);
+
+				ArrayList<Creature> ennemis = new ArrayList<Creature>();
+				ennemis.add(g1);
+				ennemis.add(g2);
+				ennemis.add(g3);
+				ennemis.add(g4);
+				ennemis.add(g5);
+				ennemis.add(g6);
+				Epee epee = new Epee("un sabre laser", "I", 20, 8, 8);
+				Joueur pers = t.personnage;
+				t = new Terrain(20, pers, ennemis, epee);
+
+				joueurAPuJouer = true;
+			}
+			catch (Exception e3) {
+				System.out.println(e3.getMessage());
 				joueurAPuJouer = false;
 			}
 			if (joueurAPuJouer) {
@@ -68,7 +91,7 @@ public class Saisie {
 						try {
 							t.ennemis.get(i).IA(t);
 						}
-						catch (Exception e3) {							
+						catch (Exception e4) {
 						}
 					}
 				
