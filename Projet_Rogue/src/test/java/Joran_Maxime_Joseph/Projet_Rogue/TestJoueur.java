@@ -6,10 +6,14 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Creature;
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Gobelin;
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Joueur;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionAttaqueImpossible;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionDeplacementIllegal;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionMarcheSurObjet;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionOuvrePorte;
+import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
 
 public class TestJoueur {
 
@@ -27,7 +31,7 @@ public class TestJoueur {
 		Epee epee = new Epee("Excaliburne", "T", 10, 8, 8);
 		j.ramasserEpee(epee);
 		
-		assertEquals(15,j.degat);
+		assertEquals(15,j.getDegat());
 	}
 	
 	@Test
@@ -58,7 +62,7 @@ public class TestJoueur {
 		{
 			j.sedeplacer(Actions.HAUT, t);
 		
-			assertEquals(4,j.x);
+			assertEquals(4,j.getX());
 		}
 		catch(ExceptionDeplacementIllegal e)
 		{
@@ -86,7 +90,7 @@ public class TestJoueur {
 		{
 			j.sedeplacer(Actions.BAS, t);
 		
-			assertEquals(6,j.x);
+			assertEquals(6,j.getX());
 		}
 		catch(ExceptionDeplacementIllegal e)
 		{
@@ -114,7 +118,7 @@ public class TestJoueur {
 		{
 			j.sedeplacer(Actions.GAUCHE, t);
 		
-			assertEquals(4,j.y);
+			assertEquals(4,j.getY());
 		}
 		catch(ExceptionDeplacementIllegal e)
 		{
@@ -142,7 +146,7 @@ public class TestJoueur {
 		{
 			j.sedeplacer(Actions.DROITE, t);
 		
-			assertEquals(6,j.y);
+			assertEquals(6,j.getY());
 		}
 		catch(ExceptionDeplacementIllegal e)
 		{
@@ -171,7 +175,7 @@ public class TestJoueur {
 		try
 		{
 			j.attaquer(Actions.HAUT, t);
-			assertEquals(5,g.pv);
+			assertEquals(5,g.getPv());
 		}
 		catch(ExceptionAttaqueImpossible e)
 		{
@@ -192,7 +196,7 @@ public class TestJoueur {
 		try
 		{
 			j.attaquer(Actions.BAS, t);
-			assertEquals(5,g.pv);
+			assertEquals(5,g.getPv());
 		}
 		catch(ExceptionAttaqueImpossible e)
 		{
@@ -213,7 +217,7 @@ public class TestJoueur {
 		try
 		{
 			j.attaquer(Actions.GAUCHE, t);
-			assertEquals(5,g.pv);
+			assertEquals(5,g.getPv());
 		}
 		catch(ExceptionAttaqueImpossible e)
 		{
@@ -234,7 +238,7 @@ public class TestJoueur {
 		try
 		{
 			j.attaquer(Actions.DROITE, t);
-			assertEquals(5,g.pv);
+			assertEquals(5,g.getPv());
 		}
 		catch(ExceptionAttaqueImpossible e)
 		{

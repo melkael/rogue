@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
+
 public class TestEpee {
 
 	@Test

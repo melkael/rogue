@@ -6,10 +6,14 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Creature;
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Gobelin;
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Joueur;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionAttaqueImpossible;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionDeplacementIllegal;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionMarcheSurObjet;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionOuvrePorte;
+import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
 
 public class TestAction {
 
@@ -54,7 +58,7 @@ public class TestAction {
 		try
 		{
 			h.deplace(j, t);
-			assertEquals(4,j.x);
+			assertEquals(4,j.getX());
 		}
 		catch(ExceptionDeplacementIllegal e)
 		{
@@ -83,7 +87,7 @@ public class TestAction {
 		try
 		{
 			b.deplace(j, t);
-			assertEquals(6,j.x);
+			assertEquals(6,j.getX());
 		}
 		catch(ExceptionDeplacementIllegal e)
 		{
@@ -112,7 +116,7 @@ public class TestAction {
 		try 
 		{
 			g.deplace(j, t);
-			assertEquals(4,j.y);
+			assertEquals(4,j.getY());
 		}
 		catch(ExceptionDeplacementIllegal e)
 		{
@@ -141,7 +145,7 @@ public class TestAction {
 		try 
 		{
 			d.deplace(j, t);
-			assertEquals(6,j.y);
+			assertEquals(6,j.getY());
 		}
 		catch(ExceptionDeplacementIllegal e)
 		{
@@ -172,7 +176,7 @@ public class TestAction {
 		try
 		{
 			h.attaque(j, t);
-			assertEquals(5,g1.pv);
+			assertEquals(5,g1.getPv());
 			
 		}
 		catch(ExceptionAttaqueImpossible e)
@@ -197,7 +201,7 @@ public class TestAction {
 		try
 		{
 			b.attaque(j, t);
-			assertEquals(5,g1.pv);
+			assertEquals(5,g1.getPv());
 			
 		}
 		catch(ExceptionAttaqueImpossible e)
@@ -222,7 +226,7 @@ public class TestAction {
 		try
 		{
 			d.attaque(j, t);
-			assertEquals(5,g1.pv);
+			assertEquals(5,g1.getPv());
 			
 		}
 		catch(ExceptionAttaqueImpossible e)
@@ -247,7 +251,7 @@ public class TestAction {
 		try
 		{
 			g.attaque(j, t);
-			assertEquals(5,g1.pv);
+			assertEquals(5,g1.getPv());
 			
 		}
 		catch(ExceptionAttaqueImpossible e)
@@ -272,7 +276,7 @@ public class TestAction {
 		try
 		{
 			h.attaque(g1, t);
-			assertEquals(5,j.pv);
+			assertEquals(5,j.getPv());
 			
 		}
 		catch(ExceptionAttaqueImpossible e)
@@ -296,7 +300,7 @@ public class TestAction {
 		try
 		{
 			b.attaque(g1, t);
-			assertEquals(5,j.pv);
+			assertEquals(5,j.getPv());
 			
 		}
 		catch(ExceptionAttaqueImpossible e)
@@ -320,7 +324,7 @@ public class TestAction {
 		try
 		{
 			g.attaque(g1, t);
-			assertEquals(5,j.pv);
+			assertEquals(5,j.getPv());
 			
 		}
 		catch(ExceptionAttaqueImpossible e)
@@ -344,7 +348,7 @@ public class TestAction {
 		try
 		{
 			d.attaque(g1, t);
-			assertEquals(5,j.pv);
+			assertEquals(5,j.getPv());
 			
 		}
 		catch(ExceptionAttaqueImpossible e)

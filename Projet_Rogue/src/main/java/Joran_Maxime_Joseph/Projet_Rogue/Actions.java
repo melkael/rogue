@@ -1,5 +1,6 @@
 package Joran_Maxime_Joseph.Projet_Rogue;
 
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Creature;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionAttaqueImpossible;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionDeplacementIllegal;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionMarcheSurObjet;
@@ -13,53 +14,53 @@ public enum Actions {
 		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 		{
 			// verification des collisions avec le mur
-			if(c.x < 2 || t.tab[c.x-1][c.y] == Decor.MUR) {
+			if(c.getX() < 2 || t.getTab()[c.getX()-1][c.getY()] == Decor.MUR) {
 				throw new ExceptionDeplacementIllegal();
 			}
 			//verification des collisions avec la porte
-			if(t.tab[c.x-1][c.y].estOuverte(t)) {
-				c.x--;
+			if(t.getTab()[c.getX()-1][c.getY()].estOuverte(t)) {
+				c.setX((c.getX()-1));
 				throw new ExceptionOuvrePorte();
 			}
 			//verification des collisions avec les ennemis
-			for(int i = 0; i < t.ennemis.size(); i++) {
-				Creature en = t.ennemis.get(i);
-				if(c.x - 1 == en.x && c.y == en.y) {
+			for(int i = 0; i < t.getEnnemis().size(); i++) {
+				Creature en = t.getEnnemis().get(i);
+				if(c.getX() - 1 == en.getX() && c.getY() == en.getY()) {
 					throw new ExceptionDeplacementIllegal();
 				}
 			}
 			//verification des collisions avec le joueurs
-			if(c.x -1 == t.personnage.x && c.y == t.personnage.y) {
+			if(c.getX() -1 == t.getPersonnage().getX() && c.getY() == t.getPersonnage().getY()) {
 				throw new ExceptionDeplacementIllegal();
 			}
 			//verification de collision avec l'epee
-			if(c.x -1 == t.epee.x && c.y == t.epee.y) {
-				c.x--;
+			if(c.getX() -1 == t.getEpee().getX() && c.getY() == t.getEpee().getY()) {
+				c.setX((c.getX()-1));
 				throw new ExceptionMarcheSurObjet();
 			}
 
-			c.x--;
+			c.setX((c.getX()-1));
 		}
 		
 		@Override 
 		public void attaque(Creature c,Terrain t) throws ExceptionAttaqueImpossible{
 			boolean aAttaque = false;
-			if(c.equals(t.personnage))
+			if(c.equals(t.getPersonnage()))
 			{	
-				for(int i = 0;i<t.ennemis.size();i++)
+				for(int i = 0;i<t.getEnnemis().size();i++)
 				{
-					if(t.ennemis.get(i).x == c.x -1 && t.ennemis.get(i).y == c.y) {
-						t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
-						System.out.println(t.ennemis.get(i).nom + " a moins de pv : " + + t.ennemis.get(i).pv);
+					if(t.getEnnemis().get(i).getX() == c.getX() -1 && t.getEnnemis().get(i).getY() == c.getY()) {
+						t.getEnnemis().get(i).setPv(t.getEnnemis().get(i).getPv()- c.getDegat())  ; 
+						System.out.println(t.getEnnemis().get(i).getNom() + " a moins de pv : " + + t.getEnnemis().get(i).getPv());
 						aAttaque = true;
 					}
 				}
 			}
 			else
 			{
-				if(t.personnage.x == c.x-1 && t.personnage.y == c.y) {
-					 t.personnage.pv = t.personnage.pv - c.degat;
-					 System.out.println(c.nom + " Vous a infligé : " + + c.degat);
+				if(t.getPersonnage().getX() == c.getX()-1 && t.getPersonnage().getY() == c.getY()) {
+					 t.getPersonnage().setPv(t.getPersonnage().getPv() - c.getDegat()) ;
+					 System.out.println(c.getNom() + " Vous a infligé : " + + c.getDegat());
 					 aAttaque = true;
 				}
 			}
@@ -74,47 +75,47 @@ public enum Actions {
 		@Override
 		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 		{
-			if(c.x > t.taille - 3 || t.tab[c.x+1][c.y] == Decor.MUR) {
+			if(c.getX() > t.getTaille() - 3 || t.getTab()[c.getX()+1][c.getY()] == Decor.MUR) {
 				throw new ExceptionDeplacementIllegal();
 			}
-			if(t.tab[c.x+1][c.y].estOuverte(t)) {
-				c.x++;
+			if(t.getTab()[c.getX()+1][c.getY()].estOuverte(t)) {
+				c.setX(c.getX()+1);
 				throw new ExceptionOuvrePorte();
 			}
-			for(int i = 0; i < t.ennemis.size(); i++) {
-				Creature en = t.ennemis.get(i);
-				if(c.x + 1 == en.x && c.y == en.y) {
+			for(int i = 0; i < t.getEnnemis().size(); i++) {
+				Creature en = t.getEnnemis().get(i);
+				if(c.getX() + 1 == en.getX() && c.getY() == en.getY()) {
 					throw new ExceptionDeplacementIllegal();
 				}
 			}
-			if(c.x + 1 == t.personnage.x && c.y == t.personnage.y) {
+			if(c.getX() + 1 == t.getPersonnage().getX() && c.getY() == t.getPersonnage().getY()) {
 				throw new ExceptionDeplacementIllegal();
 			}
-			if(c.x +1 == t.epee.x && c.y == t.epee.y) {
-				c.x++;
+			if(c.getX() +1 == t.getEpee().getX() && c.getY() == t.getEpee().getY()) {
+				c.setX(c.getX()+1);
 				throw new ExceptionMarcheSurObjet();
 			}
-			c.x++;
+			c.setX(c.getX()+1);
 		}
 		@Override 
 		public void attaque(Creature c,Terrain t) throws ExceptionAttaqueImpossible{
 			boolean aAttaque = false;
-			if(c.equals(t.personnage))
+			if(c.equals(t.getPersonnage()))
 			{	
-				for(int i = 0;i<t.ennemis.size();i++)
+				for(int i = 0;i<t.getEnnemis().size();i++)
 				{
-					if(t.ennemis.get(i).x == c.x +1 && t.ennemis.get(i).y == c.y) {
-						t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
-						System.out.println(t.ennemis.get(i).nom + " a moins de pv : " + t.ennemis.get(i).pv);
+					if(t.getEnnemis().get(i).getX() == c.getX() +1 && t.getEnnemis().get(i).getY() == c.getY()) {
+						t.getEnnemis().get(i).setPv(t.getEnnemis().get(i).getPv()- c.getDegat())  ; 
+						System.out.println(t.getEnnemis().get(i).getNom() + " a moins de pv : " + t.getEnnemis().get(i).getPv());
 						aAttaque = true;
 					}
 				}
 			}
 			else
 			{
-				if(t.personnage.x == c.x+1 && t.personnage.y == c.y) {
-					 t.personnage.pv = t.personnage.pv - c.degat;
-					 System.out.println(c.nom + " Vous a infligé : " + + c.degat);
+				if(t.getPersonnage().getX() == c.getX()+1 && t.getPersonnage().getY() == c.getY()) {
+					 t.getPersonnage().setPv(t.getPersonnage().getPv() - c.getDegat()) ;
+					 System.out.println(c.getNom() + " Vous a infligé : " + + c.getDegat());
 					 aAttaque = true;
 				}
 			}
@@ -129,47 +130,47 @@ public enum Actions {
 		@Override
 		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 		{
-			if(c.y < 2 || t.tab[c.x][c.y-1] == Decor.MUR) {
+			if(c.getY() < 2 || t.getTab()[c.getX()][c.getY()-1] == Decor.MUR) {
 				throw new ExceptionDeplacementIllegal();
 			}
-			if(t.tab[c.x][c.y-1].estOuverte(t)) {
-				c.y--;
+			if(t.getTab()[c.getX()][c.getY()-1].estOuverte(t)) {
+				c.setY(c.getY()-1);
 				throw new ExceptionOuvrePorte();
 			}
-			for(int i = 0; i < t.ennemis.size(); i++) {
-				Creature en = t.ennemis.get(i);
-				if(c.x == en.x && c.y - 1 == en.y) {
+			for(int i = 0; i < t.getEnnemis().size(); i++) {
+				Creature en = t.getEnnemis().get(i);
+				if(c.getX() == en.getX() && c.getY() - 1 == en.getY()) {
 					throw new ExceptionDeplacementIllegal();
 				}
 			}
-			if(c.x == t.personnage.x && c.y - 1 == t.personnage.y) {
+			if(c.getX() == t.getPersonnage().getX() && c.getY() - 1 == t.getPersonnage().getY()) {
 				throw new ExceptionDeplacementIllegal();
 			}
-			if(c.x == t.epee.x && c.y - 1 == t.epee.y) {
-				c.y--;
+			if(c.getX() == t.getEpee().getX() && c.getY() - 1 == t.getEpee().getY()) {
+				c.setY(c.getY()-1);
 				throw new ExceptionMarcheSurObjet();
 			}
-			c.y--;
+			c.setY(c.getY()-1);
 		}
 		@Override 
 		public void attaque(Creature c,Terrain t) throws ExceptionAttaqueImpossible{
 			boolean aAttaque = false;
-			if(c.equals(t.personnage))
+			if(c.equals(t.getPersonnage()))
 			{	
-				for(int i = 0;i<t.ennemis.size();i++)
+				for(int i = 0;i<t.getEnnemis().size();i++)
 				{
-					if(t.ennemis.get(i).x == c.x && t.ennemis.get(i).y == c.y -1) {
-						t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ; 
-						System.out.println(t.ennemis.get(i).nom + " a moins de pv : " + + t.ennemis.get(i).pv);
+					if(t.getEnnemis().get(i).getX() == c.getX() && t.getEnnemis().get(i).getY() == c.getY() -1) {
+						t.getEnnemis().get(i).setPv(t.getEnnemis().get(i).getPv()- c.getDegat())  ; 
+						System.out.println(t.getEnnemis().get(i).getNom() + " a moins de pv : " + + t.getEnnemis().get(i).getPv());
 						aAttaque = true;
 					}
 				}
 			}
 			else
 			{
-				if(t.personnage.x == c.x && t.personnage.y == c.y-1) {
-					 t.personnage.pv = t.personnage.pv - c.degat;
-					 System.out.println(c.nom + " Vous a infligé : " + + c.degat);
+				if(t.getPersonnage().getX() == c.getX() && t.getPersonnage().getY() == c.getY()-1) {
+					 t.getPersonnage().setPv(t.getPersonnage().getPv() - c.getDegat()) ;
+					 System.out.println(c.getNom() + " Vous a infligé : " + + c.getDegat());
 					 aAttaque = true;
 				}
 			}
@@ -184,47 +185,47 @@ public enum Actions {
 		@Override
 		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 		{
-			if(c.y > t.taille - 3 || t.tab[c.x][c.y+1] == Decor.MUR) {
+			if(c.getY() > t.getTaille() - 3 || t.getTab()[c.getX()][c.getY()+1] == Decor.MUR) {
 				throw new ExceptionDeplacementIllegal();
 			}
-			if(t.tab[c.x][c.y+1].estOuverte(t)) {
-				c.y++;
+			if(t.getTab()[c.getX()][c.getY()+1].estOuverte(t)) {
+				c.setY(c.getY()+1);
 				throw new ExceptionOuvrePorte();
 			}
-			for(int i = 0; i < t.ennemis.size(); i++) {
-				Creature en = t.ennemis.get(i);
-				if(c.x == en.x && c.y + 1 == en.y) {
+			for(int i = 0; i < t.getEnnemis().size(); i++) {
+				Creature en = t.getEnnemis().get(i);
+				if(c.getX() == en.getX() && c.getY() + 1 == en.getY()) {
 					throw new ExceptionDeplacementIllegal();
 				}
 			}
-			if(c.x == t.personnage.x && c.y + 1 == t.personnage.y) {
+			if(c.getX() == t.getPersonnage().getX() && c.getY() + 1 == t.getPersonnage().getY()) {
 				throw new ExceptionDeplacementIllegal();
 			}
-			if(c.x == t.epee.x && c.y + 1 == t.epee.y) {
-				c.y++;
+			if(c.getX() == t.getEpee().getX() && c.getY() + 1 == t.getEpee().getY()) {
+				c.setY(c.getY()+1);
 				throw new ExceptionMarcheSurObjet();
 			}
-			c.y++;
+			c.setY(c.getY()+1);
 		}
 		@Override 
 		public void attaque(Creature c,Terrain t) throws ExceptionAttaqueImpossible{
 			boolean aAttaque = false;
-			if(c.equals(t.personnage))
+			if(c.equals(t.getPersonnage()))
 			{	
-				for(int i = 0;i<t.ennemis.size();i++)
+				for(int i = 0;i<t.getEnnemis().size();i++)
 				{
-					if(t.ennemis.get(i).x == c.x  && t.ennemis.get(i).y == c.y + 1) {
-						t.ennemis.get(i).pv = t.ennemis.get(i).pv- c.degat ;
-						System.out.println(t.ennemis.get(i).nom + " a moins de pv : " + + t.ennemis.get(i).pv);
+					if(t.getEnnemis().get(i).getX() == c.getX()  && t.getEnnemis().get(i).getY() == c.getY() + 1) {
+						t.getEnnemis().get(i).setPv(t.getEnnemis().get(i).getPv()- c.getDegat())  ;
+						System.out.println(t.getEnnemis().get(i).getNom() + " a moins de pv : " + + t.getEnnemis().get(i).getPv());
 						aAttaque = true;
 					} 
 				}
 			}
 			else
 			{
-				if(t.personnage.x == c.x && t.personnage.y == c.y+1) {
-					 t.personnage.pv = t.personnage.pv - c.degat;
-					 System.out.println(c.nom + " Vous a infligé : " + + c.degat);
+				if(t.getPersonnage().getX() == c.getX() && t.getPersonnage().getY() == c.getY()+1) {
+					 t.getPersonnage().setPv(t.getPersonnage().getPv() - c.getDegat());
+					 System.out.println(c.getNom() + " Vous a infligé : " + + c.getDegat());
 					 aAttaque = true;
 				}
 			}

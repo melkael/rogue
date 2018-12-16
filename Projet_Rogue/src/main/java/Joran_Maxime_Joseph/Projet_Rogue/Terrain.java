@@ -1,6 +1,11 @@
 package Joran_Maxime_Joseph.Projet_Rogue;
 
 import java.util.Random;
+
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Creature;
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Joueur;
+import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
+
 import java.util.ArrayList;
 import java.io.Serializable;
 import java.io.FileInputStream;
@@ -12,11 +17,11 @@ import java.io.ObjectOutputStream;
 
 public class Terrain  implements Serializable{
 	
-	ArrayList<Creature> ennemis;
-	Joueur personnage;
-	Decor[][] tab;
-	int taille;
-	Epee epee;
+	private ArrayList<Creature> ennemis;
+	private Joueur personnage;
+	private Decor[][] tab;
+	private int taille;
+	private Epee epee;
 	
 	public Terrain(int taille, Joueur personnage, ArrayList<Creature> ennemis, Epee epee) 
 	{
@@ -36,11 +41,11 @@ public class Terrain  implements Serializable{
 			for(int j = 0; j < taille; j++) {
 				boolean mur_legal = true;
 				for (int k = 0 ; k < ennemis.size() ; k++) {
-					if (ennemis.get(k).x == i && ennemis.get(k).y == j) {
+					if (ennemis.get(k).getX() == i && ennemis.get(k).getY() == j) {
 						mur_legal = false;
 					}
 				}
-				if ((personnage.x == i && personnage.y == j) || (epee.x == i && epee.y == j)) {
+				if ((personnage.getX() == i && personnage.getY() == j) || (epee.getX() == i && epee.getY() == j)) {
 					mur_legal = false;
 				}
 				if (rand.nextInt(10) == 0 && mur_legal) {
@@ -64,7 +69,7 @@ public class Terrain  implements Serializable{
 		do {
 			x_porte = rand.nextInt(taille - 2) + 1;
 			y_porte = rand.nextInt(taille - 2) + 1;
-		}while(x_porte == epee.x && y_porte == epee.y);
+		}while(x_porte == epee.getX() && y_porte == epee.getY());
 		tab[x_porte][y_porte] = Decor.PORTE;
 	}
 	
@@ -75,11 +80,11 @@ public class Terrain  implements Serializable{
 				boolean ennemiEstSurEpee = false;
 				for(int k = 0; k < ennemis.size(); k++) {
 					if (ennemis.get(k).estVivant()) {
-						if (ennemis.get(k).x == i && ennemis.get(k).y == j) {
-							System.out.print(ennemis.get(k).symbole);
+						if (ennemis.get(k).getX() == i && ennemis.get(k).getY() == j) {
+							System.out.print(ennemis.get(k).getSymbole());
 							ennemi_ici = true;
 						}
-						if (ennemis.get(k).x == epee.x && ennemis.get(k).y == epee.y){
+						if (ennemis.get(k).getX() == epee.getX() && ennemis.get(k).getY() == epee.getY()){
 							ennemiEstSurEpee = true;
 						}
 					}
@@ -87,12 +92,12 @@ public class Terrain  implements Serializable{
 						ennemis.remove(k);
 					}
 				}
-				if (personnage.x == i && personnage.y == j) {
-					System.out.print(personnage.symbole);
+				if (personnage.getX() == i && personnage.getY() == j) {
+					System.out.print(personnage.getSymbole());
 					ennemi_ici = true;
 				}
-				if (epee.x == i && epee.y == j  && !ennemiEstSurEpee) {
-					System.out.print(epee.glyph);
+				if (epee.getX() == i && epee.getY() == j  && !ennemiEstSurEpee) {
+					System.out.print(epee.getGlyph());
 					ennemi_ici = true;
 				}
 				if (!ennemi_ici){
@@ -106,11 +111,11 @@ public class Terrain  implements Serializable{
 	public boolean EnnemiEstLegal(int x, int y){
 		boolean legal = true;
 		for(int i = 0; i < ennemis.size(); i++){
-			if(ennemis.get(i).x == x && ennemis.get(i).y == y){
+			if(ennemis.get(i).getX() == x && ennemis.get(i).getY() == y){
 				legal = false;
 			}
 		}
-		if ((x == 0) || (x >= taille - 1) || (y == 0) || (y >= taille - 1) || (x == epee.x) || (y == epee.y)){
+		if ((x == 0) || (x >= taille - 1) || (y == 0) || (y >= taille - 1) || (x == epee.getX()) || (y == epee.getY())){
 			legal = false;
 		}
 		return legal;
@@ -130,5 +135,55 @@ public class Terrain  implements Serializable{
 		Terrain result = (Terrain) ois.readObject();
 		ois.close();
 		return result;
+	}
+
+	public ArrayList<Creature> getEnnemis() 
+	{
+		return ennemis;
+	}
+
+	public void setEnnemis(ArrayList<Creature> ennemis) 
+	{
+		this.ennemis = ennemis;
+	}
+
+	public Joueur getPersonnage() 
+	{
+		return personnage;
+	}
+
+	public void setPersonnage(Joueur personnage) 
+	{
+		this.personnage = personnage;
+	}
+
+	public Decor[][] getTab() 
+	{
+		return tab;
+	}
+
+	public void setTab(Decor[][] tab) 
+	{
+		this.tab = tab;
+	}
+
+	public int getTaille() 
+	{
+		return taille;
+	}
+
+	public void setTaille(int taille) 
+	{
+		this.taille = taille;
+	}
+
+	public Epee getEpee() 
+	{
+		return epee;
+	}
+
+	public void setEpee(Epee epee) 
+	{
+		this.epee = epee;
 	}
 }

@@ -25,7 +25,7 @@ public enum Decor implements Serializable {
 	PORTE("0"){
 		@Override
 		public boolean estOuverte(Terrain t){
-			if (t.ennemis.isEmpty()){
+			if (t.getEnnemis().isEmpty()){
 				return true;
 			}
 			else{

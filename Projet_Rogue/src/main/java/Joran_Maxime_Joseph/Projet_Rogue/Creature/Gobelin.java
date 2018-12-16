@@ -1,7 +1,9 @@
-package Joran_Maxime_Joseph.Projet_Rogue;
+package Joran_Maxime_Joseph.Projet_Rogue.Creature;
 
 import java.util.Random;
 
+import Joran_Maxime_Joseph.Projet_Rogue.Actions;
+import Joran_Maxime_Joseph.Projet_Rogue.Terrain;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionAttaqueImpossible;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionDeplacementIllegal;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionMarcheSurObjet;
@@ -12,7 +14,7 @@ public class Gobelin extends Creature {
 	public Gobelin(String nom,int x,int y,int nb_actions,int pv,int degat)
 	{
 		super(nom,x,y,nb_actions,pv,degat);
-		this.symbole = "G";
+		this.setSymbole("G") ;
 	}
 	
 	@Override
@@ -53,8 +55,5 @@ public class Gobelin extends Creature {
 		
 		break;
 				}
-	}
-	
+	}	
 }
-	
-	

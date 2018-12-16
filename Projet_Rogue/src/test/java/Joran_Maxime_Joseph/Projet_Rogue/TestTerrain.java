@@ -6,6 +6,11 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Creature;
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Gobelin;
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Joueur;
+import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
+
 public class TestTerrain {
 
 	@Test

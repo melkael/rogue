@@ -6,10 +6,14 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Creature;
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Gobelin;
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Joueur;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionAttaqueImpossible;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionDeplacementIllegal;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionMarcheSurObjet;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionOuvrePorte;
+import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
 
 public class TestGobelin {
 
@@ -49,7 +53,7 @@ public class TestGobelin {
 		{
 			g.sedeplacer(Actions.HAUT, t);
 		
-			assertEquals(4,g.x);
+			assertEquals(4,g.getX());
 		}
 		catch(ExceptionDeplacementIllegal e)
 		{
@@ -78,7 +82,7 @@ public class TestGobelin {
 		{
 			g.sedeplacer(Actions.BAS, t);
 		
-			assertEquals(6,g.x);
+			assertEquals(6,g.getX());
 		}
 		catch(ExceptionDeplacementIllegal e)
 		{
@@ -107,7 +111,7 @@ public class TestGobelin {
 		{
 			g.sedeplacer(Actions.GAUCHE, t);
 		
-			assertEquals(2,g.y);
+			assertEquals(2,g.getY());
 		}
 		catch(ExceptionDeplacementIllegal e)
 		{
@@ -136,7 +140,7 @@ public class TestGobelin {
 		{
 			g.sedeplacer(Actions.DROITE, t);
 		
-			assertEquals(4,g.y);
+			assertEquals(4,g.getY());
 		}
 		catch(ExceptionDeplacementIllegal e)
 		{
@@ -165,7 +169,7 @@ public class TestGobelin {
 		try
 		{
 			g.attaquer(Actions.HAUT, t);
-			assertEquals(5,j.pv);
+			assertEquals(5,j.getPv());
 		}
 		catch(ExceptionAttaqueImpossible e)
 		{
@@ -186,7 +190,7 @@ public class TestGobelin {
 		try
 		{
 			g.attaquer(Actions.BAS, t);
-			assertEquals(5,j.pv);
+			assertEquals(5,j.getPv());
 		}
 		catch(ExceptionAttaqueImpossible e)
 		{
@@ -207,7 +211,7 @@ public class TestGobelin {
 		try
 		{
 			g.attaquer(Actions.GAUCHE, t);
-			assertEquals(5,j.pv);
+			assertEquals(5,j.getPv());
 		}
 		catch(ExceptionAttaqueImpossible e)
 		{
@@ -228,7 +232,7 @@ public class TestGobelin {
 		try
 		{
 			g.attaquer(Actions.DROITE, t);
-			assertEquals(5,j.pv);
+			assertEquals(5,j.getPv());
 		}
 		catch(ExceptionAttaqueImpossible e)
 		{
@@ -301,7 +305,7 @@ public class TestGobelin {
 		try
 		{
 			g.IA(t);
-			assertEquals(5,j.pv);
+			assertEquals(5,j.getPv());
 		}
 		catch(ExceptionDeplacementIllegal e)
 		{
@@ -334,7 +338,7 @@ public class TestGobelin {
 		try
 		{
 			g.IA(t);
-			assertEquals(5,j.pv);
+			assertEquals(5,j.getPv());
 		}
 		catch(ExceptionDeplacementIllegal e)
 		{
@@ -367,7 +371,7 @@ public class TestGobelin {
 		try
 		{
 			g.IA(t);
-			assertEquals(5,j.pv);
+			assertEquals(5,j.getPv());
 		}
 		catch(ExceptionDeplacementIllegal e)
 		{
@@ -400,7 +404,7 @@ public class TestGobelin {
 		try
 		{
 			g.IA(t);
-			assertEquals(5,j.pv);
+			assertEquals(5,j.getPv());
 		}
 		catch(ExceptionDeplacementIllegal e)
 		{
@@ -433,7 +437,7 @@ public class TestGobelin {
 		try
 		{
 			g.IA(t);
-			assertEquals(5,g.x);
+			assertEquals(5,g.getX());
 		}
 		catch(ExceptionDeplacementIllegal e)
 		{

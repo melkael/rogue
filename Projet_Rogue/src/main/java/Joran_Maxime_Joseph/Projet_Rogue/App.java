@@ -1,5 +1,8 @@
 package Joran_Maxime_Joseph.Projet_Rogue;
 import java.util.Scanner;
+
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Joueur;
+
 import java.util.ArrayList;
 
 public class App 

@@ -3,11 +3,15 @@ package Joran_Maxime_Joseph.Projet_Rogue;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Creature;
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Gobelin;
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Joueur;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionAttaqueImpossible;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionDeplacementIllegal;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionInvalidCommand;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionMarcheSurObjet;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionOuvrePorte;
+import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
 
 import java.util.Random;
 
@@ -15,7 +19,9 @@ public class Saisie {
 	private Terrain t;
 	private Joueur j;
 	private int niveau;
-	public Saisie(Joueur j) {
+	
+	public Saisie(Joueur j) 
+	{
 		this.niveau = 0;
 		this.j = j;
 		initTerrain();
@@ -58,33 +64,33 @@ public class Saisie {
 			}while(!t.EnnemiEstLegal(x, y));
 
 			Gobelin g = new Gobelin(nom, x, y, 1, pv, 5 * niveau);
-			t.ennemis.add(g);
+			t.getEnnemis().add(g);
 		}
 	}
 	public void joueurJoue(String cmd) throws ExceptionDeplacementIllegal, ExceptionInvalidCommand, ExceptionAttaqueImpossible, ExceptionMarcheSurObjet, ExceptionOuvrePorte{
 	     if (cmd.equals("go haut")) {
-	     	t.personnage.sedeplacer(Actions.HAUT,t);
+	     	t.getPersonnage().sedeplacer(Actions.HAUT,t);
 	     }
 	     else if (cmd.equals("go bas")) {
-	     	t.personnage.sedeplacer(Actions.BAS,t);
+	     	t.getPersonnage().sedeplacer(Actions.BAS,t);
 	     }
 	     else if (cmd.equals("go gauche")) {
-	    	 t.personnage.sedeplacer(Actions.GAUCHE,t);
+	    	 t.getPersonnage().sedeplacer(Actions.GAUCHE,t);
 	     }
 	     else if (cmd.equals("go droite")) {
-	    	 t.personnage.sedeplacer(Actions.DROITE,t);
+	    	 t.getPersonnage().sedeplacer(Actions.DROITE,t);
 	     }
 	     else if (cmd.equals("atk gauche")) {
-	    	 t.personnage.attaquer(Actions.GAUCHE,t);
+	    	 t.getPersonnage().attaquer(Actions.GAUCHE,t);
 	     }
 	     else if (cmd.equals("atk droite")) {
-	    	 t.personnage.attaquer(Actions.DROITE,t);
+	    	 t.getPersonnage().attaquer(Actions.DROITE,t);
 	     }
 	     else if (cmd.equals("atk bas")) {
-	    	 t.personnage.attaquer(Actions.BAS,t);
+	    	 t.getPersonnage().attaquer(Actions.BAS,t);
 	     }
 	     else if (cmd.equals("atk haut")) {
-	    	 t.personnage.attaquer(Actions.HAUT,t);
+	    	 t.getPersonnage().attaquer(Actions.HAUT,t);
 	     }
 	     else if (cmd.equals("game over")) {
 	    	 System.exit(0);
@@ -123,8 +129,8 @@ public class Saisie {
 				joueurAPuJouer = true;
 			}
 			catch (ExceptionMarcheSurObjet e1){
-				t.personnage.ramasserEpee(t.epee);
-				t.epee = new Epee();
+				t.getPersonnage().ramasserEpee(t.getEpee());
+				t.setEpee(new Epee());
 				joueurAPuJouer = true;
 			}
 			catch (ExceptionOuvrePorte e2) {
@@ -139,10 +145,10 @@ public class Saisie {
 			}
 			if (joueurAPuJouer) {
 				
-					for(int i = 0;i<t.ennemis.size();i++)
+					for(int i = 0;i<t.getEnnemis().size();i++)
 					{
 						try {
-							t.ennemis.get(i).IA(t);
+							t.getEnnemis().get(i).IA(t);
 						}
 						catch (Exception e4) {
 						}
