@@ -48,7 +48,7 @@ public class Saisie {
 			do{
 				x = rand.nextInt(taille - 1) + 1;
 				y = rand.nextInt(taille - 1) + 1;
-			}while(t.EnnemiEstLegal(x, y));
+			}while(!t.EnnemiEstLegal(x, y));
 
 			Gobelin g = new Gobelin(nom, x, y, 1, pv, 5 * niveau);
 			t.ennemis.add(g);
