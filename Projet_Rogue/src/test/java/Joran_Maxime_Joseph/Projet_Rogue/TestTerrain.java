@@ -19,5 +19,33 @@ public class TestTerrain {
 		
 		assertNotNull(t);
 	}
+	
+	@Test
+	public void TestEnnemiLegal() 
+	{
+		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Gobelin g = new Gobelin("Gobelin Jojo", 5, 3, 1, 10, 5);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
+		ArrayList<Creature> ennemis = new ArrayList<Creature>();
+		ennemis.add(g);
+		
+		Terrain t= new Terrain(10, j, ennemis,epee);
+		
+		assertTrue(t.EnnemiEstLegal(7,3));
+	}
+	
+	@Test
+	public void TestEnnemiPasLegal() 
+	{
+		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Gobelin g = new Gobelin("Gobelin Jojo", 5, 3, 1, 10, 5);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
+		ArrayList<Creature> ennemis = new ArrayList<Creature>();
+		ennemis.add(g);
+		
+		Terrain t= new Terrain(10, j, ennemis,epee);
+		
+		assertFalse(t.EnnemiEstLegal(5,3));
+	}
 }
 

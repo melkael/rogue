@@ -283,4 +283,168 @@ public class TestGobelin {
 		assertEquals(3,g.close_to_player(t));
 	}
 
+	@Test
+	public void TestIAHaut() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet,ExceptionAttaqueImpossible, ExceptionOuvrePorte
+	{
+		Joueur j = new Joueur("Maxou", 3, 5, 1, 10, 5, 1, 0);
+		Gobelin g = new Gobelin("Gobelin Jojo", 4, 5, 1, 10, 5);
+		Epee epee = new Epee("Excaliburne", "T", 10, 8, 8);
+		ArrayList<Creature> ennemis = new ArrayList<Creature>();
+		ennemis.add(g);
+		Terrain t = new Terrain(10, j, ennemis, epee);
+		
+		try
+		{
+			g.IA(t);
+			assertEquals(5,j.pv);
+		}
+		catch(ExceptionDeplacementIllegal e)
+		{
+			assertTrue(e.getMessage().equals("Deplacement Illegal"));
+		}
+		catch(ExceptionMarcheSurObjet e)
+		{
+			assertTrue(e.getMessage().equals("Marche sur un objet"));
+		}
+		catch(ExceptionOuvrePorte e)
+		{
+			assertTrue(e.getMessage().equals("Vous ouvrez une porte !"));
+		}
+		catch(ExceptionAttaqueImpossible e)
+		{
+			assertTrue(e.getMessage().equals("Attaque impossible !!"));
+		}
+	}
+	
+	@Test
+	public void TestIABas() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet,ExceptionAttaqueImpossible, ExceptionOuvrePorte
+	{
+		Joueur j = new Joueur("Maxou", 5, 5, 1, 10, 5, 1, 0);
+		Gobelin g = new Gobelin("Gobelin Jojo", 4, 5, 1, 10, 5);
+		Epee epee = new Epee("Excaliburne", "T", 10, 8, 8);
+		ArrayList<Creature> ennemis = new ArrayList<Creature>();
+		ennemis.add(g);
+		Terrain t = new Terrain(10, j, ennemis, epee);
+		
+		try
+		{
+			g.IA(t);
+			assertEquals(5,j.pv);
+		}
+		catch(ExceptionDeplacementIllegal e)
+		{
+			assertTrue(e.getMessage().equals("Deplacement Illegal"));
+		}
+		catch(ExceptionMarcheSurObjet e)
+		{
+			assertTrue(e.getMessage().equals("Marche sur un objet"));
+		}
+		catch(ExceptionOuvrePorte e)
+		{
+			assertTrue(e.getMessage().equals("Vous ouvrez une porte !"));
+		}
+		catch(ExceptionAttaqueImpossible e)
+		{
+			assertTrue(e.getMessage().equals("Attaque impossible !!"));
+		}
+	}
+	
+	@Test
+	public void TestIAGauche() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet,ExceptionAttaqueImpossible, ExceptionOuvrePorte
+	{
+		Joueur j = new Joueur("Maxou", 5, 4, 1, 10, 5, 1, 0);
+		Gobelin g = new Gobelin("Gobelin Jojo", 5, 5, 1, 10, 5);
+		Epee epee = new Epee("Excaliburne", "T", 10, 8, 8);
+		ArrayList<Creature> ennemis = new ArrayList<Creature>();
+		ennemis.add(g);
+		Terrain t = new Terrain(10, j, ennemis, epee);
+		
+		try
+		{
+			g.IA(t);
+			assertEquals(5,j.pv);
+		}
+		catch(ExceptionDeplacementIllegal e)
+		{
+			assertTrue(e.getMessage().equals("Deplacement Illegal"));
+		}
+		catch(ExceptionMarcheSurObjet e)
+		{
+			assertTrue(e.getMessage().equals("Marche sur un objet"));
+		}
+		catch(ExceptionOuvrePorte e)
+		{
+			assertTrue(e.getMessage().equals("Vous ouvrez une porte !"));
+		}
+		catch(ExceptionAttaqueImpossible e)
+		{
+			assertTrue(e.getMessage().equals("Attaque impossible !!"));
+		}
+	}
+	
+	@Test
+	public void TestIADroite() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet,ExceptionAttaqueImpossible, ExceptionOuvrePorte
+	{
+		Joueur j = new Joueur("Maxou", 5, 6, 1, 10, 5, 1, 0);
+		Gobelin g = new Gobelin("Gobelin Jojo", 5, 5, 1, 10, 5);
+		Epee epee = new Epee("Excaliburne", "T", 10, 8, 8);
+		ArrayList<Creature> ennemis = new ArrayList<Creature>();
+		ennemis.add(g);
+		Terrain t = new Terrain(10, j, ennemis, epee);
+		
+		try
+		{
+			g.IA(t);
+			assertEquals(5,j.pv);
+		}
+		catch(ExceptionDeplacementIllegal e)
+		{
+			assertTrue(e.getMessage().equals("Deplacement Illegal"));
+		}
+		catch(ExceptionMarcheSurObjet e)
+		{
+			assertTrue(e.getMessage().equals("Marche sur un objet"));
+		}
+		catch(ExceptionOuvrePorte e)
+		{
+			assertTrue(e.getMessage().equals("Vous ouvrez une porte !"));
+		}
+		catch(ExceptionAttaqueImpossible e)
+		{
+			assertTrue(e.getMessage().equals("Attaque impossible !!"));
+		}
+	}
+	
+	/*@Test
+	public void TestIADefault() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet,ExceptionAttaqueImpossible, ExceptionOuvrePorte
+	{
+		Joueur j = new Joueur("Maxou", 7, 7, 1, 10, 5, 1, 0);
+		Gobelin g = new Gobelin("Gobelin Jojo", 5, 5, 1, 10, 5);
+		Epee epee = new Epee("Excaliburne", "T", 10, 8, 8);
+		ArrayList<Creature> ennemis = new ArrayList<Creature>();
+		ennemis.add(g);
+		Terrain t = new Terrain(10, j, ennemis, epee);
+		
+		try
+		{
+			g.IA(t);
+			assertEquals(5,g.x);
+		}
+		catch(ExceptionDeplacementIllegal e)
+		{
+			assertTrue(e.getMessage().equals("Deplacement Illegal"));
+		}
+		catch(ExceptionMarcheSurObjet e)
+		{
+			assertTrue(e.getMessage().equals("Marche sur un objet"));
+		}
+		catch(ExceptionOuvrePorte e)
+		{
+			assertTrue(e.getMessage().equals("Vous ouvrez une porte !"));
+		}
+		catch(ExceptionAttaqueImpossible e)
+		{
+			assertTrue(e.getMessage().equals("Attaque impossible !!"));
+		}
+	}*/
 }
