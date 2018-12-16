@@ -2,11 +2,57 @@ package Joran_Maxime_Joseph.Projet_Rogue;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Saisie {
 	private Terrain t;
-	public Saisie(Terrain t) {
-		this.t = t;
+	private Joueur j;
+	private int niveau;
+	public Saisie(Joueur j) {
+		this.niveau = 0;
+		this.j = j;
+		initTerrain();
+	}
+	private String getRandomGobelinName(){
+		return "Jamel";
+	}
+
+	private String getRandomEpeeName(){
+		return "Excaliburne";
+	}
+
+	private void initTerrain(){
+		int taille = this.niveau * 5;
+		if (this.niveau == 0){
+			taille = 5;
+		}
+		ArrayList<Creature> ennemis = new ArrayList<Creature>();
+		Random rand = new Random();
+
+		int degatsEpee = 0;
+		if(niveau == 0){
+			degatsEpee = rand.nextInt(5 - 2) + 2;
+		}
+		else {
+			degatsEpee = rand.nextInt(niveau * 10 - niveau * 7) + niveau * 7;
+		}
+		Epee epee = new Epee(getRandomEpeeName(), "T", degatsEpee, 3, 3);
+
+		t = new Terrain(taille, j, ennemis, epee);
+
+		for (int i = 0; i < this.niveau; i++){
+			String nom = "Gobelin " + getRandomGobelinName();
+			int pv = rand.nextInt(niveau * 13 - niveau * 5) + niveau * 5;
+			int x;
+			int y;
+			do{
+				x = rand.nextInt(taille - 1) + 1;
+				y = rand.nextInt(taille - 1) + 1;
+			}while(t.EnnemiEstLegal(x, y));
+
+			Gobelin g = new Gobelin(nom, x, y, 1, pv, 5 * niveau);
+			t.ennemis.add(g);
+		}
 	}
 	public void joueurJoue(String cmd) throws ExceptionDeplacementIllegal, ExceptionInvalidCommand, ExceptionAttaqueImpossible, ExceptionMarcheSurObjet, ExceptionOuvrePorte{
 	     if (cmd.equals("go haut")) {
@@ -60,24 +106,8 @@ public class Saisie {
 			}
 			catch (ExceptionOuvrePorte e2) {
 				System.out.println(e2.getMessage());
-				Gobelin g1 = new Gobelin("Gobelin Jamel", 2, 3, 1, 20, 5);
-				Gobelin g2 = new Gobelin("Gobelin Abdel", 1, 4, 1, 20, 5);
-				Gobelin g3 = new Gobelin("Gobelin Lakrim", 7, 2, 1, 20, 5);
-				Gobelin g4 = new Gobelin("Gobelin Jamel", 5, 1, 1, 20, 5);
-				Gobelin g5 = new Gobelin("Gobelin Abdel", 6, 9, 1, 20, 5);
-				Gobelin g6 = new Gobelin("Gobelin Lakrim", 2, 2, 1, 20, 5);
-
-				ArrayList<Creature> ennemis = new ArrayList<Creature>();
-				ennemis.add(g1);
-				ennemis.add(g2);
-				ennemis.add(g3);
-				ennemis.add(g4);
-				ennemis.add(g5);
-				ennemis.add(g6);
-				Epee epee = new Epee("un sabre laser", "I", 20, 8, 8);
-				Joueur pers = t.personnage;
-				t = new Terrain(20, pers, ennemis, epee);
-
+				niveau ++;
+				initTerrain();
 				joueurAPuJouer = true;
 			}
 			catch (Exception e3) {

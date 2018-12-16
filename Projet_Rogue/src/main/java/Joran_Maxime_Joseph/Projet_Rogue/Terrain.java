@@ -87,10 +87,18 @@ public class Terrain {
 			}
 			System.out.println();
 		}
-	}	
-	
-	
-	
-	
-	
+	}
+	// à appeller uniquement à la génération du terrain pour verifier que le nouvel ennemi ne va pas etre mis sur le precedent
+	public boolean EnnemiEstLegal(int x, int y){
+		boolean legal = true;
+		for(int i = 0; i < ennemis.size(); i++){
+			if(ennemis.get(i).x == x && ennemis.get(i).y == y){
+				legal = false;
+			}
+		}
+		if ((x == 0) || (x >= taille - 1) || (y == 0) || (y >= taille - 1) || (x == epee.x) || (y == epee.y)){
+			legal = false;
+		}
+		return legal;
+	}
 }
