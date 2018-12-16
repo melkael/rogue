@@ -151,4 +151,200 @@ public class TestAction {
 			assertTrue(e.getMessage().equals("Vous ouvrez une porte !"));
 		}
 	}
+	
+	@Test
+	public void TestAtqHautJoueur()  throws ExceptionAttaqueImpossible
+	{
+		Actions h = Actions.HAUT;
+		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
+		Gobelin g1 = new Gobelin("Gobelin Jamel", 4, 5, 1, 10, 5);
+    	ArrayList<Creature> ennemis = new ArrayList<Creature>();
+    	ennemis.add(g1);
+		Terrain t = new Terrain(10, j, ennemis,epee);
+		
+		
+		try
+		{
+			h.attaque(j, t);
+			assertEquals(5,g1.pv);
+			
+		}
+		catch(ExceptionAttaqueImpossible e)
+		{
+			assertTrue(e.getMessage().equals("Attaque impossible !!"));
+		}
+		
+	}
+	
+	@Test
+	public void TestAtqBasJoueur()  throws ExceptionAttaqueImpossible
+	{
+		Actions b = Actions.BAS;
+		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
+		Gobelin g1 = new Gobelin("Gobelin Jamel", 6, 5, 1, 10, 5);
+    	ArrayList<Creature> ennemis = new ArrayList<Creature>();
+    	ennemis.add(g1);
+		Terrain t = new Terrain(10, j, ennemis,epee);
+		
+		
+		try
+		{
+			b.attaque(j, t);
+			assertEquals(5,g1.pv);
+			
+		}
+		catch(ExceptionAttaqueImpossible e)
+		{
+			assertTrue(e.getMessage().equals("Attaque impossible !!"));
+		}
+		
+	}
+	
+	@Test
+	public void TestAtqDroiteJoueur()  throws ExceptionAttaqueImpossible
+	{
+		Actions d = Actions.DROITE;
+		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
+		Gobelin g1 = new Gobelin("Gobelin Jamel", 5, 6, 1, 10, 5);
+    	ArrayList<Creature> ennemis = new ArrayList<Creature>();
+    	ennemis.add(g1);
+		Terrain t = new Terrain(10, j, ennemis,epee);
+		
+		
+		try
+		{
+			d.attaque(j, t);
+			assertEquals(5,g1.pv);
+			
+		}
+		catch(ExceptionAttaqueImpossible e)
+		{
+			assertTrue(e.getMessage().equals("Attaque impossible !!"));
+		}
+		
+	}
+	
+	@Test
+	public void TestAtqGaucheJoueur()  throws ExceptionAttaqueImpossible
+	{
+		Actions g = Actions.GAUCHE;
+		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
+		Gobelin g1 = new Gobelin("Gobelin Jamel", 5, 4, 1, 10, 5);
+    	ArrayList<Creature> ennemis = new ArrayList<Creature>();
+    	ennemis.add(g1);
+		Terrain t = new Terrain(10, j, ennemis,epee);
+		
+		
+		try
+		{
+			g.attaque(j, t);
+			assertEquals(5,g1.pv);
+			
+		}
+		catch(ExceptionAttaqueImpossible e)
+		{
+			assertTrue(e.getMessage().equals("Attaque impossible !!"));
+		}
+		
+	}
+	
+	@Test
+	public void TestAtqHautGobelin()  throws ExceptionAttaqueImpossible
+	{
+		Actions h = Actions.HAUT;
+		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
+		Gobelin g1 = new Gobelin("Gobelin Jamel", 6, 5, 1, 10, 5);
+    	ArrayList<Creature> ennemis = new ArrayList<Creature>();
+    	ennemis.add(g1);
+		Terrain t = new Terrain(10, j, ennemis,epee);
+		
+		
+		try
+		{
+			h.attaque(g1, t);
+			assertEquals(5,j.pv);
+			
+		}
+		catch(ExceptionAttaqueImpossible e)
+		{
+			assertTrue(e.getMessage().equals("Attaque impossible !!"));
+		}
+	}
+	
+	@Test
+	public void TestAtqBasGobelin()  throws ExceptionAttaqueImpossible
+	{
+		Actions b = Actions.BAS;
+		Joueur j = new Joueur("Jojo", 7, 5, 1, 10, 5, 1, 0);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
+		Gobelin g1 = new Gobelin("Gobelin Jamel", 6, 5, 1, 10, 5);
+    	ArrayList<Creature> ennemis = new ArrayList<Creature>();
+    	ennemis.add(g1);
+		Terrain t = new Terrain(10, j, ennemis,epee);
+		
+		
+		try
+		{
+			b.attaque(g1, t);
+			assertEquals(5,j.pv);
+			
+		}
+		catch(ExceptionAttaqueImpossible e)
+		{
+			assertTrue(e.getMessage().equals("Attaque impossible !!"));
+		}
+	}
+	
+	@Test
+	public void TestAtqGaucheGobelin()  throws ExceptionAttaqueImpossible
+	{
+		Actions g = Actions.GAUCHE;
+		Joueur j = new Joueur("Jojo", 6, 4, 1, 10, 5, 1, 0);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
+		Gobelin g1 = new Gobelin("Gobelin Jamel", 6, 5, 1, 10, 5);
+    	ArrayList<Creature> ennemis = new ArrayList<Creature>();
+    	ennemis.add(g1);
+		Terrain t = new Terrain(10, j, ennemis,epee);
+		
+		
+		try
+		{
+			g.attaque(g1, t);
+			assertEquals(5,j.pv);
+			
+		}
+		catch(ExceptionAttaqueImpossible e)
+		{
+			assertTrue(e.getMessage().equals("Attaque impossible !!"));
+		}
+	}
+	
+	@Test
+	public void TestAtqDroiteGobelin()  throws ExceptionAttaqueImpossible
+	{
+		Actions d = Actions.DROITE;
+		Joueur j = new Joueur("Jojo", 6, 6, 1, 10, 5, 1, 0);
+		Epee epee = new Epee("Excaliburne", "t", 10, 8, 8);
+		Gobelin g1 = new Gobelin("Gobelin Jamel", 6, 5, 1, 10, 5);
+    	ArrayList<Creature> ennemis = new ArrayList<Creature>();
+    	ennemis.add(g1);
+		Terrain t = new Terrain(10, j, ennemis,epee);
+		
+		
+		try
+		{
+			d.attaque(g1, t);
+			assertEquals(5,j.pv);
+			
+		}
+		catch(ExceptionAttaqueImpossible e)
+		{
+			assertTrue(e.getMessage().equals("Attaque impossible !!"));
+		}
+	}
 }
