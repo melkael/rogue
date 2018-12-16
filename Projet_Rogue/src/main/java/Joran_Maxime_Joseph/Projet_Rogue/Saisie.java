@@ -2,6 +2,13 @@ package Joran_Maxime_Joseph.Projet_Rogue;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionAttaqueImpossible;
+import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionDeplacementIllegal;
+import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionInvalidCommand;
+import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionMarcheSurObjet;
+import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionOuvrePorte;
+
 import java.util.Random;
 
 public class Saisie {

@@ -1,5 +1,10 @@
 package Joran_Maxime_Joseph.Projet_Rogue;
 
+import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionAttaqueImpossible;
+import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionDeplacementIllegal;
+import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionMarcheSurObjet;
+import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionOuvrePorte;
+
 public abstract class Creature {
 	
 	public String nom;

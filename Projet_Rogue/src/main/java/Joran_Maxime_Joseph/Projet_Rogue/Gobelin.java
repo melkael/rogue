@@ -2,6 +2,11 @@ package Joran_Maxime_Joseph.Projet_Rogue;
 
 import java.util.Random;
 
+import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionAttaqueImpossible;
+import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionDeplacementIllegal;
+import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionMarcheSurObjet;
+import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionOuvrePorte;
+
 public class Gobelin extends Creature {
 	
 	public Gobelin(String nom,int x,int y,int nb_actions,int pv,int degat)
