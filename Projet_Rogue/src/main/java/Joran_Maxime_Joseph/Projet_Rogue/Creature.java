@@ -29,9 +29,9 @@ public abstract class Creature {
 		return true;
 	}
 	
-	public void sedeplacer(Actions a,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet{
+	public void sedeplacer(Actions a,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte{
 		a.deplace(this, t);
-}
+	}
 	public void attaquer(Actions a,Terrain t) throws ExceptionAttaqueImpossible
 	{
 		a.attaque(this,t);
@@ -50,6 +50,6 @@ public abstract class Creature {
 			return -1;//Perso Pas Là		
 	}
 	
-	abstract public void IA(Terrain t)throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet,ExceptionAttaqueImpossible;
+	abstract public void IA(Terrain t)throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet,ExceptionAttaqueImpossible, ExceptionOuvrePorte;
 	
 }

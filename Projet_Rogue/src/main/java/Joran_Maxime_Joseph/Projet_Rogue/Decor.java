@@ -2,8 +2,36 @@ package Joran_Maxime_Joseph.Projet_Rogue;
 
 public enum Decor{
 	
-	MUR("#"),SOL(" "),PORTE("0"),LIMITE("X");
-	
+	MUR("#"){
+		@Override
+		public boolean estOuverte(Terrain t){
+			return false;
+		}
+	},
+	SOL(" "){
+		@Override
+		public boolean estOuverte(Terrain t){
+			return false;
+		}
+	},
+	LIMITE("X") {
+		@Override
+		public boolean estOuverte(Terrain t) {
+			return false;
+		}
+	},
+	PORTE("0"){
+		@Override
+		public boolean estOuverte(Terrain t){
+			if (t.ennemis.isEmpty()){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+	};
+
 	private String s;
 	
 	private Decor(String str)
@@ -14,5 +42,8 @@ public enum Decor{
 	public String toString() {
 		return s;
 	}
+
+	public abstract boolean estOuverte(Terrain t);
+
 
 }

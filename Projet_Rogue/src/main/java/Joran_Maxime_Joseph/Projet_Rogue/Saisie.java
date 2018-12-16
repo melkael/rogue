@@ -7,7 +7,7 @@ public class Saisie {
 	public Saisie(Terrain t) {
 		this.t = t;
 	}
-	public void joueurJoue(String cmd) throws ExceptionDeplacementIllegal, ExceptionInvalidCommand, ExceptionAttaqueImpossible, ExceptionMarcheSurObjet{
+	public void joueurJoue(String cmd) throws ExceptionDeplacementIllegal, ExceptionInvalidCommand, ExceptionAttaqueImpossible, ExceptionMarcheSurObjet, ExceptionOuvrePorte{
 	     if (cmd.equals("go haut")) {
 	     	t.personnage.sedeplacer(Actions.HAUT,t);
 	     }

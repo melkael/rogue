@@ -11,7 +11,7 @@ public class Gobelin extends Creature {
 	}
 	
 	@Override
-	public void IA(Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet,ExceptionAttaqueImpossible{
+	public void IA(Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet,ExceptionAttaqueImpossible, ExceptionOuvrePorte{
 		
 		switch(this.close_to_player(t))
 				{

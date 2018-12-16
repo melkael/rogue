@@ -5,11 +5,16 @@ public enum Actions {
 	HAUT("h")
 	{
 		@Override
-		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet
+		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 		{
 			// verification des collisions avec le mur
 			if(c.x < 2 || t.tab[c.x-1][c.y] == Decor.MUR) {
 				throw new ExceptionDeplacementIllegal();
+			}
+			//verification des collisions avec la porte
+			if(t.tab[c.x-1][c.y].estOuverte(t)) {
+				c.x--;
+				throw new ExceptionOuvrePorte();
 			}
 			//verification des collisions avec les ennemis
 			for(int i = 0; i < t.ennemis.size(); i++) {
@@ -27,6 +32,7 @@ public enum Actions {
 				c.x--;
 				throw new ExceptionMarcheSurObjet();
 			}
+
 			c.x--;
 		}
 		
@@ -61,10 +67,14 @@ public enum Actions {
 	BAS("b")
 	{
 		@Override
-		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet
+		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 		{
 			if(c.x > t.taille - 3 || t.tab[c.x+1][c.y] == Decor.MUR) {
 				throw new ExceptionDeplacementIllegal();
+			}
+			if(t.tab[c.x+1][c.y].estOuverte(t)) {
+				c.x++;
+				throw new ExceptionOuvrePorte();
 			}
 			for(int i = 0; i < t.ennemis.size(); i++) {
 				Creature en = t.ennemis.get(i);
@@ -112,10 +122,14 @@ public enum Actions {
 	GAUCHE("g")
 	{
 		@Override
-		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet
+		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 		{
 			if(c.y < 2 || t.tab[c.x][c.y-1] == Decor.MUR) {
 				throw new ExceptionDeplacementIllegal();
+			}
+			if(t.tab[c.x][c.y-1].estOuverte(t)) {
+				c.y--;
+				throw new ExceptionOuvrePorte();
 			}
 			for(int i = 0; i < t.ennemis.size(); i++) {
 				Creature en = t.ennemis.get(i);
@@ -163,10 +177,14 @@ public enum Actions {
 	DROITE("d")
 	{
 		@Override
-		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet
+		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 		{
 			if(c.y > t.taille - 3 || t.tab[c.x][c.y+1] == Decor.MUR) {
 				throw new ExceptionDeplacementIllegal();
+			}
+			if(t.tab[c.x][c.y+1].estOuverte(t)) {
+				c.y++;
+				throw new ExceptionOuvrePorte();
 			}
 			for(int i = 0; i < t.ennemis.size(); i++) {
 				Creature en = t.ennemis.get(i);
@@ -218,6 +236,6 @@ public enum Actions {
 		this.s=str;
 	}
 	
-	public abstract void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet;
+	public abstract void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte;
 	public abstract void attaque(Creature c,Terrain t) throws ExceptionAttaqueImpossible;
 }
