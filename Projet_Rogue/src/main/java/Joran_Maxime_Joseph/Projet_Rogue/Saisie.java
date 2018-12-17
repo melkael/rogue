@@ -28,52 +28,53 @@ public class Saisie {
 		this.t = t.InitAvecEnnemisEtObjets(niveau);
 	}
 	public void joueurJoue(String cmd) throws ExceptionDeplacementIllegal, ExceptionInvalidCommand, ExceptionAttaqueImpossible, ExceptionMarcheSurObjet, ExceptionOuvrePorte{
-	     if (cmd.equals("go haut")) {
-	     	t.getPersonnage().sedeplacer(Actions.HAUT,t);
-	     }
-	     else if (cmd.equals("go bas")) {
-	     	t.getPersonnage().sedeplacer(Actions.BAS,t);
-	     }
-	     else if (cmd.equals("go gauche")) {
-	    	 t.getPersonnage().sedeplacer(Actions.GAUCHE,t);
-	     }
-	     else if (cmd.equals("go droite")) {
-	    	 t.getPersonnage().sedeplacer(Actions.DROITE,t);
-	     }
-	     else if (cmd.equals("atk gauche")) {
-	    	 t.getPersonnage().attaquer(Actions.GAUCHE,t);
-	     }
-	     else if (cmd.equals("atk droite")) {
-	    	 t.getPersonnage().attaquer(Actions.DROITE,t);
-	     }
-	     else if (cmd.equals("atk bas")) {
-	    	 t.getPersonnage().attaquer(Actions.BAS,t);
-	     }
-	     else if (cmd.equals("atk haut")) {
-	    	 t.getPersonnage().attaquer(Actions.HAUT,t);
-	     }
-	     else if (cmd.equals("game over")) {
-	    	 System.exit(0);
-	     }
-	     else if (cmd.equals("save")) {
-	     	try {
-				t.saveToFIle();
-			}
-	     	catch (Exception e){
-	     		System.out.println(e.getMessage());
-			}
-		 }
-	     else if (cmd.equals("load")){
-	     	try {
-	     		t = t.readFromFile();
-			}
-			catch (Exception e){
-				System.out.println(e.getMessage());
-			}
-		 }
-	     else {
-	     	throw new ExceptionInvalidCommand();
-	     }
+	    switch(cmd){
+			case "go haut":
+				t.getPersonnage().sedeplacer(Actions.HAUT,t);
+				break;
+			case "go bas":
+				t.getPersonnage().sedeplacer(Actions.BAS,t);
+				break;
+			case "go gauche":
+				t.getPersonnage().sedeplacer(Actions.GAUCHE,t);
+				break;
+			case "go droite":
+				t.getPersonnage().sedeplacer(Actions.DROITE,t);
+				break;
+			case "atk gauche":
+				t.getPersonnage().attaquer(Actions.GAUCHE,t);
+				break;
+			case "atk droite":
+				t.getPersonnage().attaquer(Actions.DROITE,t);
+				break;
+			case "atk bas":
+				t.getPersonnage().attaquer(Actions.BAS,t);
+				break;
+			case "atk haut":
+				t.getPersonnage().attaquer(Actions.HAUT,t);
+				break;
+			case "game over":
+				System.exit(0);
+				break;
+			case "save":
+				try {
+					t.saveToFIle();
+				}
+				catch (Exception e){
+					System.out.println(e.getMessage());
+				}
+				break;
+			case "load":
+				try {
+					t = t.readFromFile();
+				}
+				catch (Exception e){
+					System.out.println(e.getMessage());
+				}
+				break;
+			default:
+				throw new ExceptionInvalidCommand();
+		}
 	}
 	
 	public void jouer() {
