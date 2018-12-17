@@ -12,6 +12,7 @@ import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionInvalidCommand;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionMarcheSurObjet;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionOuvrePorte;
 import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
+import Joran_Maxime_Joseph.Projet_Rogue.Menu.SaveMenu;
 
 import java.util.Random;
 
@@ -57,12 +58,8 @@ public class Saisie {
 				System.exit(0);
 				break;
 			case "save":
-				try {
-					t.saveToFIle();
-				}
-				catch (Exception e){
-					System.out.println(e.getMessage());
-				}
+				SaveMenu save = new SaveMenu();
+				save.save(t.getPersonnage().getNom(), t);
 				break;
 			case "load":
 				try {

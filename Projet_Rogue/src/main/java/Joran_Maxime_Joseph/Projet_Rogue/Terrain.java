@@ -174,9 +174,9 @@ public class Terrain  implements Serializable{
 		return legal;
 	}
 
-	public void saveToFIle() throws Exception {
+	public void saveToFIle(String nom) throws Exception {
 		// write object to file
-		FileOutputStream fos = new FileOutputStream("terrain.sav");
+		FileOutputStream fos = new FileOutputStream(nom + ".sav");
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
 		oos.writeObject(this);
 		oos.close();
