@@ -11,10 +11,11 @@ I]Exécution Maven
 		puis ouvrir un Terminal à ce niveau et taper la commande suivante : mvn package
 		Un dossier "target" contenant tous les fichiers nécessaires pour bien exécuter l'application devrait apparaitre dans le dossier Projet_Rogue
 	
-	2)Création Du Site Maven
+	2)Création Du Site Maven et Checkstyle
 	
 		Pour générer le site internet Maven contenant les informations liées au projet,il faut taper la commande suivante dans le Terminal: mvn site
 		Allez ensuite dans le dossier target/site/ et ouvrir l'index.
+		Cette commande permet aussi de générer les résultats de checkstyle
 		
 	3)Exécution De L'Application
 	
