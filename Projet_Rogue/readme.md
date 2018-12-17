@@ -102,4 +102,6 @@ II]Manuel Utilisateur
 
 III]Manuel Technique
 
-	Voir JavaDoc
+	Pour cela,il faut consulter la JavaDoc de l'application.
+	L'utilisateur doit se mettre dans le dossier target/apidocs/
+	Puis ouvrir index.html
