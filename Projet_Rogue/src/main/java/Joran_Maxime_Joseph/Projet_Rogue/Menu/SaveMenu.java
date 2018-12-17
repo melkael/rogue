@@ -3,7 +3,7 @@ package Joran_Maxime_Joseph.Projet_Rogue.Menu;
 import Joran_Maxime_Joseph.Projet_Rogue.Terrain;
 import java.util.Scanner;
 
-public class SaveMenu {
+public class SaveMenu extends Menu{
     public SaveMenu(){}
     public void save(String nom, Terrain t){
         System.out.println("Tu veux donc sauvegarder ta progression, " +

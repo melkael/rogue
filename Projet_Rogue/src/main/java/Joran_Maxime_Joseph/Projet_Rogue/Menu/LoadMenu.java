@@ -3,14 +3,16 @@ package Joran_Maxime_Joseph.Projet_Rogue.Menu;
 import java.io.File;
 import java.util.Scanner;
 
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Joueur;
 import Joran_Maxime_Joseph.Projet_Rogue.Divers.Filter;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionAbsenceDeSauvegarde;
 import Joran_Maxime_Joseph.Projet_Rogue.Terrain;
 
-public class LoadMenu {
+public class LoadMenu extends Menu{
     public LoadMenu(){}
-    public Terrain load(Terrain t) throws ExceptionAbsenceDeSauvegarde{
-
+    public Terrain load() throws ExceptionAbsenceDeSauvegarde{
+        Joueur _ = new Joueur("dummy", -1, -1, -1, -1, -1, -1, -1);
+        Terrain t = new Terrain(_);
         try {
             File f = new File("f");
             String path = f.getCanonicalPath();

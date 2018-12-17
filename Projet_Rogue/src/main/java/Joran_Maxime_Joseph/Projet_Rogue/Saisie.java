@@ -5,6 +5,7 @@ import java.util.Scanner;
 import Joran_Maxime_Joseph.Projet_Rogue.Creature.Joueur;
 import Joran_Maxime_Joseph.Projet_Rogue.Divers.Correcteur;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.*;
+import Joran_Maxime_Joseph.Projet_Rogue.Menu.EndMenu;
 import Joran_Maxime_Joseph.Projet_Rogue.Menu.LoadMenu;
 import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
 import Joran_Maxime_Joseph.Projet_Rogue.Menu.SaveMenu;
@@ -20,6 +21,13 @@ public class Saisie {
 		this.j = j;
 		this.t = new Terrain(j);
 		this.t = t.InitAvecEnnemisEtObjets(niveau);
+	}
+
+	public Saisie(Terrain t)
+	{
+		this.niveau = t.getTaille() / 5;
+		this.j = t.getPersonnage();
+		this.t = t;
 	}
 	public void joueurJoue(String cmd) throws ExceptionDeplacementIllegal, ExceptionInvalidCommand, ExceptionAttaqueImpossible, ExceptionMarcheSurObjet, ExceptionOuvrePorte{
 	    switch(cmd){
@@ -48,6 +56,7 @@ public class Saisie {
 				t.getPersonnage().attaquer(Actions.HAUT,t);
 				break;
 			case "game over":
+				EndMenu end = new EndMenu(j.getNom());
 				System.exit(0);
 				break;
 			case "save":
@@ -57,7 +66,7 @@ public class Saisie {
 			case "load":
 				try {
 					LoadMenu load = new LoadMenu();
-					t = load.load(t);
+					t = load.load();
 				}
 				catch (ExceptionAbsenceDeSauvegarde e){
 					System.out.println(e.getMessage());
