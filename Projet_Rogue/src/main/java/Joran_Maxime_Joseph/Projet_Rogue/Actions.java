@@ -252,15 +252,12 @@ public enum Actions {
 			}
 		}
 	};
-	
-	/**
-	 * Attribut String s qui représente le symbole de l'action
-	 */
+
 	private String s;
 	
 	/**
 	 * Constructeur Action
-	 * @param str le string de l'action
+	 * @param str Le symbole de l'Action
 	 */
 	private Actions(String str)
 	{
@@ -271,7 +268,7 @@ public enum Actions {
 	 * Fonction qui permet aux creatures de se deplacer
 	 * @param c qui represente les creatures
 	 * @param t qui represente le terrain
-	 * @throws ExceptionDeplacementIllegal qui envoie un msg lors d'un deplacement illegal
+	 * @throws ExceptionDeplacementIllegal qui envoie un message lors d'un deplacement illegal
 	 * @throws ExceptionMarcheSurObjet qui envoie un message lorsque le joueur marche sur un objet
 	 * @throws ExceptionOuvrePorte qui envoie un message lorsque le joueur ouvre une porte
 	 */

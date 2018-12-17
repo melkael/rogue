@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FilenameFilter;
 
 /**
- * Filter est une classe pour le type de fichier sauvegarder
+ * Filter est une classe pour le type de fichier sauvegardé
  * 
  * @author Joran_Maxime_Joseph
  * @version 1.0
@@ -13,7 +13,7 @@ import java.io.FilenameFilter;
 public class Filter {
 
 	/**
-	 * Fonction qui permet de récupeer tous les fichiers de sauvegarde
+	 * Fonction qui permet de récupérer tous les fichiers de sauvegarde
 	 * @param dirName nom du dossier
 	 * @return le fichier suivit de .sav
 	 */

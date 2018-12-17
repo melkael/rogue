@@ -12,10 +12,10 @@ import java.util.Arrays;
 public class Correcteur {
 	
 	/**
-	 * Fcontion qui calcule la distance d'édition entre 2 strings
+	 * Fonction qui calcule la distance d'édition entre 2 strings
 	 * @param x String x
 	 * @param y String y
-	 * @return la distance d'edition
+	 * @return renvoie la distance d'edition
 	 */
     public static int calculate(String x, String y) {
         int[][] dp = new int[x.length() + 1][y.length() + 1];
@@ -51,8 +51,8 @@ public class Correcteur {
 
     /**
      * Fonction min
-     * @param numbers nombres de modif
-     * @return un entier
+     * @param numbers nombres de modifications
+     * @return qui renvoie un entier
      */
     public static int min(int... numbers) {
         return Arrays.stream(numbers)
@@ -62,7 +62,7 @@ public class Correcteur {
     /**
      * Fonction corriger qui corrige les mauvaises commandes
      * @param x String qui doit etre corriger
-     * @return le bon String
+     * @return qui renvoie le bon String
      */
     public String corriger(String x){
         if (calculate(x, "go gauche") == 1){

@@ -10,7 +10,7 @@ package Joran_Maxime_Joseph.Projet_Rogue.Exception;
 public class ExceptionMarcheSurObjet extends Exception{
 	
 	/**
-	 * Constructeur par defaut de l'exception
+	 * Constructeur ExceptionMarcheSurObjet()
 	 */
 	public ExceptionMarcheSurObjet() {
 		super("Marche sur un objet");

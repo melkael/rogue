@@ -10,7 +10,7 @@ package Joran_Maxime_Joseph.Projet_Rogue.Exception;
 public class ExceptionAbsenceDeSauvegarde extends Exception{
 	
 	/**
-	 * Constructeur par defaut de l'exception
+	 * Constructeur ExceptionAbsenceDeSauvegarde()
 	 */
     public ExceptionAbsenceDeSauvegarde(){
         super("Aucune sauvegarde trouvée !");

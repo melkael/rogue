@@ -10,7 +10,7 @@ package Joran_Maxime_Joseph.Projet_Rogue.Exception;
 public class ExceptionOuvrePorte extends Exception {
 	
 	/**
-	 * Constructeur par defaut de l'exception
+	 * Constructeur ExceptionOuvrePorte()
 	 */
     public ExceptionOuvrePorte() {
         super("Vous ouvrez une porte !");

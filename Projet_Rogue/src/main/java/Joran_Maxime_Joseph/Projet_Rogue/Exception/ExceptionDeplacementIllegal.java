@@ -10,7 +10,7 @@ package Joran_Maxime_Joseph.Projet_Rogue.Exception;
 public class ExceptionDeplacementIllegal extends Exception {
 	
 	/**
-	 * Constructeur par defaut
+	 * ExceptionDeplacementIllegal()
 	 */
 	public ExceptionDeplacementIllegal()
 	{

@@ -19,12 +19,17 @@ import Joran_Maxime_Joseph.Projet_Rogue.Terrain;
 public class LoadMenu extends Menu{
 	
 	/**
-	 * Constructeur par defaut
+	 * Constructeur LoadMenu
 	 */
 	    public LoadMenu(){}
 	   
+	    	/**
+	    	 * Fonction load() qui permet de charger un fichier sauvegarder
+	    	 * @return t qui renvoie le terrain
+	    	 * @throws ExceptionAbsenceDeSauvegarde qui envoie un message s'il n'y a pas de sauvegarde
+	    	 */
 	        public Terrain load() throws ExceptionAbsenceDeSauvegarde{
-	            Joueur j = new Joueur("dummy", -1, -1, -1, -1, -1, -1, -1);
+	            Joueur j = new Joueur("dummy", -1, -1, -1, -1, -1, -1);
 	            Terrain t = new Terrain(j);
 
 	            try {

@@ -4,10 +4,23 @@ import Joran_Maxime_Joseph.Projet_Rogue.Creature.Joueur;
 
 import java.util.Scanner;
 
+/**
+ * CreerPersonnage est une classe qui permet de creer un personnage
+ * 
+ * @author Joran_Maxime_Joseph
+ * @version 1.0
+ */
 public class CreerPersonnage extends Menu{
+	/**
+	 * Constructeur CreerPersonnage
+	 */
     public CreerPersonnage(){
 
     }
+    /**
+     * Fonction Creation qui permet de creer un JOueur
+     * @return j qui renvoie un joueur
+     */
     public Joueur Creation(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Bienvenue dans UVSQuest, c'est l'heure de la création de ton personnage !");
@@ -33,7 +46,7 @@ public class CreerPersonnage extends Menu{
             pv = 50;
             atk = 7;
         }
-        Joueur j = new Joueur(nom, 2, 2, 1, pv, atk, 1, 0);
+        Joueur j = new Joueur(nom, 2, 2,pv, atk, 1, 0);
         return j;
     }
 }

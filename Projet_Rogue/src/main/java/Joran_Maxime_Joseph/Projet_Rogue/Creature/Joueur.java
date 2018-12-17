@@ -12,30 +12,24 @@ import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
  */
 public class Joueur extends Creature {
 	
-	/**
-	 * Attribut int lvl qui représente le niveau
-	 * Attribut int exp qui représente l'experience
-	 * Attribut Epee epee qui représente le port de l'epee
-	 */
 	private int lvl;
 	private int exp;
 	private Bouclier bouclier;
 	private Epee epee;
 	
 	/**
-	 * Constructeur avec attribut
+	 * Constructeur Joueur
 	 * @param nom qui représente le nom du joueur
 	 * @param x qui représente la coordonnée x du joueur
 	 * @param y qui représente la coordonnée y du joueur
-	 * @param nb_actions qui repésente le nb_actions du joueur
 	 * @param pv qui représente les pv du joueur
 	 * @param degat qui représente les degats du joueur
 	 * @param lvl qui représente les lvl du joueur
 	 * @param exp qui représente l'experience du joueur
 	 */
-	public Joueur(String nom,int x,int y,int nb_actions,int pv,int degat,int lvl,int exp)
+	public Joueur(String nom,int x,int y,int pv,int degat,int lvl,int exp)
 	{
-		super(nom,x,y,nb_actions,pv,degat);
+		super(nom,x,y,pv,degat);
 		this.lvl=lvl;
 		this.exp=exp;
 		this.setSymbole("@") ;
@@ -60,8 +54,8 @@ public class Joueur extends Creature {
 	}
 
 	/**
-	 * Getter de lvl qui renvoie le niveau du joueur
-	 * @return lvl le lvl du joueur
+	 * Getter getLvl() 
+	 * @return lvl qui renvoie le niveau du joueur
 	 */
 	public int getLvl() 
 	{
@@ -69,8 +63,8 @@ public class Joueur extends Creature {
 	}
 
 	/**
-	 * Setter de lvl qui modifie le niveau du joueur
-	 * @param lvl le lvl du joueur
+	 * Setter setLvl(int lvl) 
+	 * @param lvl qui modifie le niveau du joueur
 	 */
 	public void setLvl(int lvl) 
 	{
@@ -78,8 +72,8 @@ public class Joueur extends Creature {
 	}
 
 	/**
-	 * Getter de exp qui renvoie l'experience du joueur
-	 * @return exp l'exp du joueur
+	 * Getter getExp() 
+	 * @return exp qui renvoie l'experience du joueur
 	 */
 	public int getExp() 
 	{
@@ -87,27 +81,35 @@ public class Joueur extends Creature {
 	}
 
 	/**
-	 * Setter de exp qui modifie l'exp du joueur
-	 * @param exp l'exp du joueur
+	 * Setter setExp(int exp) 
+	 * @param exp qui modifie l'exp du joueur
 	 */
 	public void setExp(int exp) 
 	{
 		this.exp = exp;
 	}
 
+	/**
+	 * Getter getBouclier()
+	 * @return bouclier qui renvoie le bouclier du joueur
+	 */
 	public Bouclier getBouclier() 
 	{
 		return bouclier;
 	}
 
+	/**
+	 * Setter setBouclier(Bouclier bouclier)
+	 * @param bouclier qui modifie le bouclier du joueur
+	 */
 	public void setBouclier(Bouclier bouclier) 
 	{
 		this.bouclier = bouclier;
 	}
 
 	/**
-	 * Getter de Epee qui renvoie l'epee du joueur
-	 * @return epee l'epee du joueur
+	 * Getter getEpee() 
+	 * @return epee qui renvoie l'epee du joueur
 	 */
 	public Epee getEpee() 
 	{
@@ -115,8 +117,8 @@ public class Joueur extends Creature {
 	}
 
 	/**
-	 * Setter de epee qui modifie l'epee du joueur
-	 * @param epee l'epee du joueur
+	 * Setter setEpee(Epee epee) 
+	 * @param epee qui modifie l'epee du joueur
 	 */
 	public void setEpee(Epee epee) 
 	{

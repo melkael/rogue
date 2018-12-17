@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class SaveMenu extends Menu{
 
 	/**
-	 * Constructeur par defaut
+	 * Constructeur SaveMenu()
 	 */
     public SaveMenu(){}
     

@@ -32,11 +32,11 @@ public class Terrain  implements Serializable{
 	private Epee epee;
 	
 	/**
-	 * Constructeur avec attribut
+	 * Constructeur Terrain
 	 * @param taille qui représente la taille du terrain
 	 * @param personnage qui représente le joueur 
-	 * @param ennemis qui repésente la liste d'ennemis
-	 * @param epee qui repésente l'epee
+	 * @param ennemis qui représente la liste d'ennemis
+	 * @param epee qui représente l'epee
 	 */
 	public Terrain(int taille, Joueur personnage, ArrayList<Creature> ennemis, Epee epee) 
 	{
@@ -49,8 +49,8 @@ public class Terrain  implements Serializable{
 	}
 
 	/**
-	 * Constructeur avec attribut personnage
-	 * @param personnage qui représente le perso
+	 * Constructeur Terrain
+	 * @param personnage qui représente le joueur
 	 */
 	public Terrain(Joueur personnage){
 		this.ennemis = new ArrayList<Creature>();
@@ -105,23 +105,23 @@ public class Terrain  implements Serializable{
 	}
 
 	/**
-	 * Getter du nom de gobelin
-	 * @return Jamel le nom du perso
+	 * Getter getRandomGobelinName()
+	 * @return le nom du Gobelin
 	 */
 	private String getRandomGobelinName(){
 		return "Jamel";
 	}
 
 	/**
-	 * Getter du nom de l'epee
-	 * @return Excaliburne le nom de l'epee
+	 * Getter getRandomEpeeName()
+	 * @return le nom de l'epee
 	 */
 	private String getRandomEpeeName(){
-		return "Excaliburne";
+		return "Excalibur";
 	}
 
 	/**
-	 * Fonction qui initilaise un terrain avec des ennemis et des objets
+	 * Fonction qui initialise un terrain avec des ennemis et des objets
 	 * @param niveau qui représente le niveau du terrain
 	 * @return t le terrain
 	 */
@@ -154,14 +154,14 @@ public class Terrain  implements Serializable{
 				y = rand.nextInt(taille - 1) + 1;
 			}while(!t.EnnemiEstLegal(x, y));
 
-			Gobelin g = new Gobelin(nom, x, y, 1, pv, 5 * niveau);
+			Gobelin g = new Gobelin(nom, x, y, pv, 5 * niveau);
 			t.getEnnemis().add(g);
 		}
 		return t;
 	}
 	
 	/**
-	 * Fonction qui affiche le terrain
+	 * Fonction Affiche() qui affiche le terrain
 	 */
 	public void Affiche() {
 		for(int i = 0; i < taille; i++) {
@@ -198,9 +198,9 @@ public class Terrain  implements Serializable{
 		}
 	}
 	/**
-	 * Fonction qui vérifie si un ennemi peut etre positionner 
-	 * @param x qui représente les coordonnés x
-	 * @param y qui représente les coordonnés y
+	 * Fonction EnnemiEstLegal qui vérifie si un ennemi peut etre positionné
+	 * @param x qui représente la coordonnée x
+	 * @param y qui représente la coordonnée y
 	 * @return false si c'est pas légal sinon true
 	 */
 	// à appeller uniquement à la génération du terrain pour verifier que le nouvel ennemi ne va pas etre mis sur le precedent
@@ -218,7 +218,7 @@ public class Terrain  implements Serializable{
 	}
 
 	/**
-	 * Fonction qui permet de sauvegarder dans un fichier
+	 * Fonction saveToFIle qui permet de sauvegarder le jeu dans un fichier
 	 * @param nom qui représente le nom du fichier
 	 * @throws Exception qui gere l'exception de sauvegarde
 	 */
@@ -231,9 +231,9 @@ public class Terrain  implements Serializable{
 	}
 
 	/**
-	 * Fonction qui permet de lire un fichier
-	 * @param fichier le nom du fichier
-	 * @return result le resultat
+	 * Fonction readFromFile qui permet de lire un fichier
+	 * @param fichier qui représente le nom du fichier
+	 * @return result qui retourne le resultat
 	 * @throws Exception qui gere l'exception de lecture
 	 */
 	public Terrain readFromFile(String fichier) throws Exception {
@@ -245,43 +245,27 @@ public class Terrain  implements Serializable{
 	}
 	
 	/**
-	 * Getter ennemis qui permet de renvoyer les ennemis
-	 * @return ennemis la liste
+	 * Getter getEnnemis() 
+	 * @return ennemis qui renvoie la liste d'ennemis
 	 */
 	public ArrayList<Creature> getEnnemis() 
 	{
 		return ennemis;
 	}
-	/**
-	 * Setter ennemi qui permet de modfiier les ennemis
-	 * @param ennemis la liste
-	 */
-	public void setEnnemis(ArrayList<Creature> ennemis) 
-	{
-		this.ennemis = ennemis;
-	}
+	
 
 	/**
-	 * Getter personnage qui permet de renvoyer le personnage
-	 * @return personnage le perso
+	 * Getter getPersonnage()  
+	 * @return personnage qui permet de renvoyer le personnage
 	 */
 	public Joueur getPersonnage() 
 	{
 		return personnage;
 	}
-	
-	/**
-	 * Setter personnage qui permet de modifier le personnage
-	 * @param personnage le perso
-	 */
-	public void setPersonnage(Joueur personnage) 
-	{
-		this.personnage = personnage;
-	}
 
 	/**
-	 * Getter getTab qui renvoie le decor
-	 * @return tab le terrain
+	 * Getter getTab()
+	 * @return tab qui renvoie le terrain
 	 */
 	public Decor[][] getTab() 
 	{
@@ -289,17 +273,8 @@ public class Terrain  implements Serializable{
 	}
 
 	/**
-	 * Setter tab qui permet de modifier le decor
-	 * @param tab le terrain
-	 */
-	public void setTab(Decor[][] tab) 
-	{
-		this.tab = tab;
-	}
-
-	/**
-	 * Getter taile qui permet de renvoyer la taille
-	 * @return taille la taille du terrain
+	 * Getter getTaille() qui permet de renvoyer la taille
+	 * @return taille qui permet de renvoyer la taille du terrain
 	 */
 	public int getTaille() 
 	{
@@ -307,17 +282,8 @@ public class Terrain  implements Serializable{
 	}
 
 	/**
-	 * Setter taille qui permet de modifier la taille
-	 * @param taille la taille du terrain
-	 */
-	public void setTaille(int taille) 
-	{
-		this.taille = taille;
-	}
-
-	/**
-	 *  Getter getEpee qui permet de renvoyer l'epee
-	 * @return epee l'epee du perso
+	 *  Getter getEpee() 
+	 * @return epee qui permet de renvoyer l'epee
 	 */
 	public Epee getEpee() 
 	{
@@ -325,8 +291,8 @@ public class Terrain  implements Serializable{
 	}
 
 	/**
-	 * Setter epee qui permet de modifier l'epee 
-	 * @param epee l'epee du perso
+	 * Setter setEpee(Epee epee) 
+	 * @param epee qui permet de modifier l'epee 
 	 */
 	public void setEpee(Epee epee) 
 	{

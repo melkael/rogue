@@ -22,8 +22,8 @@ public class Saisie {
 	private int niveau;
 	
 	/**
-	 * Constructeur avec attribut
-	 * @param j qui reprrésente le joueur
+	 * Constructeur Saisie
+	 * @param j qui représente le joueur
 	 */
 	public Saisie(Joueur j) 
 	{
@@ -33,7 +33,10 @@ public class Saisie {
 		this.t = t.InitAvecEnnemisEtObjets(niveau);
 	}
 
-
+	/**
+	 * Constructeur Saisie
+	 * @param t qui représente le terrain
+	 */
 	public Saisie(Terrain t)
 	{
 		this.niveau = t.getTaille() / 5;
@@ -43,8 +46,8 @@ public class Saisie {
 
 	/**
 	 * Fonction joueurJoue qui permet au joueur de jouer
-	 * @param cmd qui représente les cmds taper par le joueur
-	 * @throws ExceptionDeplacementIllegal qui gere les deplacements illegaux
+	 * @param cmd qui représente les cmds tapées par le joueur
+	 * @throws ExceptionDeplacementIllegal qui envoie un message lors de deplacements illegaux
 	 * @throws ExceptionInvalidCommand qui envoie un message lors d'une mauvaise commande
 	 * @throws ExceptionAttaqueImpossible qui envoie un message lors d'une attaque impossible
 	 * @throws ExceptionMarcheSurObjet qui envoie un message lorsque le joueur marche sur un objet
@@ -99,7 +102,7 @@ public class Saisie {
 	}
 	
 	/**
-	 * Fonction jouer qui permet au jeu de tourner
+	 * Fonction jouer qui permet au jeu de s'exécuter
 	 */
 	public void jouer() {
 		Scanner sc= new Scanner(System.in);

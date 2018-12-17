@@ -10,7 +10,7 @@ package Joran_Maxime_Joseph.Projet_Rogue.Exception;
 public class ExceptionAttaqueImpossible extends Exception{
 	
 	/**
-	 * Constructeur par defaut de l'exception
+	 * Constructeur ExceptionAttaqueImpossible()
 	 */
 	public ExceptionAttaqueImpossible() {
 		super("Attaque impossible !!");

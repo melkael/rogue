@@ -76,9 +76,9 @@ public class TestDecor {
 	public void TestFctOuvertMur() 
 	{
 		Decor mur = Decor.MUR;
-		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0);
     	ArrayList<Creature> ennemis = new ArrayList<Creature>();
-    	Epee epee = new Epee("Excaliburne", "T", 10, 8, 8);
+    	Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		Terrain t = new Terrain(10, j, ennemis, epee);
 		
 		assertFalse(mur.estOuverte(t));
@@ -88,9 +88,9 @@ public class TestDecor {
 	public void TestFctOuvertSol() 
 	{
 		Decor sol = Decor.SOL;
-		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0);
     	ArrayList<Creature> ennemis = new ArrayList<Creature>();
-    	Epee epee = new Epee("Excaliburne", "T", 10, 8, 8);
+    	Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		Terrain t = new Terrain(10, j, ennemis, epee);
 		
 		assertFalse(sol.estOuverte(t));
@@ -101,9 +101,9 @@ public class TestDecor {
 	public void TestFctOuvertLimite() 
 	{
 		Decor lim = Decor.LIMITE;
-		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0);
     	ArrayList<Creature> ennemis = new ArrayList<Creature>();
-    	Epee epee = new Epee("Excaliburne", "T", 10, 8, 8);
+    	Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		Terrain t = new Terrain(10, j, ennemis, epee);
 		
 		assertFalse(lim.estOuverte(t));
@@ -114,9 +114,9 @@ public class TestDecor {
 	public void TestFctOuvertPorte() 
 	{
 		Decor p = Decor.PORTE;
-		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0);
     	ArrayList<Creature> ennemis = new ArrayList<Creature>();
-    	Epee epee = new Epee("Excaliburne", "T", 10, 8, 8);
+    	Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		Terrain t = new Terrain(10, j, ennemis, epee);
 		
 		assertTrue(p.estOuverte(t));
@@ -127,10 +127,10 @@ public class TestDecor {
 	public void TestFctOuvertPorteFerme() 
 	{
 		Decor p = Decor.PORTE;
-		Joueur j = new Joueur("Jojo", 5, 5, 1, 10, 5, 1, 0);
-		Gobelin g1 = new Gobelin("Gobelin Jamel", 2, 3, 1, 10, 5);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0);
+		Gobelin g1 = new Gobelin("Gobelin Jamel", 2, 3, 10, 5);
     	ArrayList<Creature> ennemis = new ArrayList<Creature>();
-    	Epee epee = new Epee("Excaliburne", "T", 10, 8, 8);
+    	Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		Terrain t = new Terrain(10, j, ennemis, epee);
 		
 		ennemis.add(g1);

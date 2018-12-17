@@ -5,7 +5,17 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
+/**
+ * Menu est une classe qui représente le menu
+ * 
+ * @author Joran_Maxime_Joseph
+ * @version 1.0
+ */
 public class Menu {
+	/**
+	 * Fonction AsciiArt qui permet de créer un beau menu de départ
+	 * @param str qui prend un string en entrée
+	 */
     public void AsciiArt(String str){
         try {
             BufferedImage image = new BufferedImage(144, 32, BufferedImage.TYPE_INT_RGB);
@@ -31,6 +41,9 @@ public class Menu {
         }
     }
 
+    /**
+     * Fonction padding() qui permet de structurer le menu
+     */
     public void padding(){
         for (int j = 0; j < 3; j++) {
             for (int i = 0; i < 120; i++) {
