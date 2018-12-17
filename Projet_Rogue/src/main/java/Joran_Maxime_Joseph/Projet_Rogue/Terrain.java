@@ -3,6 +3,7 @@ package Joran_Maxime_Joseph.Projet_Rogue;
 import java.util.Random;
 
 import Joran_Maxime_Joseph.Projet_Rogue.Creature.Creature;
+import Joran_Maxime_Joseph.Projet_Rogue.Creature.Gobelin;
 import Joran_Maxime_Joseph.Projet_Rogue.Creature.Joueur;
 import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
 
@@ -30,6 +31,15 @@ public class Terrain  implements Serializable{
 		this.tab = new Decor[taille][taille];
 		this.personnage = personnage;
 		this.epee = epee;
+		Init();
+	}
+
+	public Terrain(Joueur personnage){
+		this.ennemis = new ArrayList<Creature>();
+		this.taille = 10;
+		this.tab = new Decor[taille][taille];
+		this.personnage = personnage;
+		this.epee = new Epee();
 		Init();
 	}
 	
@@ -71,6 +81,49 @@ public class Terrain  implements Serializable{
 			y_porte = rand.nextInt(taille - 2) + 1;
 		}while(x_porte == epee.getX() && y_porte == epee.getY());
 		tab[x_porte][y_porte] = Decor.PORTE;
+	}
+
+	private String getRandomGobelinName(){
+		return "Jamel";
+	}
+
+	private String getRandomEpeeName(){
+		return "Excaliburne";
+	}
+
+	public Terrain InitAvecEnnemisEtObjets(int niveau){
+		int taille = niveau * 5;
+		if (niveau == 0){
+			taille = 5;
+		}
+		ArrayList<Creature> new_ennemis = new ArrayList<Creature>();
+		Random rand = new Random();
+
+		int degatsEpee = 0;
+		if(niveau == 0){
+			degatsEpee = rand.nextInt(5 - 2) + 2;
+		}
+		else {
+			degatsEpee = rand.nextInt(niveau * 10 - niveau * 7) + niveau * 7;
+		}
+		Epee new_epee = new Epee(getRandomEpeeName(), "T", degatsEpee, 3, 3);
+
+		Terrain t = new Terrain(taille, this.personnage, new_ennemis, new_epee);
+
+		for (int i = 0; i < niveau; i++){
+			String nom = "Gobelin " + getRandomGobelinName();
+			int pv = rand.nextInt(niveau * 13 - niveau * 5) + niveau * 5;
+			int x;
+			int y;
+			do{
+				x = rand.nextInt(taille - 1) + 1;
+				y = rand.nextInt(taille - 1) + 1;
+			}while(!t.EnnemiEstLegal(x, y));
+
+			Gobelin g = new Gobelin(nom, x, y, 1, pv, 5 * niveau);
+			t.getEnnemis().add(g);
+		}
+		return t;
 	}
 	
 	public void Affiche() {

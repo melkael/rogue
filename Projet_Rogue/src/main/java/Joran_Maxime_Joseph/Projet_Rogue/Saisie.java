@@ -24,48 +24,8 @@ public class Saisie {
 	{
 		this.niveau = 0;
 		this.j = j;
-		initTerrain();
-	}
-	private String getRandomGobelinName(){
-		return "Jamel";
-	}
-
-	private String getRandomEpeeName(){
-		return "Excaliburne";
-	}
-
-	private void initTerrain(){
-		int taille = this.niveau * 5;
-		if (this.niveau == 0){
-			taille = 5;
-		}
-		ArrayList<Creature> ennemis = new ArrayList<Creature>();
-		Random rand = new Random();
-
-		int degatsEpee = 0;
-		if(niveau == 0){
-			degatsEpee = rand.nextInt(5 - 2) + 2;
-		}
-		else {
-			degatsEpee = rand.nextInt(niveau * 10 - niveau * 7) + niveau * 7;
-		}
-		Epee epee = new Epee(getRandomEpeeName(), "T", degatsEpee, 3, 3);
-
-		t = new Terrain(taille, j, ennemis, epee);
-
-		for (int i = 0; i < this.niveau; i++){
-			String nom = "Gobelin " + getRandomGobelinName();
-			int pv = rand.nextInt(niveau * 13 - niveau * 5) + niveau * 5;
-			int x;
-			int y;
-			do{
-				x = rand.nextInt(taille - 1) + 1;
-				y = rand.nextInt(taille - 1) + 1;
-			}while(!t.EnnemiEstLegal(x, y));
-
-			Gobelin g = new Gobelin(nom, x, y, 1, pv, 5 * niveau);
-			t.getEnnemis().add(g);
-		}
+		this.t = new Terrain(j);
+		this.t = t.InitAvecEnnemisEtObjets(niveau);
 	}
 	public void joueurJoue(String cmd) throws ExceptionDeplacementIllegal, ExceptionInvalidCommand, ExceptionAttaqueImpossible, ExceptionMarcheSurObjet, ExceptionOuvrePorte{
 	     if (cmd.equals("go haut")) {
@@ -136,7 +96,7 @@ public class Saisie {
 			catch (ExceptionOuvrePorte e2) {
 				System.out.println(e2.getMessage());
 				niveau ++;
-				initTerrain();
+				t = t.InitAvecEnnemisEtObjets(niveau);
 				joueurAPuJouer = true;
 			}
 			catch (Exception e3) {
