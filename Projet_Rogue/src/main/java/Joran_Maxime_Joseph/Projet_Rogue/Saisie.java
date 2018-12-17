@@ -5,6 +5,7 @@ import java.util.Scanner;
 import Joran_Maxime_Joseph.Projet_Rogue.Creature.Joueur;
 import Joran_Maxime_Joseph.Projet_Rogue.Divers.Correcteur;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.*;
+import Joran_Maxime_Joseph.Projet_Rogue.Menu.EndMenu;
 import Joran_Maxime_Joseph.Projet_Rogue.Menu.LoadMenu;
 import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
 import Joran_Maxime_Joseph.Projet_Rogue.Menu.SaveMenu;
@@ -41,6 +42,15 @@ public class Saisie {
 	 * @throws ExceptionMarcheSurObjet qui envoie un message lorsque le joueur marche sur un objet
 	 * @throws ExceptionOuvrePorte qui envoie un message quand on ouvre une porte
 	 */
+
+
+	public Saisie(Terrain t)
+	{
+		this.niveau = t.getTaille() / 5;
+		this.j = t.getPersonnage();
+		this.t = t;
+	}
+
 	public void joueurJoue(String cmd) throws ExceptionDeplacementIllegal, ExceptionInvalidCommand, ExceptionAttaqueImpossible, ExceptionMarcheSurObjet, ExceptionOuvrePorte{
 	    switch(cmd){
 			case "go haut":
@@ -68,6 +78,7 @@ public class Saisie {
 				t.getPersonnage().attaquer(Actions.HAUT,t);
 				break;
 			case "game over":
+				EndMenu end = new EndMenu(j.getNom());
 				System.exit(0);
 				break;
 			case "save":
@@ -77,7 +88,7 @@ public class Saisie {
 			case "load":
 				try {
 					LoadMenu load = new LoadMenu();
-					t = load.load(t);
+					t = load.load();
 				}
 				catch (ExceptionAbsenceDeSauvegarde e){
 					System.out.println(e.getMessage());

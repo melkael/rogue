@@ -3,6 +3,7 @@ package Joran_Maxime_Joseph.Projet_Rogue.Menu;
 import Joran_Maxime_Joseph.Projet_Rogue.Terrain;
 import java.util.Scanner;
 
+
 /**
  * SaveMenu est une classe représentant le menu de sauvegarde
  * 
@@ -10,7 +11,9 @@ import java.util.Scanner;
  * @version 1.0
  */
 
-public class SaveMenu {
+
+public class SaveMenu extends Menu{
+
 	/**
 	 * Constructeur par defaut
 	 */
