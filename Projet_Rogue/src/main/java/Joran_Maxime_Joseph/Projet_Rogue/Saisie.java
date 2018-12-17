@@ -1,17 +1,13 @@
 package Joran_Maxime_Joseph.Projet_Rogue;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-import Joran_Maxime_Joseph.Projet_Rogue.Creature.Creature;
-import Joran_Maxime_Joseph.Projet_Rogue.Creature.Gobelin;
 import Joran_Maxime_Joseph.Projet_Rogue.Creature.Joueur;
+import Joran_Maxime_Joseph.Projet_Rogue.Divers.Correcteur;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.*;
 import Joran_Maxime_Joseph.Projet_Rogue.Menu.LoadMenu;
 import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
 import Joran_Maxime_Joseph.Projet_Rogue.Menu.SaveMenu;
-
-import java.util.Random;
 
 public class Saisie {
 	private Terrain t;
@@ -76,10 +72,16 @@ public class Saisie {
 		Scanner sc= new Scanner(System.in);
 		String cmd = "go !";
 		boolean joueurAPuJouer;
+		Correcteur c = new Correcteur();
 		while(cmd != "game over") {
 	    	//for(int i = 0; i < 100; i++) {System.out.println();}
 	        t.Affiche();
 			cmd = sc.nextLine();
+			if(!"".equals(c.corriger(cmd))){
+				cmd = c.corriger(cmd);
+				System.out.println("Oups, j'ai l'impression que tu as fait une faute de frappe");
+				System.out.println("Je corrige en : " + cmd);
+			}
 			try {
 				joueurJoue(cmd);
 				joueurAPuJouer = true;
