@@ -424,7 +424,7 @@ public class TestGobelin {
 		}
 	}
 	
-	/*@Test
+	@Test
 	public void TestIADefault() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet,ExceptionAttaqueImpossible, ExceptionOuvrePorte
 	{
 		Joueur j = new Joueur("Maxou", 7, 7, 1, 10, 5, 1, 0);
@@ -433,11 +433,12 @@ public class TestGobelin {
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		ennemis.add(g);
 		Terrain t = new Terrain(10, j, ennemis, epee);
+		int test[]=new int[] {g.getX(),g.getY()};
 		
 		try
 		{
 			g.IA(t);
-			assertEquals(5,g.getX());
+			assertNotEquals(new int[] {g.getX(),g.getY()},test);
 		}
 		catch(ExceptionDeplacementIllegal e)
 		{
@@ -455,5 +456,5 @@ public class TestGobelin {
 		{
 			assertTrue(e.getMessage().equals("Attaque impossible !!"));
 		}
-	}*/
+	}
 }
