@@ -58,7 +58,7 @@ public enum Decor implements Serializable {
 	};
 
 	/**
-	 * Attribut String s
+	 * Attribut String s qui représente le symbole du décor
 	 */
 	private String s;
 	

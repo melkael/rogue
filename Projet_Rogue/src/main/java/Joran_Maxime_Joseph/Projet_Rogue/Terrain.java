@@ -16,6 +16,13 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+/**
+ * Terrain est une classe qui représente la map 
+ * 
+ * @author Joran_Maxime_Joseph
+ * @version 1.0
+ */
+
 public class Terrain  implements Serializable{
 	
 	private ArrayList<Creature> ennemis;
@@ -24,6 +31,13 @@ public class Terrain  implements Serializable{
 	private int taille;
 	private Epee epee;
 	
+	/**
+	 * Constructeur avec attribut
+	 * @param taille qui représente la taille du terrain
+	 * @param personnage qui représente le joueur 
+	 * @param ennemis qui repésente la liste d'ennemis
+	 * @param epee qui repésente l'epee
+	 */
 	public Terrain(int taille, Joueur personnage, ArrayList<Creature> ennemis, Epee epee) 
 	{
 		this.ennemis = ennemis;
@@ -34,6 +48,10 @@ public class Terrain  implements Serializable{
 		Init();
 	}
 
+	/**
+	 * Constructeur avec attribut personnage
+	 * @param personnage qui représente le perso
+	 */
 	public Terrain(Joueur personnage){
 		this.ennemis = new ArrayList<Creature>();
 		this.taille = 10;
@@ -43,6 +61,9 @@ public class Terrain  implements Serializable{
 		Init();
 	}
 	
+	/**
+	 * Fonction qui initialise le terrain
+	 */
 	public void Init()
 	{
 		Random rand = new Random();
@@ -83,14 +104,27 @@ public class Terrain  implements Serializable{
 		tab[x_porte][y_porte] = Decor.PORTE;
 	}
 
+	/**
+	 * Getter du nom de gobelin
+	 * @return Jamel le nom du perso
+	 */
 	private String getRandomGobelinName(){
 		return "Jamel";
 	}
 
+	/**
+	 * Getter du nom de l'epee
+	 * @return Excaliburne le nom de l'epee
+	 */
 	private String getRandomEpeeName(){
 		return "Excaliburne";
 	}
 
+	/**
+	 * Fonction qui initilaise un terrain avec des ennemis et des objets
+	 * @param niveau qui représente le niveau du terrain
+	 * @return t le terrain
+	 */
 	public Terrain InitAvecEnnemisEtObjets(int niveau){
 		int taille = niveau * 5;
 		if (niveau == 0){
@@ -126,6 +160,9 @@ public class Terrain  implements Serializable{
 		return t;
 	}
 	
+	/**
+	 * Fonction qui affiche le terrain
+	 */
 	public void Affiche() {
 		for(int i = 0; i < taille; i++) {
 			for(int j = 0; j < taille; j++) {
@@ -160,6 +197,12 @@ public class Terrain  implements Serializable{
 			System.out.println();
 		}
 	}
+	/**
+	 * Fonction qui vérifie si un ennemi peut etre positionner 
+	 * @param x qui représente les coordonnés x
+	 * @param y qui représente les coordonnés y
+	 * @return false si c'est pas légal sinon true
+	 */
 	// à appeller uniquement à la génération du terrain pour verifier que le nouvel ennemi ne va pas etre mis sur le precedent
 	public boolean EnnemiEstLegal(int x, int y){
 		boolean legal = true;
@@ -174,6 +217,11 @@ public class Terrain  implements Serializable{
 		return legal;
 	}
 
+	/**
+	 * Fonction qui permet de sauvegarder dans un fichier
+	 * @param nom qui représente le nom du fichier
+	 * @throws Exception qui gere l'exception de sauvegarde
+	 */
 	public void saveToFIle(String nom) throws Exception {
 		// write object to file
 		FileOutputStream fos = new FileOutputStream(nom + ".sav");
@@ -182,6 +230,12 @@ public class Terrain  implements Serializable{
 		oos.close();
 	}
 
+	/**
+	 * Fonction qui permet de lire un fichier
+	 * @param fichier le nom du fichier
+	 * @return result le resultat
+	 * @throws Exception qui gere l'exception de lecture
+	 */
 	public Terrain readFromFile(String fichier) throws Exception {
 		FileInputStream fis = new FileInputStream(fichier);
 		ObjectInputStream ois = new ObjectInputStream(fis);
@@ -189,52 +243,91 @@ public class Terrain  implements Serializable{
 		ois.close();
 		return result;
 	}
-
+	
+	/**
+	 * Getter ennemis qui permet de renvoyer les ennemis
+	 * @return ennemis la liste
+	 */
 	public ArrayList<Creature> getEnnemis() 
 	{
 		return ennemis;
 	}
-
+	/**
+	 * Setter ennemi qui permet de modfiier les ennemis
+	 * @param ennemis la liste
+	 */
 	public void setEnnemis(ArrayList<Creature> ennemis) 
 	{
 		this.ennemis = ennemis;
 	}
 
+	/**
+	 * Getter personnage qui permet de renvoyer le personnage
+	 * @return personnage le perso
+	 */
 	public Joueur getPersonnage() 
 	{
 		return personnage;
 	}
-
+	
+	/**
+	 * Setter personnage qui permet de modifier le personnage
+	 * @param personnage le perso
+	 */
 	public void setPersonnage(Joueur personnage) 
 	{
 		this.personnage = personnage;
 	}
 
+	/**
+	 * Getter getTab qui renvoie le decor
+	 * @return tab le terrain
+	 */
 	public Decor[][] getTab() 
 	{
 		return tab;
 	}
 
+	/**
+	 * Setter tab qui permet de modifier le decor
+	 * @param tab le terrain
+	 */
 	public void setTab(Decor[][] tab) 
 	{
 		this.tab = tab;
 	}
 
+	/**
+	 * Getter taile qui permet de renvoyer la taille
+	 * @return taille la taille du terrain
+	 */
 	public int getTaille() 
 	{
 		return taille;
 	}
 
+	/**
+	 * Setter taille qui permet de modifier la taille
+	 * @param taille la taille du terrain
+	 */
 	public void setTaille(int taille) 
 	{
 		this.taille = taille;
 	}
 
+	/**
+	 *  Getter getEpee qui permet de renvoyer l'epee
+	 * @return epee l'epee du perso
+	 */
 	public Epee getEpee() 
 	{
 		return epee;
 	}
 
+	/**
+	 * Setter epee qui permet de modifier l'epee 
+	 * @param epee l'epee du perso
+	 */
 	public void setEpee(Epee epee) 
 	{
 		this.epee = epee;

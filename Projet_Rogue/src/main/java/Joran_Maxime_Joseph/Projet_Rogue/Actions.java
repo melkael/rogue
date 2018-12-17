@@ -6,8 +6,17 @@ import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionDeplacementIllegal;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionMarcheSurObjet;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionOuvrePorte;
 
+/**
+ * Action est une enumération représentant les actions des creatures
+ * 
+ * @author Joran_Maxime_Joseph
+ * @version 1.0
+ */
 public enum Actions {
 
+	/**
+	 * Action HAUT
+	 */
 	HAUT("h")
 	{
 		@Override
@@ -70,6 +79,9 @@ public enum Actions {
 		}	
 	},
 	
+	/**
+	 * Action BAS
+	 */
 	BAS("b")
 	{
 		@Override
@@ -125,6 +137,9 @@ public enum Actions {
 		}
 	},
 	
+	/**
+	 * Action GAUCHE
+	 */
 	GAUCHE("g")
 	{
 		@Override
@@ -180,6 +195,9 @@ public enum Actions {
 		}
 	},
 	
+	/**
+	 * Action DROITE
+	 */
 	DROITE("d")
 	{
 		@Override
@@ -235,13 +253,34 @@ public enum Actions {
 		}
 	};
 	
+	/**
+	 * Attribut String s qui représente le symbole de l'action
+	 */
 	private String s;
 	
+	/**
+	 * Constructeur Action
+	 * @param str le string de l'action
+	 */
 	private Actions(String str)
 	{
 		this.s=str;
 	}
 	
+	/**
+	 * Fonction qui permet aux creatures de se deplacer
+	 * @param c qui represente les creatures
+	 * @param t qui represente le terrain
+	 * @throws ExceptionDeplacementIllegal qui envoie un msg lors d'un deplacement illegal
+	 * @throws ExceptionMarcheSurObjet qui envoie un message lorsque le joueur marche sur un objet
+	 * @throws ExceptionOuvrePorte qui envoie un message lorsque le joueur ouvre une porte
+	 */
 	public abstract void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte;
+	/**
+	 * Fonction qui permet aux creatures d'attaquer
+	 * @param c qui represente les creatures
+	 * @param t qui represente le terrain
+	 * @throws ExceptionAttaqueImpossible qui renvoie un message lors d'une attaque impossible
+	 */
 	public abstract void attaque(Creature c,Terrain t) throws ExceptionAttaqueImpossible;
 }

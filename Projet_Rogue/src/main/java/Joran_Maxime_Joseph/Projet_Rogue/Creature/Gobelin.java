@@ -9,8 +9,23 @@ import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionDeplacementIllegal;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionMarcheSurObjet;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionOuvrePorte;
 
+/**
+ * Gobelin est une classe qui représente les Gobelins
+ * 
+ * @author Joran_Maxime_Joseph
+ * @version 1.0
+ */
 public class Gobelin extends Creature {
 	
+	/**
+	 * Constructeur avec attribut
+	 * @param nom qui représente le nom du gobelin
+	 * @param x qui représente les coordonnées x du gobelin
+	 * @param y qui représente les coordonnées y du gobelin
+	 * @param nb_actions qui représente le nb_actions du gobelin
+	 * @param pv qui représente les pv du gobelin
+	 * @param degat qui représente les degats du goblein
+	 */
 	public Gobelin(String nom,int x,int y,int nb_actions,int pv,int degat)
 	{
 		super(nom,x,y,nb_actions,pv,degat);

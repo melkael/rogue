@@ -4,10 +4,25 @@ import Joran_Maxime_Joseph.Projet_Rogue.Creature.Joueur;
 
 import java.util.Scanner;
 
+/**
+ * StartMenu est une classe représentant le menu de départ
+ * 
+ * @author Joran_Maxime_Joseph
+ * @version 1.0
+ */
 public class StartMenu {
-    public StartMenu(){
+	
+	/**
+	 * Constructeur par defaut
+	 */
+    public StartMenu()
+    {
 
     }
+    /**
+     * Fonction CreerPersonnage qui permet à l'utilisateur de creer son personnage
+     * @return j renvoie le joueur
+     */
     public Joueur CreerPersonnage(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Bienvenue dans ASCIImpossible, c'est l'heure de la création de ton personnage !");

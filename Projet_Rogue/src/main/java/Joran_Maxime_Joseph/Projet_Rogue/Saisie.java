@@ -9,11 +9,21 @@ import Joran_Maxime_Joseph.Projet_Rogue.Menu.LoadMenu;
 import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
 import Joran_Maxime_Joseph.Projet_Rogue.Menu.SaveMenu;
 
+/**
+ * Saisie est une classe  qui représente le jeu
+ * 
+ * @author Joran_Maxime_Joseph
+ * @version 1.0
+ */
 public class Saisie {
 	private Terrain t;
 	private Joueur j;
 	private int niveau;
 	
+	/**
+	 * Constructeur avec attribut
+	 * @param j qui reprrésente le joueur
+	 */
 	public Saisie(Joueur j) 
 	{
 		this.niveau = 0;
@@ -21,6 +31,16 @@ public class Saisie {
 		this.t = new Terrain(j);
 		this.t = t.InitAvecEnnemisEtObjets(niveau);
 	}
+	
+	/**
+	 * Fonction joueurJoue qui permet au joueur de jouer
+	 * @param cmd qui représente les cmds taper par le joueur
+	 * @throws ExceptionDeplacementIllegal qui gere les deplacements illegaux
+	 * @throws ExceptionInvalidCommand qui envoie un message lors d'une mauvaise commande
+	 * @throws ExceptionAttaqueImpossible qui envoie un message lors d'une attaque impossible
+	 * @throws ExceptionMarcheSurObjet qui envoie un message lorsque le joueur marche sur un objet
+	 * @throws ExceptionOuvrePorte qui envoie un message quand on ouvre une porte
+	 */
 	public void joueurJoue(String cmd) throws ExceptionDeplacementIllegal, ExceptionInvalidCommand, ExceptionAttaqueImpossible, ExceptionMarcheSurObjet, ExceptionOuvrePorte{
 	    switch(cmd){
 			case "go haut":
@@ -68,6 +88,9 @@ public class Saisie {
 		}
 	}
 	
+	/**
+	 * Fonction jouer qui permet au jeu de tourner
+	 */
 	public void jouer() {
 		Scanner sc= new Scanner(System.in);
 		String cmd = "go !";

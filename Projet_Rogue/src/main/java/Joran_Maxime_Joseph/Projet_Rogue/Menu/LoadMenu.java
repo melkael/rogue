@@ -7,8 +7,24 @@ import Joran_Maxime_Joseph.Projet_Rogue.Divers.Filter;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionAbsenceDeSauvegarde;
 import Joran_Maxime_Joseph.Projet_Rogue.Terrain;
 
+/**
+ * LoadMenu est une classe qui représente le menu de chargement
+ * 
+ * @author Joran_Maxime_Joseph
+ * @version 1.0
+ */
+
 public class LoadMenu {
+	/**
+	 * Constructeur par defaut
+	 */
     public LoadMenu(){}
+    /**
+     * Fonction load qui permet de charger un fichier contenant un terrain
+     * @param t terrain contenu dans le fichier
+     * @return t renvoie le terrain
+     * @throws ExceptionAbsenceDeSauvegarde qui affiche un message si il n'y a pas de sauvegarde
+     */
     public Terrain load(Terrain t) throws ExceptionAbsenceDeSauvegarde{
 
         try {
