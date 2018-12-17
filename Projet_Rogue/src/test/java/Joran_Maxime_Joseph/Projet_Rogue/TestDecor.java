@@ -14,8 +14,17 @@ import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
 import org.junit.Before;
 import org.junit.BeforeClass;
 
+/**
+ * TestDecor est une classe de test pour tester les méthodes de la classe Decor
+ * 
+ * @author Joran_Maxime_Joseph
+ * @version 1.0
+ */
 public class TestDecor {
 
+	/**
+	 * TestInstanceMur() qui teste la creation de MUR
+	 */
 	@Test
 	public void TestInstanceMur() 
 	{
@@ -23,6 +32,9 @@ public class TestDecor {
 		assertNotNull(mur);
 	}
 	
+	/**
+	 * TestInstanceSol() qui teste la creation de SOL
+	 */
 	@Test
 	public void TestInstanceSol() 
 	{
@@ -30,6 +42,9 @@ public class TestDecor {
 		assertNotNull(sol);
 	}
 	
+	/**
+	 * TestInstancePorte() qui teste la creation de PORTE
+	 */
 	@Test
 	public void TestInstancePorte() 
 	{
@@ -37,6 +52,9 @@ public class TestDecor {
 		assertNotNull(porte);
 	}
 	
+	/**
+	 * TestInstanceLimite() qui teste la creation de LIMITE
+	 */
 	@Test
 	public void TestInstanceLimite() 
 	{
@@ -44,6 +62,9 @@ public class TestDecor {
 		assertNotNull(lim);
 	}
 	
+	/**
+	 * TestAffichageMur() qui teste l(affichage de MUR
+	 */
 	@Test
 	public void TestAffichageMur() 
 	{
@@ -51,6 +72,9 @@ public class TestDecor {
 		assertEquals("#",mur.toString());
 	}
 	
+	/**
+	 * TestAffichageSOl() qui teste l(affichage de SOL
+	 */
 	@Test
 	public void TestAffichageSol() 
 	{
@@ -58,6 +82,9 @@ public class TestDecor {
 		assertEquals(" ",sol.toString());
 	}
 	
+	/**
+	 * TestAffichagePorte() qui teste l(affichage de PORTE
+	 */
 	@Test
 	public void TestAffichagePorte() 
 	{
@@ -65,6 +92,9 @@ public class TestDecor {
 		assertEquals("0",porte.toString());
 	}
 	
+	/**
+	 * TestAffichageLimite() qui teste l(affichage de LIMITE
+	 */
 	@Test
 	public void TestAffichageLimite() 
 	{
@@ -72,6 +102,9 @@ public class TestDecor {
 		assertEquals("X",lim.toString());
 	}
 	
+	/**
+	 * TestFctOuvertMur() qui teste que la porte est fermée
+	 */
 	@Test
 	public void TestFctOuvertMur() 
 	{
@@ -84,6 +117,9 @@ public class TestDecor {
 		assertFalse(mur.estOuverte(t));
 	}
 	
+	/**
+	 * TestFctOuvertSol() qui teste que la porte est fermée
+	 */
 	@Test
 	public void TestFctOuvertSol() 
 	{
@@ -97,6 +133,9 @@ public class TestDecor {
 		
 	}
 	
+	/**
+	 * TestFctOuvertLimite() qui teste que la porte est fermée
+	 */
 	@Test
 	public void TestFctOuvertLimite() 
 	{
@@ -110,6 +149,9 @@ public class TestDecor {
 		
 	}
 	
+	/**
+	 * TestFctOuvertPorte() qui teste que la porte est ouverte
+	 */
 	@Test
 	public void TestFctOuvertPorte() 
 	{
@@ -123,6 +165,9 @@ public class TestDecor {
 		
 	}
 	
+	/**
+	 * TestFctOuvertPorteFerme() qui teste que la porte est fermée
+	 */
 	@Test
 	public void TestFctOuvertPorteFerme() 
 	{

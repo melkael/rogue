@@ -15,8 +15,17 @@ import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionMarcheSurObjet;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionOuvrePorte;
 import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
 
+/**
+ * TestGobelin est une classe de test pour tester les méthodes de la classe Gobelin
+ * 
+ * @author Joran_Maxime_Joseph
+ * @version 1.0
+ */
 public class TestGobelin {
 
+	/**
+	 * TestInstanceGobelin() qui teste la creation de Gobelin
+	 */
 	@Test
 	public void TestInstanceGobelin() 
 	{
@@ -24,6 +33,9 @@ public class TestGobelin {
 		assertNotNull(g);
 	}
 	
+	/**
+	 * TestVivantGobelin() qui teste si le gobelin est vivant
+	 */
 	@Test
 	public void TestVivantGobelin() 
 	{
@@ -32,6 +44,9 @@ public class TestGobelin {
 		assertTrue(g.estVivant());
 	}
 	
+	/**
+	 * TestMortGobelin() qui teste si le gobelin est mort
+	 */
 	@Test
 	public void TestMortGobelin() 
 	{
@@ -40,6 +55,9 @@ public class TestGobelin {
 		assertFalse(g.estVivant());
 	}
 	
+	/**
+	 * TestSeDeplaceHaut() qui teste si le gobelin  se deplace bien en haut avec les exceptions
+	 */
 	@Test
 	public void TestSeDeplaceHaut() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
@@ -69,6 +87,9 @@ public class TestGobelin {
 		}
 	}
 	
+	/**
+	 * TestSeDeplaceBas() qui teste si le gobelin se deplace bien en bas avec les exceptions
+	 */
 	@Test
 	public void TestSeDeplaceBas() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
@@ -98,6 +119,9 @@ public class TestGobelin {
 		}
 	}
 	
+	/**
+	 * TestSeDeplaceGauche() qui teste si le gobelin se deplace bien à gauche avec les exceptions
+	 */
 	@Test
 	public void TestSeDeplaceGauche() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
@@ -127,6 +151,9 @@ public class TestGobelin {
 		}
 	}
 	
+	/**
+	 * TestSeDeplaceDroite() qui teste si le gobelin se deplace bien à droite avec les exceptions
+	 */
 	@Test
 	public void TestSeDeplaceDroite() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
@@ -156,6 +183,9 @@ public class TestGobelin {
 		}
 	}
 	
+	/**
+	 * TestAtqHaut() qui teste si le gobelin  attaque bien en haut avec les exceptions
+	 */
 	@Test
 	public void TestAtqHaut() throws ExceptionAttaqueImpossible
 	{
@@ -177,6 +207,9 @@ public class TestGobelin {
 		}
 	}
 	
+	/**
+	 * TestAtqBas() qui teste si le gobelin  attaque bien en bas avec les exceptions
+	 */
 	@Test
 	public void TestAtqBas() throws ExceptionAttaqueImpossible
 	{
@@ -198,6 +231,9 @@ public class TestGobelin {
 		}
 	}
 	
+	/**
+	 * TestAtqGauche() qui teste si le gobelin  attaque bien à gauche avec les exceptions
+	 */
 	@Test
 	public void TestAtqGauche() throws ExceptionAttaqueImpossible
 	{
@@ -219,6 +255,9 @@ public class TestGobelin {
 		}
 	}
 	
+	/**
+	 * TestAtqDroite() qui teste si le gobelin attaque bien à droite avec les exceptions
+	 */
 	@Test
 	public void TestAtqDroite() throws ExceptionAttaqueImpossible
 	{
@@ -240,6 +279,9 @@ public class TestGobelin {
 		}
 	}
 	
+	/**
+	 * TestClosePlayerHaut() qui teste si le gobelin  est en bas du joueur
+	 */
 	@Test
 	public void TestClosePlayerHaut()
 	{
@@ -253,6 +295,9 @@ public class TestGobelin {
 		assertEquals(2,g.close_to_player(t));
 	}
 	
+	/**
+	 * TestClosePlayerBas() qui teste si le gobelin  est en haut du joueur
+	 */
 	@Test
 	public void TestClosePlayerBas()
 	{
@@ -266,6 +311,9 @@ public class TestGobelin {
 		assertEquals(1,g.close_to_player(t));
 	}
 	
+	/**
+	 * TestClosePlayerGauche() qui teste si le gobelin  est a droite du joueur
+	 */
 	@Test
 	public void TestClosePlayerGauche()
 	{
@@ -279,6 +327,9 @@ public class TestGobelin {
 		assertEquals(4,g.close_to_player(t));
 	}
 	
+	/**
+	 * TestClosePlayerDroite() qui teste si le gobelin  est à gauche du joueur
+	 */
 	@Test
 	public void TestClosePlayerDroite()
 	{
@@ -292,6 +343,13 @@ public class TestGobelin {
 		assertEquals(3,g.close_to_player(t));
 	}
 
+	/**
+	 * TestIAHaut() qui teste si l'IA attaque bien en haut si le joueur est en haut
+	 * @throws ExceptionDeplacementIllegal envoie un message de deplacement illegal
+	 * @throws ExceptionMarcheSurObjet envoie un message si marche sur un objet
+	 * @throws ExceptionAttaqueImpossible envoie un message si attaque impossible
+	 * @throws ExceptionOuvrePorte envoie un message si la porte est ouverte
+	 */
 	@Test
 	public void TestIAHaut() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet,ExceptionAttaqueImpossible, ExceptionOuvrePorte
 	{
@@ -325,6 +383,13 @@ public class TestGobelin {
 		}
 	}
 	
+	/**
+	 * TestIABas() qui teste si l'IA attaque bien en bas si le joueur est en bas
+	 * @throws ExceptionDeplacementIllegal envoie un message de deplacement illegal
+	 * @throws ExceptionMarcheSurObjet envoie un message si marche sur un objet
+	 * @throws ExceptionAttaqueImpossible envoie un message si attaque impossible
+	 * @throws ExceptionOuvrePorte envoie un message si la porte est ouverte
+	 */
 	@Test
 	public void TestIABas() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet,ExceptionAttaqueImpossible, ExceptionOuvrePorte
 	{
@@ -358,6 +423,13 @@ public class TestGobelin {
 		}
 	}
 	
+	/**
+	 * TestIAGauche() qui teste si l'IA attaque bien a gauchesi le joueur est a gauche
+	 * @throws ExceptionDeplacementIllegal envoie un message de deplacement illegal
+	 * @throws ExceptionMarcheSurObjet envoie un message si marche sur un objet
+	 * @throws ExceptionAttaqueImpossible envoie un message si attaque impossible
+	 * @throws ExceptionOuvrePorte envoie un message si la porte est ouverte
+	 */
 	@Test
 	public void TestIAGauche() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet,ExceptionAttaqueImpossible, ExceptionOuvrePorte
 	{
@@ -391,6 +463,13 @@ public class TestGobelin {
 		}
 	}
 	
+	/**
+	 * TestIADroite() qui teste si l'IA attaque bien a droite si le joueur est a droite
+	 * @throws ExceptionDeplacementIllegal envoie un message de deplacement illegal
+	 * @throws ExceptionMarcheSurObjet envoie un message si marche sur un objet
+	 * @throws ExceptionAttaqueImpossible envoie un message si attaque impossible
+	 * @throws ExceptionOuvrePorte envoie un message si la porte est ouverte
+	 */
 	@Test
 	public void TestIADroite() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet,ExceptionAttaqueImpossible, ExceptionOuvrePorte
 	{
@@ -424,6 +503,13 @@ public class TestGobelin {
 		}
 	}
 	
+	/**
+	 * TestIADefault() qui teste si l'IA se deplace bien quand elle n'est pas a cote du joueur
+	 * @throws ExceptionDeplacementIllegal envoie un message de deplacement illegal
+	 * @throws ExceptionMarcheSurObjet envoie un message si marche sur un objet
+	 * @throws ExceptionAttaqueImpossible envoie un message si attaque impossible
+	 * @throws ExceptionOuvrePorte envoie un message si la porte est ouverte
+	 */
 	@Test
 	public void TestIADefault() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet,ExceptionAttaqueImpossible, ExceptionOuvrePorte
 	{

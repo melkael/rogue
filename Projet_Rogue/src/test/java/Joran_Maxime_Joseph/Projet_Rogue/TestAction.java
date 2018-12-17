@@ -15,8 +15,17 @@ import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionMarcheSurObjet;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionOuvrePorte;
 import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
 
+/**
+ * TestAction est une classe de test pour tester les méthodes de la classe Action
+ * 
+ * @author Joran_Maxime_Joseph
+ * @version 1.0
+ */
 public class TestAction {
 
+	/**
+	 * TestInstanceHaut() qui teste la creation de HAUT
+	 */
 	@Test
 	public void TestInstanceHaut() 
 	{
@@ -24,6 +33,9 @@ public class TestAction {
 		assertNotNull(h);
 	}
 	
+	/**
+	 * TestInstanceBas() qui teste la creation de BAS
+	 */
 	@Test
 	public void TestInstanceBas() 
 	{
@@ -31,6 +43,9 @@ public class TestAction {
 		assertNotNull(b);
 	}
 	
+	/**
+	 * TestInstanceGauche() qui teste la creation de GAUCHE
+	 */
 	@Test
 	public void TestInstanceGauche() 
 	{
@@ -38,6 +53,9 @@ public class TestAction {
 		assertNotNull(g);
 	}
 	
+	/**
+	 * TestInstanceDroite() qui teste la creation de DROITE
+	 */
 	@Test
 	public void TestInstanceDroite() 
 	{
@@ -45,8 +63,11 @@ public class TestAction {
 		assertNotNull(d);
 	}
 	
+	/**
+	 * TestDeplaceHautJoueur() qui teste si le personnage peut se deplacer en haut avec les exceptions
+	 */
 	@Test
-	public void TestDeplaceHaut()  throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
+	public void TestDeplaceHautJoueur()  throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
 		Actions h = Actions.HAUT;
 		Joueur j = new Joueur("Jojo", 5, 5,10, 5, 1, 0);
@@ -74,8 +95,11 @@ public class TestAction {
 		}
 	}
 	
+	/**
+	 * TestDeplaceBasJoueur() qui teste si le personnage peut se deplacer en bas avec les exceptions
+	 */
 	@Test
-	public void TestDeplaceBas() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
+	public void TestDeplaceBasJoueur() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
 		Actions b = Actions.BAS;
 		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0);
@@ -103,8 +127,11 @@ public class TestAction {
 		}
 	}
 
+	/**
+	 * TestDeplaceGaucheJoueur() qui teste si le personnage peut se deplacer à gauche avec les exceptions
+	 */
 	@Test
-	public void TestDeplaceGauche() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
+	public void TestDeplaceGaucheJoueur() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
 		Actions g = Actions.GAUCHE;
 		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0);
@@ -132,8 +159,11 @@ public class TestAction {
 		}
 	}
 	
+	/**
+	 * TestDeplaceDroiteJoueur() qui teste si le personnage peut se deplacer à droite avec les exceptions
+	 */
 	@Test
-	public void TestDeplaceDroite() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
+	public void TestDeplaceDroiteJoueur() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
 		Actions d = Actions.DROITE;
 		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0);
@@ -161,6 +191,141 @@ public class TestAction {
 		}
 	}
 	
+	/**
+	 * TestDeplaceHautGobelin() qui teste si le gobelin peut se deplacer en haut avec les exceptions
+	 */
+	@Test
+	public void TestDeplaceHautGobelin()  throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
+	{
+		Actions h = Actions.HAUT;
+		Joueur j = new Joueur("Jojo", 5, 5,10, 5, 1, 0);
+		Gobelin g = new Gobelin("Gobelin Jojo", 5, 3,  10, 5);
+		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
+		ArrayList<Creature> ennemis = new ArrayList<Creature>();
+		Terrain t = new Terrain(10, j, ennemis,epee);
+		
+		
+		try
+		{
+			h.deplace(g, t);
+			assertEquals(4,g.getX());
+		}
+		catch(ExceptionDeplacementIllegal e)
+		{
+			assertTrue(e.getMessage().equals("Deplacement Illegal"));
+		}
+		catch(ExceptionMarcheSurObjet e)
+		{
+			assertTrue(e.getMessage().equals("Marche sur un objet"));
+		}
+		catch(ExceptionOuvrePorte e)
+		{
+			assertTrue(e.getMessage().equals("Vous ouvrez une porte !"));
+		}
+	}
+	
+	/**
+	 * TestDeplaceBasGobelin() qui teste si le gobelin peut se deplacer en bas avec les exceptions
+	 */
+	@Test
+	public void TestDeplaceBasGobelin() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
+	{
+		Actions b = Actions.BAS;
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0);
+		Gobelin g = new Gobelin("Gobelin Jojo", 5, 3,  10, 5);
+		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
+		ArrayList<Creature> ennemis = new ArrayList<Creature>();
+		Terrain t = new Terrain(10, j, ennemis,epee);
+		
+		
+		try
+		{
+			b.deplace(g, t);
+			assertEquals(6,g.getX());
+		}
+		catch(ExceptionDeplacementIllegal e)
+		{
+			assertTrue(e.getMessage().equals("Deplacement Illegal"));
+		}
+		catch(ExceptionMarcheSurObjet e)
+		{
+			assertTrue(e.getMessage().equals("Marche sur un objet"));
+		}
+		catch(ExceptionOuvrePorte e)
+		{
+			assertTrue(e.getMessage().equals("Vous ouvrez une porte !"));
+		}
+	}
+
+	/**
+	 * TestDeplaceGaucheGobelin() qui teste si le Gobelin peut se deplacer à gauche avec les exceptions
+	 */
+	@Test
+	public void TestDeplaceGaucheGobelin() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
+	{
+		Actions g = Actions.GAUCHE;
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0);
+		Gobelin gob = new Gobelin("Gobelin Jojo", 5, 3,  10, 5);
+		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
+		ArrayList<Creature> ennemis = new ArrayList<Creature>();
+		Terrain t = new Terrain(10, j, ennemis,epee);
+		
+		
+		try 
+		{
+			g.deplace(gob, t);
+			assertEquals(2,gob.getY());
+		}
+		catch(ExceptionDeplacementIllegal e)
+		{
+			assertTrue(e.getMessage().equals("Deplacement Illegal"));
+		}
+		catch(ExceptionMarcheSurObjet e)
+		{
+			assertTrue(e.getMessage().equals("Marche sur un objet"));
+		}
+		catch(ExceptionOuvrePorte e)
+		{
+			assertTrue(e.getMessage().equals("Vous ouvrez une porte !"));
+		}
+	}
+	
+	/**
+	 * TestDeplaceDroiteGobelin() qui teste si le gobelin peut se deplacer à droite avec les exceptions
+	 */
+	@Test
+	public void TestDeplaceDroiteGobelin() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
+	{
+		Actions d = Actions.DROITE;
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0);
+		Gobelin g = new Gobelin("Gobelin Jojo", 5, 3,  10, 5);
+		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
+		ArrayList<Creature> ennemis = new ArrayList<Creature>();
+		Terrain t = new Terrain(10, j, ennemis,epee);
+		
+		
+		try 
+		{
+			d.deplace(g, t);
+			assertEquals(4,g.getY());
+		}
+		catch(ExceptionDeplacementIllegal e)
+		{
+			assertTrue(e.getMessage().equals("Deplacement Illegal"));
+		}
+		catch(ExceptionMarcheSurObjet e)
+		{
+			assertTrue(e.getMessage().equals("Marche sur un objet"));
+		}
+		catch(ExceptionOuvrePorte e)
+		{
+			assertTrue(e.getMessage().equals("Vous ouvrez une porte !"));
+		}
+	}
+	
+	/**
+	 * TestAtqHautJoueur() qui teste si le personnage peut attaquer en haut avec les exceptions
+	 */
 	@Test
 	public void TestAtqHautJoueur()  throws ExceptionAttaqueImpossible
 	{
@@ -186,6 +351,9 @@ public class TestAction {
 		
 	}
 	
+	/**
+	 * TestAtqHBasJoueur() qui teste si le personnage peut attaquer en bas avec les exceptions
+	 */
 	@Test
 	public void TestAtqBasJoueur()  throws ExceptionAttaqueImpossible
 	{
@@ -211,6 +379,9 @@ public class TestAction {
 		
 	}
 	
+	/**
+	 * TestAtqDroiteJoueur() qui teste si le personnage peut attaquer à droite avec les exceptions
+	 */
 	@Test
 	public void TestAtqDroiteJoueur()  throws ExceptionAttaqueImpossible
 	{
@@ -236,6 +407,9 @@ public class TestAction {
 		
 	}
 	
+	/**
+	 * TestAtqGaucheJoueur() qui teste si le personnage peut attaquer à gaucheavec les exceptions
+	 */
 	@Test
 	public void TestAtqGaucheJoueur()  throws ExceptionAttaqueImpossible
 	{
@@ -261,6 +435,9 @@ public class TestAction {
 		
 	}
 	
+	/**
+	 * TestAtqHautGobelin() qui teste si le gobelin peut attaquer en haut avec les exceptions
+	 */
 	@Test
 	public void TestAtqHautGobelin()  throws ExceptionAttaqueImpossible
 	{
@@ -285,6 +462,9 @@ public class TestAction {
 		}
 	}
 	
+	/**
+	 * TestAtqBasGobelin() qui teste si le gobelin peut attaquer en bas avec les exceptions
+	 */
 	@Test
 	public void TestAtqBasGobelin()  throws ExceptionAttaqueImpossible
 	{
@@ -309,6 +489,9 @@ public class TestAction {
 		}
 	}
 	
+	/**
+	 * TestAtqGaucheGobelin() qui teste si le gobelin peut attaquer à gauche avec les exceptions
+	 */
 	@Test
 	public void TestAtqGaucheGobelin()  throws ExceptionAttaqueImpossible
 	{
@@ -333,6 +516,9 @@ public class TestAction {
 		}
 	}
 	
+	/**
+	 * TestAtqDroiteGobelin() qui teste si le gobelin peut attaquer à droite avec les exceptions
+	 */
 	@Test
 	public void TestAtqDroiteGobelin()  throws ExceptionAttaqueImpossible
 	{

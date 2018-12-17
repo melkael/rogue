@@ -15,8 +15,17 @@ import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionMarcheSurObjet;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionOuvrePorte;
 import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
 
+/**
+ * TestJoueur est une classe de test pour tester les méthodes de la classe Joueur
+ * 
+ * @author Joran_Maxime_Joseph
+ * @version 1.0
+ */
 public class TestJoueur {
 
+	/**
+	 * TestInstanceJoueur() qui teste la creation de Joueur
+	 */
 	@Test
 	public void TestInstanceJoueur() 
 	{
@@ -24,6 +33,9 @@ public class TestJoueur {
 		assertNotNull(j);
 	}
 
+	/**
+	 * TestRamasseEpee qui teste que le joueur ramasse bien une epee
+	 */
 	@Test
 	public void TestRamasseEpee() 
 	{
@@ -34,6 +46,9 @@ public class TestJoueur {
 		assertEquals(15,j.getDegat());
 	}
 	
+	/**
+	 * TestVivantJoueur() qui teste si le joueur est vivant
+	 */
 	@Test
 	public void TestVivantJoueur() 
 	{
@@ -42,6 +57,9 @@ public class TestJoueur {
 		assertTrue(j.estVivant());
 	}
 	
+	/**
+	 * TestMortJoueur() qui teste si le joueur est mort
+	 */
 	@Test
 	public void TestMortJoueur() 
 	{
@@ -50,6 +68,9 @@ public class TestJoueur {
 		assertFalse(j.estVivant());
 	}
 
+	/**
+	 * TestSeDeplaceHaut() qui teste si le joueur  se deplace bien en haut avec les exceptions
+	 */
 	@Test
 	public void TestSeDeplaceHaut() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
@@ -78,6 +99,9 @@ public class TestJoueur {
 		}
 	}
 	
+	/**
+	 * TestSeDeplaceBas() qui teste si le joueur  se deplace bien en bas avec les exceptions
+	 */
 	@Test
 	public void TestSeDeplaceBas() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
@@ -106,6 +130,9 @@ public class TestJoueur {
 		}
 	}
 	
+	/**
+	 * TestSeDeplaceGauche() qui teste si le joueur  se deplace bien à gauche avec les exceptions
+	 */
 	@Test
 	public void TestSeDeplaceGauche() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
@@ -134,6 +161,9 @@ public class TestJoueur {
 		}
 	}
 	
+	/**
+	 * TestSeDeplaceDroite() qui teste si le joueur  se deplace bien à droite avec les exceptions
+	 */
 	@Test
 	public void TestSeDeplaceDroite() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
@@ -162,6 +192,9 @@ public class TestJoueur {
 		}
 	}
 	
+	/**
+	 * TestAtqHaut() qui teste si le joueur  attaque bien en haut avec les exceptions
+	 */
 	@Test
 	public void TestAtqHaut() throws ExceptionAttaqueImpossible
 	{
@@ -183,6 +216,9 @@ public class TestJoueur {
 		}
 	}
 	
+	/**
+	 * TestAtqBas() qui teste si le joueur  attaque bien en bas avec les exceptions
+	 */
 	@Test
 	public void TestAtqBas() throws ExceptionAttaqueImpossible
 	{
@@ -204,6 +240,9 @@ public class TestJoueur {
 		}
 	}
 	
+	/**
+	 * TestAtqGauche() qui teste si le joueur  attaque bien à gauche avec les exceptions
+	 */
 	@Test
 	public void TestAtqGauche() throws ExceptionAttaqueImpossible
 	{
@@ -225,6 +264,9 @@ public class TestJoueur {
 		}
 	}
 	
+	/**
+	 * TestAtqDroite() qui teste si le joueur  attaque bien à droite avec les exceptions
+	 */
 	@Test
 	public void TestAtqDroite() throws ExceptionAttaqueImpossible
 	{
@@ -246,6 +288,9 @@ public class TestJoueur {
 		}
 	}
 	
+	/**
+	 * TestClosePlayer() qui teste si le joueur  ne peut pas etre a cote d'un autre joueur
+	 */
 	@Test
 	public void TestClosePlayer()
 	{
