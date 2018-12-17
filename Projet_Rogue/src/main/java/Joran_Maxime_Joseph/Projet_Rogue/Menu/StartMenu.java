@@ -10,7 +10,7 @@ public class StartMenu {
     }
     public Joueur CreerPersonnage(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Bienvenue dans ASCIImpossible, c'est leur de la création de ton personnage !");
+        System.out.println("Bienvenue dans ASCIImpossible, c'est l'heure de la création de ton personnage !");
         System.out.println("D'abord, héros, quel est ton nom ?");
         String nom = sc.nextLine();
         String classe;

@@ -2,6 +2,7 @@ package Joran_Maxime_Joseph.Projet_Rogue;
 import java.util.Scanner;
 
 import Joran_Maxime_Joseph.Projet_Rogue.Creature.Joueur;
+import Joran_Maxime_Joseph.Projet_Rogue.Menu.LoadMenu;
 import Joran_Maxime_Joseph.Projet_Rogue.Menu.StartMenu;
 
 import java.util.ArrayList;

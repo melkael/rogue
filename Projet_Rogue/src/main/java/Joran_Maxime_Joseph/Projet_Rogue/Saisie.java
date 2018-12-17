@@ -6,11 +6,8 @@ import java.util.Scanner;
 import Joran_Maxime_Joseph.Projet_Rogue.Creature.Creature;
 import Joran_Maxime_Joseph.Projet_Rogue.Creature.Gobelin;
 import Joran_Maxime_Joseph.Projet_Rogue.Creature.Joueur;
-import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionAttaqueImpossible;
-import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionDeplacementIllegal;
-import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionInvalidCommand;
-import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionMarcheSurObjet;
-import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionOuvrePorte;
+import Joran_Maxime_Joseph.Projet_Rogue.Exception.*;
+import Joran_Maxime_Joseph.Projet_Rogue.Menu.LoadMenu;
 import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
 import Joran_Maxime_Joseph.Projet_Rogue.Menu.SaveMenu;
 
@@ -63,9 +60,10 @@ public class Saisie {
 				break;
 			case "load":
 				try {
-					t = t.readFromFile();
+					LoadMenu load = new LoadMenu();
+					t = load.load(t);
 				}
-				catch (Exception e){
+				catch (ExceptionAbsenceDeSauvegarde e){
 					System.out.println(e.getMessage());
 				}
 				break;

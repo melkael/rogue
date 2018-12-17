@@ -182,8 +182,8 @@ public class Terrain  implements Serializable{
 		oos.close();
 	}
 
-	public Terrain readFromFile() throws Exception {
-		FileInputStream fis = new FileInputStream("terrain.sav");
+	public Terrain readFromFile(String fichier) throws Exception {
+		FileInputStream fis = new FileInputStream(fichier);
 		ObjectInputStream ois = new ObjectInputStream(fis);
 		Terrain result = (Terrain) ois.readObject();
 		ois.close();
