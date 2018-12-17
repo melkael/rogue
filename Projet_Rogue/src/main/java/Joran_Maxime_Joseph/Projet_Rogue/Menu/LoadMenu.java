@@ -22,15 +22,10 @@ public class LoadMenu extends Menu{
 	 * Constructeur par defaut
 	 */
 	    public LoadMenu(){}
-	    /**
-	     * Fonction load qui permet de charger un fichier contenant un terrain
-	     * @param t terrain contenu dans le fichier
-	     * @return t renvoie le terrain
-	     * @throws ExceptionAbsenceDeSauvegarde qui affiche un message si il n'y a pas de sauvegarde
-	     */
+	   
 	        public Terrain load() throws ExceptionAbsenceDeSauvegarde{
-	            Joueur _ = new Joueur("dummy", -1, -1, -1, -1, -1, -1, -1);
-	            Terrain t = new Terrain(_);
+	            Joueur j = new Joueur("dummy", -1, -1, -1, -1, -1, -1, -1);
+	            Terrain t = new Terrain(j);
 
 	            try {
 	                File f = new File("f");

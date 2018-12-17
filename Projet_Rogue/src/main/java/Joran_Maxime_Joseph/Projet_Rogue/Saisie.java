@@ -32,16 +32,6 @@ public class Saisie {
 		this.t = new Terrain(j);
 		this.t = t.InitAvecEnnemisEtObjets(niveau);
 	}
-	
-	/**
-	 * Fonction joueurJoue qui permet au joueur de jouer
-	 * @param cmd qui représente les cmds taper par le joueur
-	 * @throws ExceptionDeplacementIllegal qui gere les deplacements illegaux
-	 * @throws ExceptionInvalidCommand qui envoie un message lors d'une mauvaise commande
-	 * @throws ExceptionAttaqueImpossible qui envoie un message lors d'une attaque impossible
-	 * @throws ExceptionMarcheSurObjet qui envoie un message lorsque le joueur marche sur un objet
-	 * @throws ExceptionOuvrePorte qui envoie un message quand on ouvre une porte
-	 */
 
 
 	public Saisie(Terrain t)
@@ -51,6 +41,15 @@ public class Saisie {
 		this.t = t;
 	}
 
+	/**
+	 * Fonction joueurJoue qui permet au joueur de jouer
+	 * @param cmd qui représente les cmds taper par le joueur
+	 * @throws ExceptionDeplacementIllegal qui gere les deplacements illegaux
+	 * @throws ExceptionInvalidCommand qui envoie un message lors d'une mauvaise commande
+	 * @throws ExceptionAttaqueImpossible qui envoie un message lors d'une attaque impossible
+	 * @throws ExceptionMarcheSurObjet qui envoie un message lorsque le joueur marche sur un objet
+	 * @throws ExceptionOuvrePorte qui envoie un message quand on ouvre une porte
+	 */
 	public void joueurJoue(String cmd) throws ExceptionDeplacementIllegal, ExceptionInvalidCommand, ExceptionAttaqueImpossible, ExceptionMarcheSurObjet, ExceptionOuvrePorte{
 	    switch(cmd){
 			case "go haut":
