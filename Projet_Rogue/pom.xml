@@ -121,6 +121,7 @@
     
     <reporting>
       <plugins>
+      
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
@@ -133,6 +134,13 @@
             </reportSet>
           </reportSets>
         </plugin>
+        
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jxr-plugin</artifactId>
+            <version>2.3</version>
+        </plugin>
+        
       </plugins>
     </reporting>
 
