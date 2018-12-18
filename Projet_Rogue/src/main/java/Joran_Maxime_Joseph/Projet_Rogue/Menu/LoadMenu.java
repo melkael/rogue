@@ -29,7 +29,7 @@ public class LoadMenu extends Menu{
 	    	 * @throws ExceptionAbsenceDeSauvegarde qui envoie un message s'il n'y a pas de sauvegarde
 	    	 */
 	        public Terrain load() throws ExceptionAbsenceDeSauvegarde{
-	            Joueur j = new Joueur("dummy", -1, -1, -1, -1, -1, -1);
+	            Joueur j = new Joueur("dummy", -1, -1, -1, -1, -1, -1,-1);
 	            Terrain t = new Terrain(j);
 
 	            try {

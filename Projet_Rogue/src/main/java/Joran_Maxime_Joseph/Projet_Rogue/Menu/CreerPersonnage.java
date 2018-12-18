@@ -35,18 +35,20 @@ public class CreerPersonnage extends Menu{
             }
             System.out.println("Choisis ta classe petit malin !");
         }
-        int pv, atk;
+        int pv, atk,mana;
         if (classe.equalsIgnoreCase("ASSASSIN")){
             System.out.println("Tu seras donc un assassin : 30pv de base et 15 de dégats !");
             pv = 30;
             atk = 15;
+            mana = 50;
         }
         else {
             System.out.println("Tu seras donc un preux chevalier : 50pv de base et 7 de dégats !");
             pv = 50;
             atk = 7;
+            mana = 50;
         }
-        Joueur j = new Joueur(nom, 2, 2,pv, atk, 1, 0);
+        Joueur j = new Joueur(nom, 2, 2,pv, atk, 1, 0,mana);
         return j;
     }
 }

@@ -16,6 +16,7 @@ public class Joueur extends Creature {
 	private int exp;
 	private Bouclier bouclier;
 	private Epee epee;
+	private int Mana;
 	
 	/**
 	 * Constructeur Joueur
@@ -27,7 +28,7 @@ public class Joueur extends Creature {
 	 * @param lvl qui représente les lvl du joueur
 	 * @param exp qui représente l'experience du joueur
 	 */
-	public Joueur(String nom,int x,int y,int pv,int degat,int lvl,int exp)
+	public Joueur(String nom,int x,int y,int pv,int degat,int lvl,int exp,int mana)
 	{
 		super(nom,x,y,pv,degat);
 		this.lvl=lvl;
@@ -35,6 +36,7 @@ public class Joueur extends Creature {
 		this.setSymbole("@") ;
 		this.bouclier = new Bouclier();
 		this.epee = new Epee();
+		this.Mana = mana;
 	}
 	
 	/**
@@ -123,6 +125,14 @@ public class Joueur extends Creature {
 	public void setEpee(Epee epee) 
 	{
 		this.epee = epee;
+	}
+
+	public int getMana() {
+		return Mana;
+	}
+
+	public void setMana(int mana) {
+		Mana = mana;
 	}
 	
 }

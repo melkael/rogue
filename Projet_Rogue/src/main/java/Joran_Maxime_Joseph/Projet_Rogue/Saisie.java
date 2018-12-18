@@ -8,6 +8,8 @@ import Joran_Maxime_Joseph.Projet_Rogue.Exception.*;
 import Joran_Maxime_Joseph.Projet_Rogue.Menu.EndMenu;
 import Joran_Maxime_Joseph.Projet_Rogue.Menu.LoadMenu;
 import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
+import Sorts.Cataclysm;
+import Sorts.Soin;
 import Joran_Maxime_Joseph.Projet_Rogue.Menu.SaveMenu;
 
 /**
@@ -96,6 +98,14 @@ public class Saisie {
 					System.out.println(e.getMessage());
 				}
 				break;
+			case "Cataclysm" :
+				Cataclysm spell=new Cataclysm("BombeA",50);
+				System.out.println(spell.Effet(t));
+				break;
+			case "Soin" :
+				Soin swag =new Soin("Heal",30);
+				System.out.println(swag.Effet(t));
+				break;	
 			default:
 				throw new ExceptionInvalidCommand();
 		}
