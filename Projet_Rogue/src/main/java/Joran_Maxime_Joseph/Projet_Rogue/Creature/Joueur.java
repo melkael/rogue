@@ -46,7 +46,7 @@ public class Joueur extends Creature {
 	 * Fonction afficheStats() qui affiche les stats du perso
 	 */
 	public void afficheStats(){
-		System.out.println("#####################################");
+		System.out.println("####################################");
 		System.out.print("### ");
 		System.out.print(ANSI_GREEN + "PV : ");
 		System.out.print(this.getPv());
@@ -60,7 +60,7 @@ public class Joueur extends Creature {
 		System.out.print("/50");
 		System.out.print(ANSI_RESET);
 		System.out.println(" ###");
-		System.out.println("#####################################");
+		System.out.println("####################################");
 	}
 	
 	@Override
