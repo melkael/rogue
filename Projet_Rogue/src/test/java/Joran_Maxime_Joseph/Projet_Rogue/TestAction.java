@@ -70,7 +70,7 @@ public class TestAction {
 	public void TestDeplaceHautJoueur()  throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
 		Actions h = Actions.HAUT;
-		Joueur j = new Joueur("Jojo", 5, 5,10, 5, 1, 0,100);
+		Joueur j = new Joueur("Jojo", 5, 5,10, 5,100);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis,epee);
@@ -102,7 +102,7 @@ public class TestAction {
 	public void TestDeplaceBasJoueur() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
 		Actions b = Actions.BAS;
-		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5,100);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis,epee);
@@ -134,7 +134,7 @@ public class TestAction {
 	public void TestDeplaceGaucheJoueur() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
 		Actions g = Actions.GAUCHE;
-		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5,100);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis,epee);
@@ -166,7 +166,7 @@ public class TestAction {
 	public void TestDeplaceDroiteJoueur() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
 		Actions d = Actions.DROITE;
-		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5,100);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis,epee);
@@ -198,7 +198,7 @@ public class TestAction {
 	public void TestDeplaceHautGobelin()  throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
 		Actions h = Actions.HAUT;
-		Joueur j = new Joueur("Jojo", 5, 5,10, 5, 1, 0,100);
+		Joueur j = new Joueur("Jojo", 5, 5,10, 5,100);
 		Gobelin g = new Gobelin("Gobelin Jojo", 5, 3,  10, 5);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -231,7 +231,7 @@ public class TestAction {
 	public void TestDeplaceBasGobelin() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
 		Actions b = Actions.BAS;
-		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5,100);
 		Gobelin g = new Gobelin("Gobelin Jojo", 5, 3,  10, 5);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -264,7 +264,7 @@ public class TestAction {
 	public void TestDeplaceGaucheGobelin() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
 		Actions g = Actions.GAUCHE;
-		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5,100);
 		Gobelin gob = new Gobelin("Gobelin Jojo", 5, 3,  10, 5);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -297,7 +297,7 @@ public class TestAction {
 	public void TestDeplaceDroiteGobelin() throws ExceptionDeplacementIllegal,ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
 		Actions d = Actions.DROITE;
-		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5,100);
 		Gobelin g = new Gobelin("Gobelin Jojo", 5, 3,  10, 5);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -330,7 +330,7 @@ public class TestAction {
 	public void TestAtqHautJoueur()  throws ExceptionAttaqueImpossible
 	{
 		Actions h = Actions.HAUT;
-		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5,100);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		Gobelin g1 = new Gobelin("Gobelin Jamel", 4, 5, 10, 5);
     	ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -358,7 +358,7 @@ public class TestAction {
 	public void TestAtqBasJoueur()  throws ExceptionAttaqueImpossible
 	{
 		Actions b = Actions.BAS;
-		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5,100);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		Gobelin g1 = new Gobelin("Gobelin Jamel", 6, 5, 10, 5);
     	ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -386,7 +386,7 @@ public class TestAction {
 	public void TestAtqDroiteJoueur()  throws ExceptionAttaqueImpossible
 	{
 		Actions d = Actions.DROITE;
-		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5,100);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		Gobelin g1 = new Gobelin("Gobelin Jamel", 5, 6, 10, 5);
     	ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -414,7 +414,7 @@ public class TestAction {
 	public void TestAtqGaucheJoueur()  throws ExceptionAttaqueImpossible
 	{
 		Actions g = Actions.GAUCHE;
-		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5,100);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		Gobelin g1 = new Gobelin("Gobelin Jamel", 5, 4, 10, 5);
     	ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -442,7 +442,7 @@ public class TestAction {
 	public void TestAtqHautGobelin()  throws ExceptionAttaqueImpossible
 	{
 		Actions h = Actions.HAUT;
-		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5,100);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		Gobelin g1 = new Gobelin("Gobelin Jamel", 6, 5, 10, 5);
     	ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -469,7 +469,7 @@ public class TestAction {
 	public void TestAtqBasGobelin()  throws ExceptionAttaqueImpossible
 	{
 		Actions b = Actions.BAS;
-		Joueur j = new Joueur("Jojo", 7, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Jojo", 7, 5, 10, 5, 100);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		Gobelin g1 = new Gobelin("Gobelin Jamel", 6, 5, 10, 5);
     	ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -496,7 +496,7 @@ public class TestAction {
 	public void TestAtqGaucheGobelin()  throws ExceptionAttaqueImpossible
 	{
 		Actions g = Actions.GAUCHE;
-		Joueur j = new Joueur("Jojo", 6, 4, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Jojo", 6, 4, 10, 5, 100);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		Gobelin g1 = new Gobelin("Gobelin Jamel", 6, 5, 10, 5);
     	ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -523,7 +523,7 @@ public class TestAction {
 	public void TestAtqDroiteGobelin()  throws ExceptionAttaqueImpossible
 	{
 		Actions d = Actions.DROITE;
-		Joueur j = new Joueur("Jojo", 6, 6, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Jojo", 6, 6, 10, 5, 100);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		Gobelin g1 = new Gobelin("Gobelin Jamel", 6, 5, 10, 5);
     	ArrayList<Creature> ennemis = new ArrayList<Creature>();

@@ -46,7 +46,7 @@ public class TestCataclysm {
 	public void TestEffetPv() throws ExceptionNotEnoughMana
 	{
 		Cataclysm c = new Cataclysm("c",20);
-		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 100);
 		Gobelin g = new Gobelin("Gobelin Jojo", 5, 3,  19, 5);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -66,7 +66,7 @@ public class TestCataclysm {
 	public void TestEffetMana() throws ExceptionNotEnoughMana
 	{
 		Cataclysm c = new Cataclysm("c",20);
-		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 100);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis, epee);
@@ -84,7 +84,7 @@ public class TestCataclysm {
 	public void TestEffetAffichageFaux() throws ExceptionNotEnoughMana
 	{
 		Cataclysm c = new Cataclysm("c",20);
-		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,10);
+		Joueur j = new Joueur("Maxou", 5, 5, 10, 5,10);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis, epee);
@@ -105,7 +105,7 @@ public class TestCataclysm {
 	public void TestEffetAffichageOK() throws ExceptionNotEnoughMana
 	{
 		Cataclysm c = new Cataclysm("c",20);
-		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 100);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis, epee);

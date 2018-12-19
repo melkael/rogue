@@ -44,7 +44,7 @@ public class TestSoin {
 	public void TestEffetPv() throws ExceptionNotEnoughMana
 	{
 		Soin s = new Soin("s",20);
-		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 100);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis, epee);
@@ -62,7 +62,7 @@ public class TestSoin {
 	public void TestEffetMana() throws ExceptionNotEnoughMana
 	{
 		Soin s = new Soin("s",20);
-		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 100);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis, epee);
@@ -80,7 +80,7 @@ public class TestSoin {
 	public void TestEffetAffichageFaux() throws ExceptionNotEnoughMana
 	{
 		Soin s = new Soin("s",20);
-		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,10);
+		Joueur j = new Joueur("Maxou", 5, 5, 10, 5,10);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis, epee);
@@ -101,7 +101,7 @@ public class TestSoin {
 	public void TestEffetAffichageOK() throws ExceptionNotEnoughMana
 	{
 		Soin s = new Soin("s",20);
-		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 100);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis, epee);

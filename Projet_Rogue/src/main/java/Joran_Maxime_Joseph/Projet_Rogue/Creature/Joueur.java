@@ -11,8 +11,6 @@ import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
  */
 public class Joueur extends Creature {
 	
-	private int lvl;
-	private int exp;
 	private Epee epee;
 	private int Mana;
 	
@@ -23,15 +21,11 @@ public class Joueur extends Creature {
 	 * @param y qui représente la coordonnée y du joueur
 	 * @param pv qui représente les pv du joueur
 	 * @param degat qui représente les degats du joueur
-	 * @param lvl qui représente les lvl du joueur
-	 * @param exp qui représente l'experience du joueur
 	 * @param mana qui représente le mana du joueur
 	 */
-	public Joueur(String nom,int x,int y,int pv,int degat,int lvl,int exp,int mana)
+	public Joueur(String nom,int x,int y,int pv,int degat,int mana)
 	{
 		super(nom,x,y,pv,degat);
-		this.lvl=lvl;
-		this.exp=exp;
 		this.setSymbole("\uD83D\uDC82") ;
 		this.epee = new Epee();
 		this.Mana = mana;
@@ -48,6 +42,9 @@ public class Joueur extends Creature {
 		System.out.println("Vous ramassez " + e.getNom() + ", vos degats : " + this.getDegat());
 	}
 
+	/**
+	 * Fonction afficheStats() qui affiche les stats du perso
+	 */
 	public void afficheStats(){
 		System.out.println("####################################");
 		System.out.print("### ");
@@ -72,42 +69,6 @@ public class Joueur extends Creature {
 	}
 
 	/**
-	 * Getter getLvl() 
-	 * @return lvl qui renvoie le niveau du joueur
-	 */
-	public int getLvl() 
-	{
-		return lvl;
-	}
-
-	/**
-	 * Setter setLvl(int lvl) 
-	 * @param lvl qui modifie le niveau du joueur
-	 */
-	public void setLvl(int lvl) 
-	{
-		this.lvl = lvl;
-	}
-
-	/**
-	 * Getter getExp() 
-	 * @return exp qui renvoie l'experience du joueur
-	 */
-	public int getExp() 
-	{
-		return exp;
-	}
-
-	/**
-	 * Setter setExp(int exp) 
-	 * @param exp qui modifie l'exp du joueur
-	 */
-	public void setExp(int exp) 
-	{
-		this.exp = exp;
-	}
-
-	/**
 	 * Getter getEpee() 
 	 * @return epee qui renvoie l'epee du joueur
 	 */
@@ -125,10 +86,18 @@ public class Joueur extends Creature {
 		this.epee = epee;
 	}
 
+	/**
+	 * Getter getMana()
+	 * @return Mana qui renvoie le mana du joueur
+	 */
 	public int getMana() {
 		return Mana;
 	}
 
+	/**
+	 * Setter setMana(int mana) 
+	 * @param mana qui permet de modifier le mana du joueur
+	 */
 	public void setMana(int mana) {
 		Mana = mana;
 	}
