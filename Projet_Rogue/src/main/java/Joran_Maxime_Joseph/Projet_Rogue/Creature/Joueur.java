@@ -34,7 +34,7 @@ public class Joueur extends Creature {
 		super(nom,x,y,pv,degat);
 		this.lvl=lvl;
 		this.exp=exp;
-		this.setSymbole("@") ;
+		this.setSymbole("\uD83D\uDC82") ;
 		this.bouclier = new Bouclier();
 		this.epee = new Epee();
 		this.Mana = mana;

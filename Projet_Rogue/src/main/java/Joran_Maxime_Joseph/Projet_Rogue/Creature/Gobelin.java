@@ -28,7 +28,7 @@ public class Gobelin extends Creature {
 	public Gobelin(String nom,int x,int y,int pv,int degat)
 	{
 		super(nom,x,y,pv,degat);
-		this.setSymbole("G") ;
+		this.setSymbole("\uD83D\uDC7B") ;
 	}
 	
 	@Override

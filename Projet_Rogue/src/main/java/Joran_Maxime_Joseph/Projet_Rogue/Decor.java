@@ -14,7 +14,7 @@ public enum Decor implements Serializable {
 	/**
 	 * Symbole Du MUR : #
 	 */
-	MUR("#"){
+	MUR("\uD83D\uDD6F️"){
 		
 		@Override
 		public boolean estOuverte(Terrain t){
@@ -34,7 +34,7 @@ public enum Decor implements Serializable {
 	/**
 	 * Symbole De la LIMITE : X
 	 */
-	LIMITE("X") {
+	LIMITE(".") {
 		
 		@Override
 		public boolean estOuverte(Terrain t) {
@@ -44,7 +44,7 @@ public enum Decor implements Serializable {
 	/**
 	 * Symbole De la PORTE : 0
 	 */
-	PORTE("0"){
+	PORTE("\uD83D\uDEAA"){
 		
 		@Override
 		public boolean estOuverte(Terrain t){
