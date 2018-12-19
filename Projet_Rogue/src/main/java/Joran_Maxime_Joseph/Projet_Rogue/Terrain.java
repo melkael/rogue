@@ -144,9 +144,14 @@ public class Terrain  implements Serializable{
 		int y_epee = 0;
 		x_epee = rand.nextInt(taille - 2) + 1;
 		y_epee = rand.nextInt(taille - 2) + 1;
+		Epee new_epee;
 
-		Epee new_epee = new Epee(getRandomEpeeName(), "\uD83D\uDDE1️", degatsEpee, x_epee, y_epee);
-
+		if (niveau > 1) {
+			new_epee = new Epee(getRandomEpeeName(), "\uD83D\uDDE1️", degatsEpee, x_epee, y_epee);
+		}
+		else {
+			new_epee = new Epee(getRandomEpeeName(), "\uD83D\uDDE1️", degatsEpee, 3, 3);
+		}
 		this.personnage.setMana(this.personnage.getMana() + 15);
 		if (this.personnage.getMana() > 50)
 			this.personnage.setMana(50);

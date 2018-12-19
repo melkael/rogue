@@ -89,10 +89,10 @@ public class Correcteur {
         else if(calculate(x, "atk haut") <= 2){
             return "atk haut";
         }
-        else if(calculate(x, "save") <= 2){
+        else if(calculate(x, "save") == 1){
             return "save";
         }
-        else if(calculate(x, "load") <= 2){
+        else if(calculate(x, "load") == 1){
             return "load";
         }
         return "";
