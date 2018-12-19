@@ -69,7 +69,7 @@ public class TestDecor {
 	public void TestAffichageMur() 
 	{
 		Decor mur = Decor.MUR;
-		assertEquals("#",mur.toString());
+		assertEquals("\uD83D\uDD6F️",mur.toString());
 	}
 	
 	/**
@@ -89,7 +89,7 @@ public class TestDecor {
 	public void TestAffichagePorte() 
 	{
 		Decor porte = Decor.PORTE;
-		assertEquals("0",porte.toString());
+		assertEquals("\uD83D\uDEAA",porte.toString());
 	}
 	
 	/**
@@ -99,7 +99,7 @@ public class TestDecor {
 	public void TestAffichageLimite() 
 	{
 		Decor lim = Decor.LIMITE;
-		assertEquals("X",lim.toString());
+		assertEquals(".",lim.toString());
 	}
 	
 	/**
