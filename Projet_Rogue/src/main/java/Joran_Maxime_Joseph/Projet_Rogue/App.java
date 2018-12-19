@@ -38,9 +38,7 @@ public class App
             }
             catch (ExceptionAbsenceDeSauvegarde e){
                 System.out.println(e.getMessage());
-                Joueur j = new CreerPersonnage().Creation();
-                Saisie saisie = new Saisie(j);
-                saisie.jouer();
+                System.exit(0);
             }
         }
     }

@@ -96,13 +96,14 @@ public class Saisie {
 				}
 				catch (ExceptionAbsenceDeSauvegarde e){
 					System.out.println(e.getMessage());
+					System.exit(0);
 				}
 				break;
-			case "Cataclysm" :
-				Cataclysm spell=new Cataclysm("BombeA",50);
+			case "cataclysme" :
+				Cataclysm spell = new Cataclysm("BombeA",50);
 				System.out.println(spell.Effet(t));
 				break;
-			case "Soin" :
+			case "soin" :
 				Soin swag =new Soin("Heal",30);
 				System.out.println(swag.Effet(t));
 				break;	
@@ -155,6 +156,7 @@ public class Saisie {
 							t.getEnnemis().get(i).IA(t);
 						}
 						catch (Exception e4) {
+							System.out.println(e4.getMessage());
 						}
 					}
 				

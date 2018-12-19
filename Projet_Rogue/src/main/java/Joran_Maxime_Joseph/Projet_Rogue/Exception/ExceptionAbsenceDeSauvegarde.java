@@ -14,5 +14,7 @@ public class ExceptionAbsenceDeSauvegarde extends Exception{
 	 */
     public ExceptionAbsenceDeSauvegarde(){
         super("Aucune sauvegarde trouvée !");
+        System.out.println(getMessage());
+        System.exit(0);
     }
 }

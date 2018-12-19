@@ -47,16 +47,15 @@ public class LoadMenu extends Menu{
 	                Scanner sc = new Scanner(System.in);
 	                int choix;
 	                String s = "";
-	                System.out.println("Choisis le numero de ta sauvegarde !");
 	                do{
+						System.out.println("Choisis le numero de ta sauvegarde !");
 	                    s = sc.nextLine();
 	                    try{
 	                        choix = Integer.parseInt(s);
 	                    }
 	                    catch (NumberFormatException e) {
 	                        choix = -1;
-	                        System.out.println("Choisis le numero de ta sauvegarde !");
-	                    }
+	                    };
 	                }while(choix < 0 || fileList.length < choix);
 	                return t.readFromFile(fileList[choix].getName());
 	            }
