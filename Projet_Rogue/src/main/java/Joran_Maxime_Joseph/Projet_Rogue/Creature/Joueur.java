@@ -52,13 +52,17 @@ public class Joueur extends Creature {
 	}
 
 	public void afficheStats(){
+		System.out.println("#####################################");
+		System.out.print("### ");
 		System.out.print("PV : ");
 		System.out.print(this.getPv());
 		System.out.print(" DMG : ");
 		System.out.print(this.getDegat());
 		System.out.print(" MANA : ");
 		System.out.print(this.getMana());
-		System.out.println("/50");
+		System.out.print("/50");
+		System.out.println(" ###");
+		System.out.println("#####################################");
 	}
 	
 	@Override
