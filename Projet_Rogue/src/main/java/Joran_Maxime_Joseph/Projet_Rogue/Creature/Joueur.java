@@ -1,7 +1,6 @@
 package Joran_Maxime_Joseph.Projet_Rogue.Creature;
 
 import Joran_Maxime_Joseph.Projet_Rogue.Terrain;
-import Joran_Maxime_Joseph.Projet_Rogue.Objet.Bouclier;
 import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
 
 /**
@@ -14,7 +13,6 @@ public class Joueur extends Creature {
 	
 	private int lvl;
 	private int exp;
-	private Bouclier bouclier;
 	private Epee epee;
 	private int Mana;
 	
@@ -35,7 +33,6 @@ public class Joueur extends Creature {
 		this.lvl=lvl;
 		this.exp=exp;
 		this.setSymbole("\uD83D\uDC82") ;
-		this.bouclier = new Bouclier();
 		this.epee = new Epee();
 		this.Mana = mana;
 	}
@@ -104,24 +101,6 @@ public class Joueur extends Creature {
 	public void setExp(int exp) 
 	{
 		this.exp = exp;
-	}
-
-	/**
-	 * Getter getBouclier()
-	 * @return bouclier qui renvoie le bouclier du joueur
-	 */
-	public Bouclier getBouclier() 
-	{
-		return bouclier;
-	}
-
-	/**
-	 * Setter setBouclier(Bouclier bouclier)
-	 * @param bouclier qui modifie le bouclier du joueur
-	 */
-	public void setBouclier(Bouclier bouclier) 
-	{
-		this.bouclier = bouclier;
 	}
 
 	/**

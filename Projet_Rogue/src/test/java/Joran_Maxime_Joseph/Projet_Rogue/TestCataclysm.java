@@ -7,20 +7,18 @@ import java.util.ArrayList;
 import Joran_Maxime_Joseph.Projet_Rogue.Creature.Creature;
 import Joran_Maxime_Joseph.Projet_Rogue.Creature.Gobelin;
 import Joran_Maxime_Joseph.Projet_Rogue.Creature.Joueur;
-import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionAttaqueImpossible;
-import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionDeplacementIllegal;
-import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionMarcheSurObjet;
 import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionNotEnoughMana;
-import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionOuvrePorte;
 import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
 import Joran_Maxime_Joseph.Projet_Rogue.Sorts.Cataclysm;
-import Joran_Maxime_Joseph.Projet_Rogue.Sorts.Soin;
 import Joran_Maxime_Joseph.Projet_Rogue.Terrain;
 
 import org.junit.Test;
 
 public class TestCataclysm {
 
+	/**
+	 * TestInstanceCataclysm() qui teste la creation du cataclysme
+	 */
 	@Test
 	public void TestInstanceCataclysm() 
 	{
@@ -29,6 +27,9 @@ public class TestCataclysm {
 		assertNotNull(c);
 	}
 	
+	/**
+	 * TestInstanceCataclysm2() qui teste la creation du cataclysme
+	 */
 	@Test
 	public void TestInstanceCataclysm2() 
 	{
@@ -37,6 +38,10 @@ public class TestCataclysm {
 		assertNotNull(c);
 	}
 
+	/**
+	 * TestEffetPv() qui teste si le joueur est bien soigné
+	 * @throws ExceptionNotEnoughMana qui envoie un message si exception
+	 */
 	@Test
 	public void TestEffetPv() throws ExceptionNotEnoughMana
 	{
@@ -53,6 +58,10 @@ public class TestCataclysm {
 		assertEquals(9,g.getPv());
 	}
 	
+	/**
+	 * TestEffetMana() qui teste si le joueur a bien perdu du mana
+	 * @throws ExceptionNotEnoughMana qui envoie un message si exception
+	 */
 	@Test
 	public void TestEffetMana() throws ExceptionNotEnoughMana
 	{
@@ -67,6 +76,10 @@ public class TestCataclysm {
 		assertEquals(80,t.getPersonnage().getMana());
 	}
 	
+	/**
+	 * TestEffetAffichageFaux() qui teste si ca affiche le bon message
+	 * @throws ExceptionNotEnoughMana qui envoie un message si exception
+	 */
 	@Test
 	public void TestEffetAffichageFaux() throws ExceptionNotEnoughMana
 	{
@@ -84,6 +97,10 @@ public class TestCataclysm {
 		
 	}
 	
+	/**
+	 * TestEffetAffichageOK() qui teste si ca affiche le bon message
+	 * @throws ExceptionNotEnoughMana qui envoie un message si exception
+	 */
 	@Test
 	public void TestEffetAffichageOK() throws ExceptionNotEnoughMana
 	{

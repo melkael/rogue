@@ -14,6 +14,9 @@ import org.junit.Test;
 
 public class TestSoin {
 
+	/**
+	 * TestInstanceSoin() qui teste la creation du soin
+	 */
 	@Test
 	public void TestInstanceSoin() 
 	{
@@ -22,6 +25,9 @@ public class TestSoin {
 		assertNotNull(s);
 	}
 	
+	/**
+	 * TestInstanceSoin2() qui teste la creation du soin
+	 */
 	@Test
 	public void TestInstanceSoin2() 
 	{
@@ -30,6 +36,10 @@ public class TestSoin {
 		assertNotNull(s);
 	}
 
+	/**
+	 * TestEffetPv() qui teste si le joueur est bien soigné
+	 * @throws ExceptionNotEnoughMana qui envoie un message si exception
+	 */
 	@Test
 	public void TestEffetPv() throws ExceptionNotEnoughMana
 	{
@@ -44,6 +54,10 @@ public class TestSoin {
 		assertEquals(20,t.getPersonnage().getPv());
 	}
 	
+	/**
+	 * TestEffetMana() qui teste si le joueur a bien perdu du mana
+	 * @throws ExceptionNotEnoughMana qui envoie un message si exception
+	 */
 	@Test
 	public void TestEffetMana() throws ExceptionNotEnoughMana
 	{
@@ -58,6 +72,10 @@ public class TestSoin {
 		assertEquals(80,t.getPersonnage().getMana());
 	}
 	
+	/**
+	 * TestEffetAffichageFaux() qui teste si ca affiche le bon message
+	 * @throws ExceptionNotEnoughMana qui envoie un message si exception
+	 */
 	@Test
 	public void TestEffetAffichageFaux() throws ExceptionNotEnoughMana
 	{
@@ -75,6 +93,10 @@ public class TestSoin {
 		}
 	}
 	
+	/**
+	 * TestEffetAffichageOK() qui teste si ca affiche le bon message
+	 * @throws ExceptionNotEnoughMana qui envoie un message si exception
+	 */
 	@Test
 	public void TestEffetAffichageOK() throws ExceptionNotEnoughMana
 	{
