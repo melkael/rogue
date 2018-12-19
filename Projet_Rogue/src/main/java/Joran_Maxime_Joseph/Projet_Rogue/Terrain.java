@@ -142,10 +142,8 @@ public class Terrain  implements Serializable{
 		}
 		int x_epee = 0;
 		int y_epee = 0;
-		do {
-			x_epee = rand.nextInt(taille - 2) + 1;
-			y_epee = rand.nextInt(taille - 2) + 1;
-		}while(tab[x_epee][y_epee] == Decor.PORTE);
+		x_epee = rand.nextInt(taille - 2) + 1;
+		y_epee = rand.nextInt(taille - 2) + 1;
 
 		Epee new_epee = new Epee(getRandomEpeeName(), "\uD83D\uDDE1️", degatsEpee, x_epee, y_epee);
 
