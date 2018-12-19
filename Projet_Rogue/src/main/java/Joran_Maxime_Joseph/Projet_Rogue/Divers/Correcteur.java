@@ -65,34 +65,34 @@ public class Correcteur {
      * @return qui renvoie le bon String
      */
     public String corriger(String x){
-        if (calculate(x, "go gauche") <= 2){
+        if (calculate(x, "go gauche") <= 2 && calculate(x, "go gauche") != 0){
             return "go gauche";
         }
-		else if(calculate(x, "go droite") <= 2){
+		else if(calculate(x, "go droite") <= 2 && calculate(x, "go droite") != 0){
             return "go droite";
         }
-        else if(calculate(x, "go bas") <= 2){
+        else if(calculate(x, "go bas") <= 2 && calculate(x, "go bas") != 0){
             return "go bas";
         }
-        else if(calculate(x, "go haut") <= 2){
+        else if(calculate(x, "go haut") <= 2 && calculate(x, "go haut") != 0){
             return "go haut";
         }
-        else if(calculate(x, "atk droite") <= 2){
+        else if(calculate(x, "atk droite") <= 2 && calculate(x, "atk droite") != 0){
             return "atk droite";
         }
-        else if(calculate(x, "atk gauche") <= 2){
+        else if(calculate(x, "atk gauche") <= 2 && calculate(x, "atk gauche") != 0){
             return "atk gauche";
         }
-        else if(calculate(x, "atk bas") <= 2){
+        else if(calculate(x, "atk bas") <= 2 && calculate(x, "atk bas") != 0){
             return "atk bas";
         }
-        else if(calculate(x, "atk haut") <= 2){
+        else if(calculate(x, "atk haut") <= 2 && calculate(x, "atk haut") != 0){
             return "atk haut";
         }
-        else if(calculate(x, "save") == 1){
+        else if(calculate(x, "save") <= 2 && calculate(x, "save") != 0){
             return "save";
         }
-        else if(calculate(x, "load") == 1){
+        else if(calculate(x, "load") <= 2 && calculate(x, "load") != 0){
             return "load";
         }
         return "";

@@ -109,7 +109,9 @@ public class Terrain  implements Serializable{
 	 * @return le nom du Gobelin
 	 */
 	private String getRandomGobelinName(){
-		return "Jamel";
+		String[] array = {"Oulboou", "Potter", "Gilet Jaune", "Johnson", "Zombie", "Flibustier", "Lepreux"};
+		int rnd = new Random().nextInt(array.length);
+		return array[rnd];
 	}
 
 	/**
@@ -117,7 +119,9 @@ public class Terrain  implements Serializable{
 	 * @return le nom de l'epee
 	 */
 	private String getRandomEpeeName(){
-		return "Excalibur";
+		String[] array = {"Excalibur", "Sabre Laser", "Katana Kawai", "Epee Daedra", "Baton magique", "Dague aiguisée"};
+		int rnd = new Random().nextInt(array.length);
+		return array[rnd];
 	}
 
 	/**
