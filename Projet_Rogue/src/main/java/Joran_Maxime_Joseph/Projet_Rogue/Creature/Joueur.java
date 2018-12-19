@@ -59,7 +59,7 @@ public class Joueur extends Creature {
 		System.out.print(this.getMana());
 		System.out.print("/50");
 		System.out.print(ANSI_RESET);
-		System.out.println(" ###");
+		System.out.println(" ##");
 		System.out.println("####################################");
 	}
 	

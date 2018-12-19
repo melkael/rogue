@@ -22,8 +22,8 @@ public class StartMenu extends Menu{
     public StartMenu(){
         AsciiArt("UVSQuest");
         padding();
-        System.out.println("###############################################  C pour charger ta save    #############################################");
-        System.out.println("############################################### N pour commencer la partie #############################################");
+        System.out.println("###############################################" + ANSI_YELLOW + "  C pour charger ta save" + ANSI_RESET + "    #############################################");
+        System.out.println("###############################################" + ANSI_YELLOW + " N pour commencer la partie" + ANSI_RESET + " #############################################");
         padding();
         Scanner sc = new Scanner(System.in);
         String entree = "";
