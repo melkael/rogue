@@ -65,34 +65,34 @@ public class Correcteur {
      * @return qui renvoie le bon String
      */
     public String corriger(String x){
-        if (calculate(x, "go gauche") == 1){
+        if (calculate(x, "go gauche") <= 2){
             return "go gauche";
         }
-		else if(calculate(x, "go droite") == 1){
+		else if(calculate(x, "go droite") <= 2){
             return "go droite";
         }
-        else if(calculate(x, "go bas") == 1){
+        else if(calculate(x, "go bas") <= 2){
             return "go bas";
         }
-        else if(calculate(x, "go haut") == 1){
+        else if(calculate(x, "go haut") <= 2){
             return "go haut";
         }
-        else if(calculate(x, "atk droite") == 1){
+        else if(calculate(x, "atk droite") <= 2){
             return "atk droite";
         }
-        else if(calculate(x, "atk gauche") == 1){
+        else if(calculate(x, "atk gauche") <= 2){
             return "atk gauche";
         }
-        else if(calculate(x, "atk bas") == 1){
+        else if(calculate(x, "atk bas") <= 2){
             return "atk bas";
         }
-        else if(calculate(x, "atk haut") == 1){
+        else if(calculate(x, "atk haut") <= 2){
             return "atk haut";
         }
-        else if(calculate(x, "save") == 1){
+        else if(calculate(x, "save") <= 2){
             return "save";
         }
-        else if(calculate(x, "load") == 1){
+        else if(calculate(x, "load") <= 2){
             return "load";
         }
         return "";
