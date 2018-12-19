@@ -39,7 +39,7 @@ public class Joueur extends Creature {
 		this.setDegat(this.getDegat()-this.epee.getDegat()) ;
 		this.setEpee(e);
 		this.setDegat(this.getDegat()+this.epee.getDegat()) ;
-		System.out.println("Vous ramassez " + e.getNom() + ", vos degats : " + this.getDegat());
+		System.out.println(ANSI_YELLOW + "Vous ramassez " + e.getNom() + ", vos degats : " + this.getDegat() + ANSI_RESET);
 	}
 
 	/**
