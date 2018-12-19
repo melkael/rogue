@@ -84,6 +84,7 @@ public class Saisie {
 				break;
 			case "game over":
 				EndMenu end = new EndMenu(j.getNom());
+				end.AsciiArt("LVL : " + Integer.toString(niveau));
 				System.exit(0);
 				break;
 			case "save":
@@ -153,8 +154,8 @@ public class Saisie {
 			} catch (ExceptionOuvrePorte e2) {
 				System.out.println(e2.getMessage());
 				niveau++;
-				t.getPersonnage().setPv(t.getPersonnage().getPv() + niveau * 10);
-				t.getPersonnage().setMana(t.getPersonnage().getMana() + niveau * 10);
+				t.getPersonnage().setPv(t.getPersonnage().getPv() + niveau * 5);
+				t.getPersonnage().setMana(t.getPersonnage().getMana() + niveau * 5);
 				t = t.InitAvecEnnemisEtObjets(niveau);
 				joueurAPuJouer = true;
 			} catch (Exception e3) {
@@ -172,6 +173,7 @@ public class Saisie {
 			}
 			if (!t.getPersonnage().estVivant()){
 				EndMenu end = new EndMenu(j.getNom());
+				end.AsciiArt("LVL : " + Integer.toString(niveau));
 				System.exit(0);
 			}
 		}
