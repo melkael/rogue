@@ -29,7 +29,7 @@ public class TestJoueur {
 	@Test
 	public void TestInstanceJoueur() 
 	{
-		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 100);
 		assertNotNull(j);
 	}
 
@@ -39,7 +39,7 @@ public class TestJoueur {
 	@Test
 	public void TestRamasseEpee() 
 	{
-		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 100);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		j.ramasserEpee(epee);
 		
@@ -52,7 +52,7 @@ public class TestJoueur {
 	@Test
 	public void TestVivantJoueur() 
 	{
-		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 100);
 			
 		assertTrue(j.estVivant());
 	}
@@ -63,7 +63,7 @@ public class TestJoueur {
 	@Test
 	public void TestMortJoueur() 
 	{
-		Joueur j = new Joueur("Maxou", 5, 5, 0, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 0, 5, 100);
 		
 		assertFalse(j.estVivant());
 	}
@@ -74,7 +74,7 @@ public class TestJoueur {
 	@Test
 	public void TestSeDeplaceHaut() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
-		Joueur j = new Joueur("Maxou", 5, 5, 0, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 0, 5, 100);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis, epee);
@@ -105,7 +105,7 @@ public class TestJoueur {
 	@Test
 	public void TestSeDeplaceBas() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
-		Joueur j = new Joueur("Maxou", 5, 5, 0, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 0, 5, 100);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis, epee);
@@ -136,7 +136,7 @@ public class TestJoueur {
 	@Test
 	public void TestSeDeplaceGauche() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
-		Joueur j = new Joueur("Maxou", 5, 5, 0, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 0, 5, 100);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis, epee);
@@ -167,7 +167,7 @@ public class TestJoueur {
 	@Test
 	public void TestSeDeplaceDroite() throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 	{
-		Joueur j = new Joueur("Maxou", 5, 5, 0, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 0, 5, 100);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis, epee);
@@ -198,7 +198,7 @@ public class TestJoueur {
 	@Test
 	public void TestAtqHaut() throws ExceptionAttaqueImpossible
 	{
-		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 100);
 		Gobelin g = new Gobelin("Gobelin Jojo", 4, 5, 10, 5);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -222,7 +222,7 @@ public class TestJoueur {
 	@Test
 	public void TestAtqBas() throws ExceptionAttaqueImpossible
 	{
-		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 100);
 		Gobelin g = new Gobelin("Gobelin Jojo", 6, 5, 10, 5);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -246,7 +246,7 @@ public class TestJoueur {
 	@Test
 	public void TestAtqGauche() throws ExceptionAttaqueImpossible
 	{
-		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 100);
 		Gobelin g = new Gobelin("Gobelin Jojo", 5, 4, 10, 5);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -270,7 +270,7 @@ public class TestJoueur {
 	@Test
 	public void TestAtqDroite() throws ExceptionAttaqueImpossible
 	{
-		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 100);
 		Gobelin g = new Gobelin("Gobelin Jojo", 5, 6, 10, 5);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -294,7 +294,7 @@ public class TestJoueur {
 	@Test
 	public void TestClosePlayer()
 	{
-		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,100);
+		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 100);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis, epee);

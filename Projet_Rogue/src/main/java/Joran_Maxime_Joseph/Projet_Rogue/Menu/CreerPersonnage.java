@@ -48,7 +48,7 @@ public class CreerPersonnage extends Menu{
             atk = 7;
             mana = 50;
         }
-        Joueur j = new Joueur(nom, 2, 2,pv, atk, 1, 0,mana);
+        Joueur j = new Joueur(nom, 2, 2,pv, atk,mana);
         return j;
     }
 }
