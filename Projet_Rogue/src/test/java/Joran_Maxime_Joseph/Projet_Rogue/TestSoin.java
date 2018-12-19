@@ -59,7 +59,7 @@ public class TestSoin {
 	}
 	
 	@Test
-	public void TestEffetAffichageFaux()
+	public void TestEffetAffichageFaux() throws ExceptionNotEnoughMana
 	{
 		Soin s = new Soin("s",20);
 		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,10);
@@ -71,12 +71,12 @@ public class TestSoin {
 			s.Effet(t);
 		}
 		catch(ExceptionNotEnoughMana e) {
-			assertTrue(e.getMessage().equals("Not Enough Mana"));
+			assertTrue(e.getMessage().equals("Tu manques de mana pour lancer ce sort !"));
 		}
 	}
-	/*
+	
 	@Test
-	public void TestEffetAffichageOK()
+	public void TestEffetAffichageOK() throws ExceptionNotEnoughMana
 	{
 		Soin s = new Soin("s",20);
 		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,100);
@@ -84,9 +84,15 @@ public class TestSoin {
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis, epee);
 		
-		s.Effet(t);
-		
-		assertEquals("Vous vous sentez mieux ! Vous gagnez 10 pv",s.Effet(t));
-	}
-	*/
+		try
+		{
+			s.Effet(t);
+			assertTrue("Vous vous sentez mieux ! Vous gagnez 10 pv",true);
+
+		}
+		catch(ExceptionNotEnoughMana e)
+		{
+			assertTrue(e.getMessage().equals("Tu manques de mana pour lancer ce sort !"));
+		}
+	}	
 }

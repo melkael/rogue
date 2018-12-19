@@ -10,11 +10,10 @@ package Joran_Maxime_Joseph.Projet_Rogue.Exception;
 public class ExceptionNotEnoughMana extends Exception{
 	
 	/**
-	 * Constructeur ExceptionAbsenceDeSauvegarde()
+	 * Constructeur ExceptionNotEnoughMana()()
 	 */
     public ExceptionNotEnoughMana(){
         super("Tu manques de mana pour lancer ce sort !");
-        System.out.println(getMessage());
-        System.exit(0);
+       
     }
 }

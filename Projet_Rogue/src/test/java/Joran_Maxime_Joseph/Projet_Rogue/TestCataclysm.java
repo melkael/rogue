@@ -79,13 +79,13 @@ public class TestCataclysm {
 			c.Effet(t);
 		}
 		catch(ExceptionNotEnoughMana e) {
-			assertTrue(e.getMessage().equals("Not Enough Mana"));
+			assertTrue(e.getMessage().equals("Tu manques de mana pour lancer ce sort !"));
 		}
 		
 	}
-	/*
+	
 	@Test
-	public void TestEffetAffichageOK()
+	public void TestEffetAffichageOK() throws ExceptionNotEnoughMana
 	{
 		Cataclysm c = new Cataclysm("c",20);
 		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,100);
@@ -93,10 +93,13 @@ public class TestCataclysm {
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis, epee);
 		
-		c.Effet(t);
-		
-		assertEquals("Le cataclysm se déchaine ! Tout les ennemis perdent 10Pv",c.Effet(t));
+		try{
+			c.Effet(t);
+			assertTrue("Vous vous sentez mieux ! Vous gagnez 10 pv",true);
+		}
+		catch(ExceptionNotEnoughMana e) {
+			assertTrue(e.getMessage().equals("Tu manques de mana pour lancer ce sort !"));
+		}
 	}
-	*/
 
 }

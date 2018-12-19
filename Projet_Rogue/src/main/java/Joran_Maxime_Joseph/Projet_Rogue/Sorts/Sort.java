@@ -31,10 +31,10 @@ public abstract class Sort {
 		this.setCout(Cout);
 	}
 	/**
-	 * Fonction String Effet(Terrain t) qui retourne un message si le sort a fonctionné ou non selon les manas du joueur
 	 *
-	 * @param t qui represente le terrain
-	 * @return qui renvoie un message
+	 * Fonction String Effet(Terrain t) qui retourne un message si le sort a fonctionné ou non selon les manas du joueur
+	 * @param t qui repqénte le terrain
+	 * @throws ExceptionNotEnoughMana qui envoie un message quand le joueur n'a pas assez de mana
 	 */
 	public abstract void Effet(Terrain t) throws ExceptionNotEnoughMana;
 	/**

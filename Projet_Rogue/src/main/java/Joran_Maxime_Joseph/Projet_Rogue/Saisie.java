@@ -54,6 +54,7 @@ public class Saisie {
 	 * @throws ExceptionAttaqueImpossible qui envoie un message lors d'une attaque impossible
 	 * @throws ExceptionMarcheSurObjet qui envoie un message lorsque le joueur marche sur un objet
 	 * @throws ExceptionOuvrePorte qui envoie un message quand on ouvre une porte
+	 * @throws ExceptionNotEnoughMana qui envoie un message quand lej oueur n'a pas assez de mana
 	 */
 	public void joueurJoue(String cmd) throws ExceptionDeplacementIllegal, ExceptionInvalidCommand, ExceptionAttaqueImpossible, ExceptionMarcheSurObjet, ExceptionOuvrePorte, ExceptionNotEnoughMana{
 	    switch(cmd){
