@@ -27,6 +27,7 @@ public class Joueur extends Creature {
 	 * @param degat qui représente les degats du joueur
 	 * @param lvl qui représente les lvl du joueur
 	 * @param exp qui représente l'experience du joueur
+	 * @param mana qui représente le mana du joueur
 	 */
 	public Joueur(String nom,int x,int y,int pv,int degat,int lvl,int exp,int mana)
 	{

@@ -25,7 +25,7 @@ public class TestTerrain {
 	@Test
 	public void TestInstanceTerrain() 
 	{
-		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0,100);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		
@@ -40,7 +40,7 @@ public class TestTerrain {
 	@Test
 	public void TestEnnemiLegal() 
 	{
-		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0,100);
 		Gobelin g = new Gobelin("Gobelin Jojo", 5, 3, 10, 5);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -57,7 +57,7 @@ public class TestTerrain {
 	@Test
 	public void TestEnnemiPasLegal() 
 	{
-		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0,100);
 		Gobelin g = new Gobelin("Gobelin Jojo", 5, 3, 10, 5);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -74,7 +74,7 @@ public class TestTerrain {
 	@Test
 	public void TestTailleTerrain() 
 	{
-		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0,100);
 		Gobelin g = new Gobelin("Gobelin Jojo", 5, 3, 10, 5);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
@@ -91,7 +91,7 @@ public class TestTerrain {
 	@Test
 	public void TestTailleNegativeTerrain() 
 	{
-		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0);
+		Joueur j = new Joueur("Jojo", 5, 5, 10, 5, 1, 0,100);
 		Gobelin g = new Gobelin("Gobelin Jojo", 5, 3, 10, 5);
 		Epee epee = new Epee("Excalibur", "t", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();

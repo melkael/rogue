@@ -90,14 +90,21 @@ II]Manuel Utilisateur
 			Le monstre est à gauche du Personnage: atk gauche
 			
 		Lors d'une attaque ,les monstres vont perdre des points de vies équivalents à la puissance de l'attaque du joueur.
+		
+	8)Lancer Des Sorts
 	
-	8)Les Niveaux Du Jeu
+		Pour lancer des sorts,l'utilisateur peut taper les commandes suivantes :
+		
+			cataclysm:pour toucher tous les ennemis présents sur le terrain
+			soin:pour se soigner
+	
+	9)Les Niveaux Du Jeu
 	
 		Le Jeu possède différents niveaux.Pour accéder au niveau supérieur,il suffit que l'utilisateur tue tous les monstres
 		et passe la porte du niveau où il se situe.
 		Chaque niveau est plus dur que les précédents ,c'est à dire qu'il y a plus de monstre ,plus fort et une map plus grande.
 		
-	9)Sauvegarder Une Partie
+	10)Sauvegarder Une Partie
 	
 		Pour sauvegarder une partie, l'utilisateur devra taper la commande suivante : save
 		Celle-ci dirigera le joueur vers un menu lui disant de choisir le nom du fichier pour sa sauvegarde.
