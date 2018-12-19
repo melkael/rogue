@@ -1,6 +1,7 @@
 package Joran_Maxime_Joseph.Projet_Rogue.Sorts;
 
 import Joran_Maxime_Joseph.Projet_Rogue.Terrain;
+import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionNotEnoughMana;
 
 /**
  * Soin est une classe qui permet de lancer un sort qui soigne le joueur
@@ -28,16 +29,12 @@ public class Soin extends Sort{
 	}
 	
 	@Override
-	public String Effet(Terrain t) {
-		String msg = new String();
+	public void Effet(Terrain t) throws ExceptionNotEnoughMana{
 		if(t.getPersonnage().getMana() < this.getCout())
-			msg = "Not Enough Mana";
-		else {
-			t.getPersonnage().setMana(t.getPersonnage().getMana()-this.getCout());
-			t.getPersonnage().setPv(t.getPersonnage().getPv()+10);
-			msg = "Vous vous sentez mieux ! Vous gagnez 10 pv";
-		}
-		return msg;
+			throw new ExceptionNotEnoughMana();
+		t.getPersonnage().setMana(t.getPersonnage().getMana()-this.getCout());
+		t.getPersonnage().setPv(t.getPersonnage().getPv()+10);
+		System.out.println("Vous vous sentez mieux ! Vous gagnez 10 pv");
 	}
 
 }

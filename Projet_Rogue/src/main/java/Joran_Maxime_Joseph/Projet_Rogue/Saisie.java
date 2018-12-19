@@ -55,7 +55,7 @@ public class Saisie {
 	 * @throws ExceptionMarcheSurObjet qui envoie un message lorsque le joueur marche sur un objet
 	 * @throws ExceptionOuvrePorte qui envoie un message quand on ouvre une porte
 	 */
-	public void joueurJoue(String cmd) throws ExceptionDeplacementIllegal, ExceptionInvalidCommand, ExceptionAttaqueImpossible, ExceptionMarcheSurObjet, ExceptionOuvrePorte{
+	public void joueurJoue(String cmd) throws ExceptionDeplacementIllegal, ExceptionInvalidCommand, ExceptionAttaqueImpossible, ExceptionMarcheSurObjet, ExceptionOuvrePorte, ExceptionNotEnoughMana{
 	    switch(cmd){
 			case "go haut":
 				t.getPersonnage().sedeplacer(Actions.HAUT,t);
@@ -96,16 +96,26 @@ public class Saisie {
 				}
 				catch (ExceptionAbsenceDeSauvegarde e){
 					System.out.println(e.getMessage());
-					System.exit(0);
 				}
 				break;
 			case "cataclysme" :
+				try {
 				Cataclysm spell = new Cataclysm("BombeA",50);
-				System.out.println(spell.Effet(t));
+				spell.Effet(t);
+				}
+				catch(ExceptionNotEnoughMana e){
+					System.out.println(e.getMessage());
+				}
+				
 				break;
 			case "soin" :
+				try {
 				Soin swag =new Soin("Heal",30);
-				System.out.println(swag.Effet(t));
+				swag.Effet(t);
+				}
+				catch(ExceptionNotEnoughMana e) {
+					System.out.println(e.getMessage());
+				}
 				break;	
 			default:
 				throw new ExceptionInvalidCommand();

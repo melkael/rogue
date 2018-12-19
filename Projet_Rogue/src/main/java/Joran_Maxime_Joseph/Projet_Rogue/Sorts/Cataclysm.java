@@ -1,6 +1,7 @@
 package Joran_Maxime_Joseph.Projet_Rogue.Sorts;
 
 import Joran_Maxime_Joseph.Projet_Rogue.Terrain;
+import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionNotEnoughMana;
 
 /**
  * Cataclysme est une classe qui permet de lancer un sort qui touche tous les ennemis sur le terrain
@@ -27,20 +28,14 @@ public class Cataclysm extends Sort{
 		super(nom,Cout);
 	}
 	
-	// Retourne un message d'interaction 
 	@Override
-	public String Effet(Terrain t) {
-		String msg = new String();
+	public void Effet(Terrain t) throws ExceptionNotEnoughMana{
 		if(t.getPersonnage().getMana() < this.getCout())
-			msg = "Not Enough Mana";
-		else {
-			t.getPersonnage().setMana(t.getPersonnage().getMana()-this.getCout());
-			for(int i = 0;i< t.getEnnemis().size();i++) {
-				t.getEnnemis().get(i).setPv(t.getEnnemis().get(i).getPv() - 10);
-			}
-			msg = "Le cataclysm se déchaine ! Tout les ennemis perdent 10Pv";
+			throw new ExceptionNotEnoughMana();
+		t.getPersonnage().setMana(t.getPersonnage().getMana()-this.getCout());
+		for(int i = 0;i< t.getEnnemis().size();i++) {
+			t.getEnnemis().get(i).setPv(t.getEnnemis().get(i).getPv() - 10);
 		}
-		
-		return msg;
-		}
+		System.out.println("Le cataclysm se déchaine ! Tout les ennemis perdent 10Pv");		
+	}
 }

@@ -1,6 +1,7 @@
 package Joran_Maxime_Joseph.Projet_Rogue.Sorts;
 
 import Joran_Maxime_Joseph.Projet_Rogue.Terrain;
+import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionNotEnoughMana;
 
 /**
  * Sort est une classe abstraite qui représente les sorts
@@ -35,7 +36,7 @@ public abstract class Sort {
 	 * @param t qui represente le terrain
 	 * @return qui renvoie un message
 	 */
-	public abstract String Effet(Terrain t);
+	public abstract void Effet(Terrain t) throws ExceptionNotEnoughMana;
 	/**
 	 * Setter setNom(String nom)
 	 * @param nom qui permet de modifier le nom du sort
