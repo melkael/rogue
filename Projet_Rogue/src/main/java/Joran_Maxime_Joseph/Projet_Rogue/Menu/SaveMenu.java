@@ -25,9 +25,9 @@ public class SaveMenu extends Menu{
      * @param t qui prend en parametre le terrain actuel
      */
     public void save(String nom, Terrain t){
-        System.out.println("Tu veux donc sauvegarder ta progression, " +
+        System.out.println(ANSI_GREEN_BACKGROUND + ANSI_BLACK + "Tu veux donc sauvegarder ta progression, " +
                 nom + ", très bien, donne moi simplement le nom du fichier à sauvegarder (l'extension .sav sera" +
-                " automatiquement ajoutée à la fin)");
+                " automatiquement ajoutée à la fin)" + ANSI_RESET);
         Scanner sc = new Scanner(System.in);
         String nomFichier = sc.nextLine();
         try {

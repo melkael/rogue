@@ -42,13 +42,20 @@ public class LoadMenu extends Menu{
 	                    throw new ExceptionAbsenceDeSauvegarde();
 	                }
 	                for(int i = 0; i < fileList.length; i++){
-	                    System.out.println(fileList[i].getName() + " - " + Integer.toString(i));
+	                	String col = "";
+	                	if(i % 2 == 0)
+	                		col = ANSI_GREEN_BACKGROUND;
+	                	else
+	                		col = ANSI_BLUE_BACKGROUND;
+
+	                    System.out.println(col + ANSI_BLACK +fileList[i].getName() + " - " + Integer.toString(i) + ANSI_RESET);
 	                }
 	                Scanner sc = new Scanner(System.in);
 	                int choix;
 	                String s = "";
 	                do{
-						System.out.println("Choisis le numero de ta sauvegarde !");
+	                	System.out.println();
+						System.out.println(ANSI_RED_BACKGROUND + ANSI_BLACK + "Choisis le numero de ta sauvegarde !" + ANSI_RESET);
 	                    s = sc.nextLine();
 	                    try{
 	                        choix = Integer.parseInt(s);
