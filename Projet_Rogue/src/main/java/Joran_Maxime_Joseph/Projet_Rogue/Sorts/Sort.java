@@ -10,7 +10,9 @@ import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionNotEnoughMana;
  * @version 1.0
  */
 public abstract class Sort {
-	
+
+	public static final String ANSI_RESET = "\u001B[0m";
+
 	private String nom;
 	private int Cout;
 	/**

@@ -11,6 +11,9 @@ import Joran_Maxime_Joseph.Projet_Rogue.Exception.ExceptionNotEnoughMana;
  */
 public class Soin extends Sort{
 
+	public static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
+	public static final String ANSI_BLACK = "\u001B[30m";
+
 	/**
 	 * Constructeur Soin()
 	 */
@@ -34,7 +37,7 @@ public class Soin extends Sort{
 			throw new ExceptionNotEnoughMana();
 		t.getPersonnage().setMana(t.getPersonnage().getMana()-this.getCout());
 		t.getPersonnage().setPv(t.getPersonnage().getPv()+10);
-		System.out.println("Vous vous sentez mieux ! Vous gagnez 10 pv");
+		System.out.println(ANSI_GREEN_BACKGROUND + ANSI_BLACK + "Vous vous sentez mieux ! Vous gagnez 10 pv" + ANSI_RESET);
 	}
 
 }
