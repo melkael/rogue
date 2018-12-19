@@ -167,7 +167,7 @@ public class Saisie {
 					try {
 						t.getEnnemis().get(i).IA(t);
 					} catch (Exception e4) {
-						System.out.println(e4.getMessage());
+						// ne pas afficher l'erreur pour les gobelins
 					}
 				}
 			}
