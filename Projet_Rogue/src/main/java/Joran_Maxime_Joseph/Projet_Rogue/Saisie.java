@@ -153,6 +153,8 @@ public class Saisie {
 			} catch (ExceptionOuvrePorte e2) {
 				System.out.println(e2.getMessage());
 				niveau++;
+				t.getPersonnage().setPv(t.getPersonnage().getPv() + niveau * 10);
+				t.getPersonnage().setMana(t.getPersonnage().getMana() + niveau * 10);
 				t = t.InitAvecEnnemisEtObjets(niveau);
 				joueurAPuJouer = true;
 			} catch (Exception e3) {
