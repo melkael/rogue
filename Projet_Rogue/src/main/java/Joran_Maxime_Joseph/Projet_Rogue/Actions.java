@@ -53,6 +53,10 @@ public enum Actions {
 		
 		@Override 
 		public void attaque(Creature c,Terrain t) throws ExceptionAttaqueImpossible{
+			String ANSI_RED_BACKGROUND = "\u001B[41m";
+			String ANSI_BLUE_BACKGROUND = "\u001B[44m";
+			String ANSI_RESET = "\u001B[0m";
+
 			boolean aAttaque = false;
 			if(c.equals(t.getPersonnage()))
 			{	
@@ -60,7 +64,7 @@ public enum Actions {
 				{
 					if(t.getEnnemis().get(i).getX() == c.getX() -1 && t.getEnnemis().get(i).getY() == c.getY()) {
 						t.getEnnemis().get(i).setPv(t.getEnnemis().get(i).getPv()- c.getDegat())  ; 
-						System.out.println(t.getEnnemis().get(i).getNom() + " a moins de pv : " + + t.getEnnemis().get(i).getPv());
+						System.out.println(ANSI_BLUE_BACKGROUND + t.getEnnemis().get(i).getNom() + " a moins de pv : " + + t.getEnnemis().get(i).getPv() + ANSI_RESET);
 						aAttaque = true;
 					}
 				}
@@ -69,7 +73,7 @@ public enum Actions {
 			{
 				if(t.getPersonnage().getX() == c.getX()-1 && t.getPersonnage().getY() == c.getY()) {
 					 t.getPersonnage().setPv(t.getPersonnage().getPv() - c.getDegat()) ;
-					 System.out.println(c.getNom() + " Vous a infligé : " + + c.getDegat());
+					 System.out.println(ANSI_RED_BACKGROUND + c.getNom() + " Vous a infligé : " + + c.getDegat() + ANSI_RESET);
 					 aAttaque = true;
 				}
 			}
@@ -84,6 +88,7 @@ public enum Actions {
 	 */
 	BAS("b")
 	{
+
 		@Override
 		public void deplace(Creature c,Terrain t) throws ExceptionDeplacementIllegal, ExceptionMarcheSurObjet, ExceptionOuvrePorte
 		{
@@ -111,6 +116,11 @@ public enum Actions {
 		}
 		@Override 
 		public void attaque(Creature c,Terrain t) throws ExceptionAttaqueImpossible{
+
+			String ANSI_RED_BACKGROUND = "\u001B[41m";
+			String ANSI_BLUE_BACKGROUND = "\u001B[44m";
+			String ANSI_RESET = "\u001B[0m";
+
 			boolean aAttaque = false;
 			if(c.equals(t.getPersonnage()))
 			{	
@@ -118,7 +128,7 @@ public enum Actions {
 				{
 					if(t.getEnnemis().get(i).getX() == c.getX() +1 && t.getEnnemis().get(i).getY() == c.getY()) {
 						t.getEnnemis().get(i).setPv(t.getEnnemis().get(i).getPv()- c.getDegat())  ; 
-						System.out.println(t.getEnnemis().get(i).getNom() + " a moins de pv : " + t.getEnnemis().get(i).getPv());
+						System.out.println(ANSI_BLUE_BACKGROUND + t.getEnnemis().get(i).getNom() + " a moins de pv : " + t.getEnnemis().get(i).getPv() + ANSI_RESET);
 						aAttaque = true;
 					}
 				}
@@ -127,7 +137,7 @@ public enum Actions {
 			{
 				if(t.getPersonnage().getX() == c.getX()+1 && t.getPersonnage().getY() == c.getY()) {
 					 t.getPersonnage().setPv(t.getPersonnage().getPv() - c.getDegat()) ;
-					 System.out.println(c.getNom() + " Vous a infligé : " + + c.getDegat());
+					 System.out.println(ANSI_RED_BACKGROUND + c.getNom() + " Vous a infligé : " + + c.getDegat() + ANSI_RESET);
 					 aAttaque = true;
 				}
 			}
@@ -169,6 +179,10 @@ public enum Actions {
 		}
 		@Override 
 		public void attaque(Creature c,Terrain t) throws ExceptionAttaqueImpossible{
+			String ANSI_RED_BACKGROUND = "\u001B[41m";
+			String ANSI_BLUE_BACKGROUND = "\u001B[44m";
+			String ANSI_RESET = "\u001B[0m";
+
 			boolean aAttaque = false;
 			if(c.equals(t.getPersonnage()))
 			{	
@@ -176,7 +190,7 @@ public enum Actions {
 				{
 					if(t.getEnnemis().get(i).getX() == c.getX() && t.getEnnemis().get(i).getY() == c.getY() -1) {
 						t.getEnnemis().get(i).setPv(t.getEnnemis().get(i).getPv()- c.getDegat())  ; 
-						System.out.println(t.getEnnemis().get(i).getNom() + " a moins de pv : " + + t.getEnnemis().get(i).getPv());
+						System.out.println(ANSI_BLUE_BACKGROUND + t.getEnnemis().get(i).getNom() + " a moins de pv : " + + t.getEnnemis().get(i).getPv() + ANSI_RESET);
 						aAttaque = true;
 					}
 				}
@@ -185,7 +199,7 @@ public enum Actions {
 			{
 				if(t.getPersonnage().getX() == c.getX() && t.getPersonnage().getY() == c.getY()-1) {
 					 t.getPersonnage().setPv(t.getPersonnage().getPv() - c.getDegat()) ;
-					 System.out.println(c.getNom() + " Vous a infligé : " + + c.getDegat());
+					 System.out.println(ANSI_RED_BACKGROUND + c.getNom() + " Vous a infligé : " + + c.getDegat() + ANSI_RESET);
 					 aAttaque = true;
 				}
 			}
@@ -227,6 +241,10 @@ public enum Actions {
 		}
 		@Override 
 		public void attaque(Creature c,Terrain t) throws ExceptionAttaqueImpossible{
+			String ANSI_RED_BACKGROUND = "\u001B[41m";
+			String ANSI_BLUE_BACKGROUND = "\u001B[44m";
+			String ANSI_RESET = "\u001B[0m";
+
 			boolean aAttaque = false;
 			if(c.equals(t.getPersonnage()))
 			{	
@@ -234,7 +252,7 @@ public enum Actions {
 				{
 					if(t.getEnnemis().get(i).getX() == c.getX()  && t.getEnnemis().get(i).getY() == c.getY() + 1) {
 						t.getEnnemis().get(i).setPv(t.getEnnemis().get(i).getPv()- c.getDegat())  ;
-						System.out.println(t.getEnnemis().get(i).getNom() + " a moins de pv : " + + t.getEnnemis().get(i).getPv());
+						System.out.println(ANSI_BLUE_BACKGROUND + t.getEnnemis().get(i).getNom() + " a moins de pv : " + + t.getEnnemis().get(i).getPv() + ANSI_RESET);
 						aAttaque = true;
 					} 
 				}
@@ -243,7 +261,7 @@ public enum Actions {
 			{
 				if(t.getPersonnage().getX() == c.getX() && t.getPersonnage().getY() == c.getY()+1) {
 					 t.getPersonnage().setPv(t.getPersonnage().getPv() - c.getDegat());
-					 System.out.println(c.getNom() + " Vous a infligé : " + + c.getDegat());
+					 System.out.println(ANSI_RED_BACKGROUND + c.getNom() + " Vous a infligé : " + + c.getDegat() + ANSI_RESET);
 					 aAttaque = true;
 				}
 			}

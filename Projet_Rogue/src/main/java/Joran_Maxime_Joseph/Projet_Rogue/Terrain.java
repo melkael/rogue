@@ -140,8 +140,8 @@ public class Terrain  implements Serializable{
 		else {
 			degatsEpee = rand.nextInt(niveau * 10 - niveau * 7) + niveau * 7;
 		}
-		int x_epee = rand.nextInt(taille - 1);
-		int y_epee = rand.nextInt(taille - 1);
+		int x_epee = rand.nextInt(taille - 2) + 1;
+		int y_epee = rand.nextInt(taille - 2) + 1;
 		Epee new_epee = new Epee(getRandomEpeeName(), "\uD83D\uDDE1️", degatsEpee, x_epee, y_epee);
 
 		this.personnage.setMana(this.personnage.getMana() + 15);
