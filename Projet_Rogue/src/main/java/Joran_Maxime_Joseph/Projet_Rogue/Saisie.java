@@ -8,8 +8,8 @@ import Joran_Maxime_Joseph.Projet_Rogue.Exception.*;
 import Joran_Maxime_Joseph.Projet_Rogue.Menu.EndMenu;
 import Joran_Maxime_Joseph.Projet_Rogue.Menu.LoadMenu;
 import Joran_Maxime_Joseph.Projet_Rogue.Objet.Epee;
-import Sorts.Cataclysm;
-import Sorts.Soin;
+import Joran_Maxime_Joseph.Projet_Rogue.Sorts.Cataclysm;
+import Joran_Maxime_Joseph.Projet_Rogue.Sorts.Soin;
 import Joran_Maxime_Joseph.Projet_Rogue.Menu.SaveMenu;
 
 /**

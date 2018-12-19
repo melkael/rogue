@@ -1,4 +1,4 @@
-package Sorts;
+package Joran_Maxime_Joseph.Projet_Rogue.Sorts;
 
 import Joran_Maxime_Joseph.Projet_Rogue.Terrain;
 
