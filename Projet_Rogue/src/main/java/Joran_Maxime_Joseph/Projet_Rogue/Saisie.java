@@ -102,7 +102,7 @@ public class Saisie {
 				break;
 			case "cataclysme" :
 				try {
-				Cataclysm spell = new Cataclysm("BombeA",50);
+				Cataclysm spell = new Cataclysm("BombeA",30);
 				spell.Effet(t);
 				}
 				catch(ExceptionNotEnoughMana e){
