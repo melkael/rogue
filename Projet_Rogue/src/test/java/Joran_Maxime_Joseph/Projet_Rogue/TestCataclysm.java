@@ -36,21 +36,21 @@ public class TestCataclysm {
 		assertNotNull(c);
 	}
 
-	/*@Test
+	@Test
 	public void TestEffetPv()
 	{
-		Soin s = new Soin("s",20);
+		Cataclysm c = new Cataclysm("c",20);
 		Joueur j = new Joueur("Maxou", 5, 5, 10, 5, 1, 0,100);
-		Gobelin g = new Gobelin("Gobelin Jojo", 5, 3,  20, 5);
+		Gobelin g = new Gobelin("Gobelin Jojo", 5, 3,  19, 5);
 		Epee epee = new Epee("Excalibur", "T", 10, 8, 8);
 		ArrayList<Creature> ennemis = new ArrayList<Creature>();
 		Terrain t = new Terrain(10, j, ennemis, epee);
 		ennemis.add(g);
 		
-		s.Effet(t);
+		c.Effet(t);
 		
-		assertEquals(10,g.getPv());
-	}*/
+		assertEquals(9,g.getPv());
+	}
 	
 	@Test
 	public void TestEffetMana()
