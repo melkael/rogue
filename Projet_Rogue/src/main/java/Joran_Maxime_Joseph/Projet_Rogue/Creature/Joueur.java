@@ -50,6 +50,16 @@ public class Joueur extends Creature {
 		this.setDegat(this.getDegat()+this.epee.getDegat()) ;
 		System.out.println("Vous ramassez " + e.getNom() + ", vos degats : " + this.getDegat());
 	}
+
+	public void afficheStats(){
+		System.out.print("PV : ");
+		System.out.print(this.getPv());
+		System.out.print(" DMG : ");
+		System.out.print(this.getDegat());
+		System.out.print(" MANA : ");
+		System.out.print(this.getMana());
+		System.out.println("/50");
+	}
 	
 	@Override
 	public void IA(Terrain t){

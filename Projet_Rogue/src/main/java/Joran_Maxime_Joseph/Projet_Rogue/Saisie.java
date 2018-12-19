@@ -121,10 +121,13 @@ public class Saisie {
 		boolean joueurAPuJouer;
 		Correcteur c = new Correcteur();
 		while(cmd != "game over") {
-	    	//for(int i = 0; i < 100; i++) {System.out.println();}
-	        t.Affiche();
+			for (int i = 0; i < 5; i++) {
+				System.out.println();
+			}
+			t.getPersonnage().afficheStats();
+			t.Affiche();
 			cmd = sc.nextLine();
-			if(!"".equals(c.corriger(cmd))){
+			if (!"".equals(c.corriger(cmd))) {
 				cmd = c.corriger(cmd);
 				System.out.println("Oups, j'ai l'impression que tu as fait une faute de frappe");
 				System.out.println("Je corrige en : " + cmd);
@@ -132,34 +135,31 @@ public class Saisie {
 			try {
 				joueurJoue(cmd);
 				joueurAPuJouer = true;
-			}
-			catch (ExceptionMarcheSurObjet e1){
+			} catch (ExceptionMarcheSurObjet e1) {
 				t.getPersonnage().ramasserEpee(t.getEpee());
 				t.setEpee(new Epee());
 				joueurAPuJouer = true;
-			}
-			catch (ExceptionOuvrePorte e2) {
+			} catch (ExceptionOuvrePorte e2) {
 				System.out.println(e2.getMessage());
-				niveau ++;
+				niveau++;
 				t = t.InitAvecEnnemisEtObjets(niveau);
 				joueurAPuJouer = true;
-			}
-			catch (Exception e3) {
+			} catch (Exception e3) {
 				System.out.println(e3.getMessage());
 				joueurAPuJouer = false;
 			}
 			if (joueurAPuJouer) {
-				
-					for(int i = 0;i<t.getEnnemis().size();i++)
-					{
-						try {
-							t.getEnnemis().get(i).IA(t);
-						}
-						catch (Exception e4) {
-							System.out.println(e4.getMessage());
-						}
+				for (int i = 0; i < t.getEnnemis().size(); i++) {
+					try {
+						t.getEnnemis().get(i).IA(t);
+					} catch (Exception e4) {
+						System.out.println(e4.getMessage());
 					}
-				
+				}
+			}
+			if (!t.getPersonnage().estVivant()){
+				EndMenu end = new EndMenu(j.getNom());
+				System.exit(0);
 			}
 		}
 		sc.close();

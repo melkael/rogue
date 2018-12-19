@@ -142,6 +142,10 @@ public class Terrain  implements Serializable{
 		}
 		Epee new_epee = new Epee(getRandomEpeeName(), "T", degatsEpee, 3, 3);
 
+		this.personnage.setMana(this.personnage.getMana() + 15);
+		if (this.personnage.getMana() > 50)
+			this.personnage.setMana(50);
+
 		Terrain t = new Terrain(taille, this.personnage, new_ennemis, new_epee);
 
 		for (int i = 0; i < niveau; i++){
