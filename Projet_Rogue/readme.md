@@ -52,7 +52,7 @@
     Voici la représentation des différents éléments présents sur la map :
 
         .:Limites De La Map
-        💂:Mur De La Map
+        🕯️:Mur De La Map
         💂:Personnage
         🚪:Porte 
         🗡️:Epee
