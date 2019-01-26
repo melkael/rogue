@@ -1,117 +1,115 @@
-									Projet Rogue-Like
-                    Elkael Maxime, Robin Joran, Desquaires Joseph
-                    
-	I]Exécution Maven
+# Projet Rogue-Like
+##### Elkael Maxime, Robin Joran, Desquaires Joseph
+## I]Exécution Maven
 
-	Remarque:toutes les commandes sont à effectuer dans le dossier suivant : "projet_rogue/Projet_Rogue/"
+Remarque:toutes les commandes sont à effectuer dans le dossier suivant : "projet_rogue/Projet_Rogue/"
 
-	1)Création Du Package Maven
+### 1)Création Du Package Maven
 
-    Pour créer le dossier cible (target) de l'application avec Maven,il faut se placer dans le dossier "projet_rogue/Projet_Rogue/"
-    puis ouvrir un Terminal à ce niveau et taper la commande suivante : mvn package
-    Un dossier "target" contenant tous les fichiers nécessaires pour bien exécuter l'application devrait apparaitre dans le dossier Projet_Rogue
+Pour créer le dossier cible (target) de l'application avec Maven,il faut se placer dans le dossier "projet_rogue/Projet_Rogue/" puis ouvrir un Terminal à ce niveau et taper la commande suivante : mvn package
 
-	2)Création Du Site Maven et Checkstyle
+Un dossier "target" contenant tous les fichiers nécessaires pour bien exécuter l'application devrait apparaitre dans le dossier Projet_Rogue
 
-    Pour générer le site internet Maven contenant les informations liées au projet,il faut taper la commande suivante dans le Terminal: mvn site
-    Allez ensuite dans le dossier target/site/ et ouvrir l'index.
-    Cette commande permet aussi de générer les résultats de checkstyle
+### 2)Création Du Site Maven et Checkstyle
 
-	3)Exécution De L'Application
+* Pour générer le site internet Maven contenant les informations liées au projet,il faut taper la commande suivante dans le * Terminal: mvn site
+* Allez ensuite dans le dossier target/site/ et ouvrir l'index.
+* Cette commande permet aussi de générer les résultats de checkstyle
 
-    Pour exécuter l'application, il suffit de taper la commande : java -jar target/Projet_Rogue-1.0-SNAPSHOT.jar
-    L'application devrait s'exécuter directement dans le Terminal.
+### 3)Exécution De L'Application
 
-	4)Nettoyage du dossier target
+Pour exécuter l'application, il suffit de taper la commande : java -jar target/Projet_Rogue-1.0-SNAPSHOT.jar
+L'application devrait s'exécuter directement dans le Terminal.
 
-    Il faut exécuter la commande suivante : mvn clean
-    Cette commande permet de supprimer le dossier target.
+### 4)Nettoyage du dossier target
+
+Il faut exécuter la commande suivante : mvn clean
+Cette commande permet de supprimer le dossier target.
     
-	II]Manuel Utilisateur
+## II]Manuel Utilisateur
 
-	Voici les différentes actions que l'utilisateur devra effectuer pour le bon déroulement de l'application :
+Voici les différentes actions que l'utilisateur devra effectuer pour le bon déroulement de l'application :
+### 0) Bug Potentiel
 
-	1)Menu De Démarrage De L'Application
+Si l'affichage est décallé, il faut changer la police de votre terminal, essayez Roboto, chez moi elle fonctionne parfaitement
 
-    L'utilisateur arrive sur le menu de démarrage.
-    Il a la possibilité de taper "N" pour commencer une partie ou de taper "C" pour charger une partie.
-    Taper N menera a la partie 2).
-    Taper C proposera a l'utilisateur de charger une partie parmi une liste de sauvegarde.Chaque fichier comporte un numéro,il suffit
-    de taper le numéro correspondant a la partie sauvegardé souhaité pour la charger.
+### 1) Menu De Démarrage De L'Application
 
-	2)Menu Création Du Personnage
+* L'utilisateur arrive sur le menu de démarrage.
+* Il a la possibilité de taper "N" pour commencer une partie ou de taper "C" pour charger une partie.
+* Taper N menera a la partie 2).
+* Taper C proposera a l'utilisateur de charger une partie parmi une liste de sauvegarde.Chaque fichier comporte un numéro,il suffit de taper le numéro correspondant a la partie sauvegardé souhaité pour la charger.
 
-    Lors de l'exécution de l'application,la première chose que l'utilisateur devra faire sera de créer son personnage.
-    Pour cela,il devra tout d'abord lui affecter un Nom,puis choisir sa classe.
-    Il y a deux classes disponibles : ASSASSIN ou CHEVALIER
-    Chacune possède des caracteristiques différentes : ASSASSIN a moins de pv et plus de dégats que le CHEVALIER
-    Après avoir effectuer son choix,l'utilisateur arrivera sur la première map.
+### 2)Menu Création Du Personnage
 
-	3)Symboles Presents Sur La Map
+Lors de l'exécution de l'application,la première chose que l'utilisateur devra faire sera de créer son personnage.
+Pour cela,il devra tout d'abord lui affecter un Nom,puis choisir sa classe.
+Il y a deux classes disponibles : ASSASSIN ou CHEVALIER
+Chacune possède des caracteristiques différentes : ASSASSIN a moins de pv et plus de dégats que le CHEVALIER
+Après avoir effectuer son choix,l'utilisateur arrivera sur la première map.
 
-    Voici la représentation des différents éléments présents sur la map :
+### 3)Symboles Presents Sur La Map
 
-        .:Limites De La Map
-        🕯️:Mur De La Map
-        💂:Personnage
-        🚪:Porte 
-        🗡️:Epee
-        👻:Gobelins
+Voici la représentation des différents éléments présents sur la map :
 
-	4)Déplacement Du Personnage
+* .:Limites De La Map
+* 🕯️:Mur De La Map
+* 💂:Personnage
+* 🚪:Porte 
+* 🗡️:Epee
+* 👻:Gobelins
 
-    Pour déplacer le Personnage ,l'utilisateur devra taper les commandes suivantes:
+### 4)Déplacement Du Personnage
 
-        Pour se déplacer en haut : go haut
-        Pour se déplacer en bas : go bas
-        Pour se déplacer à droite : go droite
-        Pour se déplacer à gauche : go gauche
+Pour déplacer le Personnage, l'utilisateur devra taper les commandes suivantes:
 
-	5)Ramasser Un Objet
+* Pour se déplacer en haut : go haut
+* Pour se déplacer en bas : go bas
+* Pour se déplacer à droite : go droite
+* Pour se déplacer à gauche : go gauche
 
-    Pour ramasser un objet, l'utilisateur doit déplacer le Personnage jusqu'à la case où se trouve l'objet.
-    Une fois le symbole Du Personnage sur la case de l'objet,un message devrait apparaître concernant les bonus 
-    obtenus par le personnage (augmentation de dégats etc...)
-    Par Exemple,Le fait de ramasser une épée aura pour objectif d'augmenter les dégâts du Personnage.
+### 5)Ramasser Un Objet
 
-	6)Passer Une Porte et arriver dans un autre monde
+Pour ramasser un objet, l'utilisateur doit déplacer le Personnage jusqu'à la case où se trouve l'objet.
+Une fois le symbole Du Personnage sur la case de l'objet,un message devrait apparaître concernant les bonus obtenus par le personnage (augmentation de dégats etc...)
+Par Exemple,Le fait de ramasser une épée aura pour objectif d'augmenter les dégâts du Personnage.
 
-    Pour passer une porte,il suffit de tuer tous les monstres présents sur la map ce qui aura pour effet de débloquer la porte.
-    Cependant,lors du premier niveau, l'utilisateur peut passer directement la porte car aucun ennemis est présent.
+### 6)Passer Une Porte et arriver dans un autre monde
 
-	7)Attaquer Les Monstres
+Pour passer une porte,il suffit de tuer tous les monstres présents sur la map ce qui aura pour effet de débloquer la porte.
+Cependant,lors du premier niveau, l'utilisateur peut passer directement la porte car aucun ennemis est présent.
 
-    Pour attaquer les monstres,l'utilisateur devra positionner le personnage à côté d'un monstre et taper les commandes suivantes selon
-    où le monstre est positionné :
+### 7)Attaquer Les Monstres
 
-        Le monstre est au-dessus du Personnage: atk haut
-        Le monstre est en-dessous du Personnage: atk bas
-        Le monstre est à droite du Personnage: atk droite
-        Le monstre est à gauche du Personnage: atk gauche
+Pour attaquer les monstres,l'utilisateur devra positionner le personnage à côté d'un monstre et taper les commandes suivantes selon la position du monstre :
 
-    Lors d'une attaque ,les monstres vont perdre des points de vies équivalents à la puissance de l'attaque du joueur.
+* Le monstre est au-dessus du Personnage: atk haut
+* Le monstre est en-dessous du Personnage: atk bas
+* Le monstre est à droite du Personnage: atk droite
+* Le monstre est à gauche du Personnage: atk gauche
 
-	8)Lancer Des Sorts
+Lors d'une attaque ,les monstres vont perdre des points de vie équivalents à la puissance de l'attaque du joueur.
 
-    Pour lancer des sorts,l'utilisateur peut taper les commandes suivantes :
+### 8)Lancer Des Sorts
 
-        cataclysm:pour toucher tous les ennemis présents sur le terrain
-        soin:pour se soigner
+Pour lancer des sorts,l'utilisateur peut taper les commandes suivantes :
 
-	9)Les Niveaux Du Jeu
+* cataclysm:pour toucher tous les ennemis présents sur le terrain
+* soin:pour se soigner
 
-    Le Jeu possède différents niveaux.Pour accéder au niveau supérieur,il suffit que l'utilisateur tue tous les monstres
-    et passe la porte du niveau où il se situe.
-    Chaque niveau est plus dur que les précédents ,c'est à dire qu'il y a plus de monstre ,plus fort et une map plus grande.
+### 9)Les Niveaux Du Jeu
 
-	10)Sauvegarder Une Partie
+Le Jeu possède différents niveaux.Pour accéder au niveau supérieur,il suffit que l'utilisateur tue tous les monstres et passe la porte du niveau où il se situe.
+Chaque niveau est plus dur que les précédents ,c'est à dire qu'il y a plus de monstre ,plus fort et une map plus grande.
 
-    Pour sauvegarder une partie, l'utilisateur devra taper la commande suivante : save
-    Celle-ci dirigera le joueur vers un menu lui disant de choisir le nom du fichier pour sa sauvegarde.
+### 10)Sauvegarder Une Partie
+
+Pour sauvegarder une partie, l'utilisateur devra taper la commande suivante : save
+Celle-ci dirigera le joueur vers un menu lui disant de choisir le nom du fichier pour sa sauvegarde.
     
-	III]Manuel Technique
+## III]Manuel Technique
 
-	Pour cela,il faut consulter la JavaDoc de l'application.
-	L'utilisateur doit se mettre dans le dossier target/apidocs/
-	Puis ouvrir index.html.
+Consulter la JavaDoc de l'application.
+L'utilisateur doit se mettre dans le dossier target/apidocs/
+Puis ouvrir index.html.
 Le détail de chaque méthode de chaque classe et le détail des classes seront présentes .
